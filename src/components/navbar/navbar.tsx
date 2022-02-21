@@ -9,7 +9,7 @@ const Navbar: React.FC<Props> = ({ setContent }) => (
   <Container>
     <span>WhatsUp</span>
     <NavbarItemContainer>
-      <NavbarItem onClick={() => setContent("Item 1")}> item 1</NavbarItem>
+      <NavbarItem onClick={() => setContent("contact")}>Contact</NavbarItem>
       <NavbarItem onClick={() => setContent("Item 2")}> item 2</NavbarItem>
       <NavbarItem onClick={() => setContent("Item 3")}> item 3</NavbarItem>
       <NavbarItem onClick={() => setContent("Item 4")}> item 4</NavbarItem>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./components/navbar/navbar";
 import styled from "@emotion/styled/macro";
+import Contact from "./pages/contact";
 
 const App: React.FC = () => {
   const [content, setContent] = useState<any>("none");
@@ -8,7 +9,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <Navbar setContent={setContent} />
-      <ContentContainer>{content}</ContentContainer>
+      <ContentContainer>
+        {content === "contact" && <Contact />}
+      </ContentContainer>
     </div>
   );
 };
