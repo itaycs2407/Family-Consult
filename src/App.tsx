@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from "react";
+import Navbar from "./components/navbar/navbar";
+import styled from "@emotion/styled/macro";
 
-function App() {
+const App: React.FC = () => {
+  const [content, setContent] = useState<any>("none");
+
   return (
     <div className="App">
-      this is the first Page
+      <Navbar setContent={setContent} />
+      <ContentContainer>{content}</ContentContainer>
     </div>
   );
-}
+};
+
+const ContentContainer = styled.div`
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default App;
