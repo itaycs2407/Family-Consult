@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled/macro";
-import { keyframes } from "@emotion/react";
 import { locale } from "../locale/locale";
 import { LANGUAGE } from "../constant/constant";
 
