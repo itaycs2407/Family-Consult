@@ -83,6 +83,7 @@ const Container = styled.div`
 
 const Card = styled.div`
   padding: 30px 60px;
+  width: 500px;
   border-radius: 15px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   background-color: white;
@@ -96,6 +97,7 @@ const Card = styled.div`
 const Input = styled.input<{ rtl: boolean }>`
   padding: 5px 10px;
   height: 25px;
+  border: none;
   width: 90%;
   border-radius: 10px;
   text-align: ${({ rtl }) => (rtl ? "right" : "left")};
@@ -105,7 +107,7 @@ const Input = styled.input<{ rtl: boolean }>`
 
 const SelectContainer = styled.div<{ rtl: boolean }>`
   border-radius: 10px;
-  width: 100%;
+  width: 95%;
   text-align: ${({ rtl }) => (rtl ? "right" : "left")};
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 `;
@@ -117,11 +119,13 @@ const ContactText = styled.textarea<{ showMoreInfo: boolean }>`
   opacity: ${({ showMoreInfo }) => (showMoreInfo ? 1 : 0)};
   padding: 12px 20px;
   overflow: hidden;
+  width: 86%;
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: #f8f8f8;
   direction: rtl;
   text-align: right;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   font-size: 16px;
   transition: all 1s ease-in-out;
 `;

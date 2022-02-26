@@ -14,7 +14,6 @@ const WorkshopItem: React.FC<Props> = ({ workshop }) => (
     </ImageContainer>
     <Title>{workshop.title}</Title>
     <Description>
-      {workshop.description}
       <Button title={"לחץ לקבלת פרטים"} />
     </Description>
   </Container>
@@ -22,7 +21,7 @@ const WorkshopItem: React.FC<Props> = ({ workshop }) => (
 
 const Container = styled.div`
   width: 280px;
-  height: 600px;
+  height: 300px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   background-color: white;
   display: flex;
@@ -31,7 +30,7 @@ const Container = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  height: 35%;
+  height: 65%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 `;
@@ -45,7 +44,8 @@ const Image = styled.img`
 
 const Title = styled.div`
   padding: 10px;
-  text-align: right;
+  background-color: orange;
+  text-align: center;
 `;
 
 const Description = styled.div`

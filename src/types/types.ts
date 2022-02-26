@@ -11,3 +11,10 @@ export type Translation = {
 };
 
 export type Language = "en" | "he";
+
+export type PageContent =
+  | "singleConsult"
+  | "about"
+  | "home"
+  | "workshop"
+  | "contact";
