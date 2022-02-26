@@ -6,6 +6,7 @@ import { LANGUAGE } from "../constant/constant";
 
 import Select from "react-select";
 import Button from "../components/button";
+import { Fadein } from "../constant/style";
 
 const Contact = () => {
   const [fullName, setFullName] = useState("");
@@ -73,22 +74,12 @@ const Contact = () => {
   );
 };
 
-const Fadein = keyframes`
-from {
-  opacity: 0;
-}
-  to {
-    opacity: 1;
-  }
-
-
-`;
 const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  animation: ${Fadein} 1s;
+  animation: ${Fadein} 1s ease-in-out;
 `;
 
 const Card = styled.div`

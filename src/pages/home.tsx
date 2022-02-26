@@ -1,6 +1,6 @@
 import React from "react";
-import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled/macro";
+import { Fadein } from "../constant/style";
 
 interface Props {}
 
@@ -12,18 +12,10 @@ const Home: React.FC<Props> = () => {
   );
 };
 
-const Fadein = keyframes`
-from {
-  opacity: 0;
-}
-  to {
-    opacity: 1;
-  }
-  `;
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  animation: ${Fadein} 1s;
+  animation: ${Fadein} 1s ease-in-out;
 `;
 export default Home;

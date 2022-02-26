@@ -1,10 +1,6 @@
-type Language = "en" | "he";
+import { Language, Translation } from "../types/types";
 
-const translate: {
-  [id: string]: {
-    [id: string]: string | Array<string>;
-  };
-} = {
+const translate: Translation = {
   en: {
     contact: "Contact Us",
   },

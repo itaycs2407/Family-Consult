@@ -1,40 +1,59 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
+import { WorkshopInfo } from "../../types/types";
+import Button from "../button";
 
 interface Props {
-  title: string;
-  description: string;
+  workshop: WorkshopInfo;
 }
 
-const WorkshopItem: React.FC<Props> = ({ title, description }) => (
+const WorkshopItem: React.FC<Props> = ({ workshop }) => (
   <Container>
-    <Image>image</Image>
-    <Title>{title}</Title>
-    <Description>{description}</Description>
+    <ImageContainer>
+      <Image src={workshop.image} />
+    </ImageContainer>
+    <Title>{workshop.title}</Title>
+    <Description>
+      {workshop.description}
+      <Button title={"לחץ לקבלת פרטים"} />
+    </Description>
   </Container>
 );
 
 const Container = styled.div`
-  width: 200px;
-  height: 400px;
+  width: 280px;
+  height: 600px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  background-color: white;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  background-color: white;
-  border: red 2px solid;
 `;
 
-const Image = styled.div`
+const ImageContainer = styled.div`
   height: 35%;
-  padding: 10px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background-color: #61dafb;
 `;
 
-const Title = styled.div``;
+const Image = styled.img`
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  height: 100%;
+`;
+
+const Title = styled.div`
+  padding: 10px;
+  text-align: right;
+`;
 
 const Description = styled.div`
+  text-align: right;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: orange;
