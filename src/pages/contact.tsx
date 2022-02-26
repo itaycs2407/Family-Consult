@@ -17,6 +17,7 @@ const Contact = () => {
 
   useEffect(() => {
     setShowMoreInfo(contactReason === locale("moreInfoKey"));
+
     setContactInfo("");
   }, [contactReason]);
 
