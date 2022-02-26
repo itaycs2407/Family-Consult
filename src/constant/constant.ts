@@ -32,4 +32,5 @@ export const workshopData: Array<WorkshopInfo> = [
     description: "פה צריך להיות את תיאור הסדנה בערך שלוש שורות של קשקושים",
     image: defaultImage,
   },
+
 ];
