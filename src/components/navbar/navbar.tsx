@@ -48,7 +48,7 @@ const NavbarItemContainer = styled.div`
 `;
 
 const NavbarItem = styled.div`
-  width: 150px;
+  min-width: 100px;
   margin: 0 15px;
   background-color: yellow;
   border-radius: 10px;
