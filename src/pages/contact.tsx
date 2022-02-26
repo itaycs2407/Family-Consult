@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled/macro";
 import { keyframes } from "@emotion/react";
 import { locale } from "../locale/locale";
 import { LANGUAGE } from "../constant/constant";
 
+import Select from "react-select";
+import Button from "../components/button";
+
 const Contact = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [contactReason, setContactReason] = useState<string>("");
+  const [showMoreInfo, setShowMoreInfo] = useState(false);
+  const [contactInfo, setContactInfo] = useState("");
+
+  useEffect(() => {
+    setShowMoreInfo(contactReason === locale("moreInfoKey"));
+    setContactInfo("");
+  }, [contactReason]);
 
   return (
     <Container>
@@ -17,7 +28,7 @@ const Contact = () => {
           type="text"
           value={fullName}
           onChange={(event) => setFullName(event.target.value)}
-          placeholder={locale("fullName")}
+          placeholder={locale("fullName") as string}
           autoFocus
           rtl={LANGUAGE === "he"}
         />
@@ -25,25 +36,38 @@ const Contact = () => {
           type="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          placeholder={locale("email")}
+          placeholder={locale("email") as string}
           rtl={LANGUAGE === "he"}
         />
         <Input
           type="tel"
           value={phoneNumber}
           onChange={(event) => setPhoneNumber(event.target.value)}
-          placeholder={locale("phoneNumber")}
+          placeholder={locale("phoneNumber") as string}
           rtl={LANGUAGE === "he"}
         />
-        <Select placeholder="ddd" rtl={LANGUAGE === "he"}>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </Select>
+        <SelectContainer rtl={LANGUAGE === "he"}>
+          <Select
+            placeholder={locale("contactReason") as string}
+            onChange={(event) =>
+              event !== null && setContactReason(event.value)
+            }
+            options={(locale("contactReasons") as Array<string>).map(
+              (option) => ({
+                value: option,
+                label: option,
+              })
+            )}
+          />
+        </SelectContainer>
+        <ContactText
+          value={contactInfo}
+          onChange={(event) => setContactInfo(event.target.value)}
+          showMoreInfo={showMoreInfo}
+          placeholder={locale("moreInfoPlaceholder") as string}
+        />
 
-        <button onClick={() => alert("send was clicked")}>
-          {locale("send")}
-        </button>
+        <Button title={locale("send") as string} />
       </Card>
     </Container>
   );
@@ -83,19 +107,33 @@ const Card = styled.div`
 const Input = styled.input<{ rtl: boolean }>`
   padding: 5px 10px;
   height: 25px;
-  width: 250px;
+  width: 90%;
   border-radius: 10px;
   text-align: ${({ rtl }) => (rtl ? "right" : "left")};
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   outline: none;
 `;
 
-const Select = styled.select<{ rtl: boolean }>`
-  padding: 5px 10px;
-  height: 25px;
-  width: 250px;
+const SelectContainer = styled.div<{ rtl: boolean }>`
   border-radius: 10px;
+  width: 100%;
   text-align: ${({ rtl }) => (rtl ? "right" : "left")};
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 `;
+
+const ContactText = styled.textarea<{ showMoreInfo: boolean }>`
+  resize: none;
+  height: ${({ showMoreInfo }) => (showMoreInfo ? "150px" : "0px")};
+  visibility: ${({ showMoreInfo }) => (showMoreInfo ? "visible" : "hidden")};
+  padding: 12px 20px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  direction: rtl;
+  text-align: right;
+  font-size: 16px;
+  transition: all 1s ease-in-out;
+`;
+
 export default Contact;

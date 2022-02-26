@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import styled from "@emotion/styled/macro";
+import { ReactComponent as WhatsappLogo } from "../../assets/whatsup.svg";
 
 interface Props {
   setContent: Dispatch<SetStateAction<any>>;
@@ -7,12 +8,15 @@ interface Props {
 
 const Navbar: React.FC<Props> = ({ setContent }) => (
   <Container>
-    <span>WhatsUp</span>
+    <ImageContainer>{/*<WhatsappLogo />*/}</ImageContainer>
     <NavbarItemContainer>
-      <NavbarItem onClick={() => setContent("contact")}>Contact</NavbarItem>
-      <NavbarItem onClick={() => setContent("Item 2")}> item 2</NavbarItem>
-      <NavbarItem onClick={() => setContent("Item 3")}> item 3</NavbarItem>
-      <NavbarItem onClick={() => setContent("Item 4")}> item 4</NavbarItem>
+      <NavbarItem onClick={() => setContent("contact")}>צור קשר</NavbarItem>
+      <NavbarItem onClick={() => setContent("workshop")}> סדנאות</NavbarItem>
+      <NavbarItem onClick={() => setContent("singleConsult")}>
+        ייעוץ פרטני
+      </NavbarItem>
+      <NavbarItem onClick={() => setContent("about")}> אודותי</NavbarItem>
+      <NavbarItem onClick={() => setContent("home")}> בית</NavbarItem>
     </NavbarItemContainer>
     <span>Logo</span>
   </Container>
@@ -52,4 +56,8 @@ const NavbarItem = styled.div`
   }
 `;
 
+const ImageContainer = styled.div`
+  width: 60px;
+  height: 60px;
+`;
 export default Navbar;

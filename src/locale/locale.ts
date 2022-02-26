@@ -1,6 +1,6 @@
 type Language = "en" | "he";
 
-const translate: { [id: string]: { [id: string]: string } } = {
+const translate: { [id: string]: { [id: string]: string | Array<string> } } = {
   en: {
     contact: "Contact Us",
   },
@@ -10,6 +10,10 @@ const translate: { [id: string]: { [id: string]: string } } = {
     email: "דואר אלקטרוני",
     phoneNumber: "טלפון",
     send: "שלח",
+    moreInfoKey: "אחר",
+    moreInfoPlaceholder: "תיאור קצר של הפנייה...",
+    contactReason: "סיבת פנייה",
+    contactReasons: ["ייעוץ פרטני", "סדנאות", "אחר"],
   },
 };
 
