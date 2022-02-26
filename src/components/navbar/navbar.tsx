@@ -1,6 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
 import styled from "@emotion/styled/macro";
-import { ReactComponent as WhatsappLogo } from "../../assets/whatsup.svg";
 import { locale } from "../../locale/locale";
 
 interface Props {
@@ -9,7 +8,6 @@ interface Props {
 
 const Navbar: React.FC<Props> = ({ setContent }) => (
   <Container>
-    <ImageContainer>{/*<WhatsappLogo />*/}</ImageContainer>
     <NavbarItemContainer>
       <NavbarItem onClick={() => setContent("contact")}>
         {locale("navBarItemContactMe")}
@@ -65,8 +63,4 @@ const NavbarItem = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
-  width: 60px;
-  height: 60px;
-`;
 export default Navbar;
