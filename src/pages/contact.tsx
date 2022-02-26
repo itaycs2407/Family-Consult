@@ -114,6 +114,7 @@ const ContactText = styled.textarea<{ showMoreInfo: boolean }>`
   resize: none;
   height: ${({ showMoreInfo }) => (showMoreInfo ? "150px" : "0px")};
   visibility: ${({ showMoreInfo }) => (showMoreInfo ? "visible" : "hidden")};
+  opacity: ${({ showMoreInfo }) => (showMoreInfo ? 1 : 0)};
   padding: 12px 20px;
   overflow: hidden;
   border: 2px solid #ccc;
