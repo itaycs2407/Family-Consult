@@ -20,7 +20,7 @@ const StyledButton = styled.button`
   position: relative;
   display: inline-block;
   outline: none;
-  border-radius: 5px;
+  border-radius: 15px;
   border: none;
   box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5),
     7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);

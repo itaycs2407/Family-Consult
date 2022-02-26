@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import styled from "@emotion/styled/macro";
 import { ReactComponent as WhatsappLogo } from "../../assets/whatsup.svg";
+import { locale } from "../../locale/locale";
 
 interface Props {
   setContent: Dispatch<SetStateAction<any>>;
@@ -10,20 +11,28 @@ const Navbar: React.FC<Props> = ({ setContent }) => (
   <Container>
     <ImageContainer>{/*<WhatsappLogo />*/}</ImageContainer>
     <NavbarItemContainer>
-      <NavbarItem onClick={() => setContent("contact")}>צור קשר</NavbarItem>
-      <NavbarItem onClick={() => setContent("workshop")}> סדנאות</NavbarItem>
-      <NavbarItem onClick={() => setContent("singleConsult")}>
-        ייעוץ פרטני
+      <NavbarItem onClick={() => setContent("contact")}>
+        {locale("navBarItemContactMe")}
       </NavbarItem>
-      <NavbarItem onClick={() => setContent("about")}> אודותי</NavbarItem>
-      <NavbarItem onClick={() => setContent("home")}> בית</NavbarItem>
+      <NavbarItem onClick={() => setContent("workshop")}>
+        {locale("navBarItemWorkshop")}
+      </NavbarItem>
+      <NavbarItem onClick={() => setContent("singleConsult")}>
+        {locale("navBarItemSingleConsult")}
+      </NavbarItem>
+      <NavbarItem onClick={() => setContent("about")}>
+        {locale("navBarItemAboutMe")}
+      </NavbarItem>
+      <NavbarItem onClick={() => setContent("home")}>
+        {locale("navBarItemHome")}
+      </NavbarItem>
     </NavbarItemContainer>
     <span>Logo</span>
   </Container>
 );
 
 const Container = styled.div`
-  position: sticky;
+  position: inherit;
   width: 100vw;
   height: 50px;
   display: flex;

@@ -1,11 +1,20 @@
 type Language = "en" | "he";
 
-const translate: { [id: string]: { [id: string]: string | Array<string> } } = {
+const translate: {
+  [id: string]: {
+    [id: string]: string | Array<string>;
+  };
+} = {
   en: {
     contact: "Contact Us",
   },
   he: {
     contact: "צור קשר",
+    navBarItemHome: "בית",
+    navBarItemAboutMe: "אודותי",
+    navBarItemSingleConsult: "ייעוץ פרטני",
+    navBarItemWorkshop: "סדנאות",
+    navBarItemContactMe: "צור קשר",
     fullName: "שם מלא",
     email: "דואר אלקטרוני",
     phoneNumber: "טלפון",
