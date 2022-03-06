@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React  from "react";
 import styled from "@emotion/styled/macro";
 import Navbar from "./components/navbar/navbar";
 import Contact from "./pages/contact";
@@ -6,20 +6,24 @@ import Workshop from "./pages/workshop";
 import Home from "./pages/home";
 import AboutMe from "./pages/about-me";
 import Consult from "./pages/consult";
-import { PageContent } from "./types/types";
+import {Redirect, Route, Switch} from "react-router-dom";
 
 const App: React.FC = () => {
-  const [content, setContent] = useState<PageContent>("contact");
 
   return (
     <Container>
-      <Navbar setContent={setContent} />
+      <Navbar />
       <ContentContainer>
-        {content === "contact" && <Contact />}
-        {content === "workshop" && <Workshop />}
-        {content === "home" && <Home />}
-        {content === "about" && <AboutMe />}
-        {content === "singleConsult" && <Consult />}
+          <Switch>
+              <Route exact path="/home" component={Home}/>
+              <Route exact path="/contact" component={Contact}/>
+              <Route exact path="/workshop" component={Workshop}/>
+              <Route exact path="/about" component={AboutMe}/>
+              <Route exact path="/singleConsult" component={Consult}/>
+              <Redirect from='/' to={'/home'}/>
+          </Switch>
+
+
       </ContentContainer>
     </Container>
   );

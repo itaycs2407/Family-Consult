@@ -1,27 +1,27 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 import styled from "@emotion/styled/macro";
 import { locale } from "../../locale/locale";
+import {NavLink} from "react-router-dom";
 
 interface Props {
-  setContent: Dispatch<SetStateAction<any>>;
 }
 
-const Navbar: React.FC<Props> = ({ setContent }) => (
+const Navbar: React.FC<Props> = () => (
   <Container>
     <NavbarItemContainer>
-      <NavbarItem onClick={() => setContent("contact")}>
+      <NavbarItem to='/contact'>
         {locale("navBarItemContactMe")}
       </NavbarItem>
-      <NavbarItem onClick={() => setContent("workshop")}>
+      <NavbarItem  to='/workshop' >
         {locale("navBarItemWorkshop")}
       </NavbarItem>
-      <NavbarItem onClick={() => setContent("singleConsult")}>
+      <NavbarItem  to='/SingleConsult' >
         {locale("navBarItemSingleConsult")}
       </NavbarItem>
-      <NavbarItem onClick={() => setContent("about")}>
+      <NavbarItem  to='/about' >
         {locale("navBarItemAboutMe")}
       </NavbarItem>
-      <NavbarItem onClick={() => setContent("home")}>
+      <NavbarItem  to='/home' >
         {locale("navBarItemHome")}
       </NavbarItem>
     </NavbarItemContainer>
@@ -47,8 +47,9 @@ const NavbarItemContainer = styled.div`
   align-items: center;
 `;
 
-const NavbarItem = styled.div`
+const NavbarItem = styled(NavLink)`
   min-width: 100px;
+  text-decoration: none;
   margin: 0 15px;
   background-color: yellow;
   border-radius: 10px;
