@@ -44,7 +44,7 @@ const Image = styled.img`
 
 const Title = styled.div`
   padding: 10px;
-  background-color: orange;
+  background-color: #f8d6de;
   text-align: center;
 `;
 
@@ -56,7 +56,7 @@ const Description = styled.div`
   justify-content: space-between;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-color: orange;
+  background-color: #f8d6de;
   flex: 1;
 `;
 

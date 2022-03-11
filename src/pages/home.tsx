@@ -23,7 +23,7 @@ const Home: React.FC<Props> = () => {
         </P>
       </ContentContainer>
       <CardContainer>
-        <Card to="/singleConsult">singleConsult</Card>
+        <Card to="/personal-consult">singleConsult</Card>
         <Card to="/workshop">workshop</Card>
       </CardContainer>
     </Container>

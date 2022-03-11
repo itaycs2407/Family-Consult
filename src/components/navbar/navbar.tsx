@@ -26,7 +26,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: orange;
+  background-color: #f7cad6;
 `;
 
 const NavbarItemContainer = styled.div`
@@ -41,7 +41,7 @@ const NavbarItem = styled(NavLink)`
   min-width: 100px;
   text-decoration: none;
   margin: 0 15px;
-  background-color: yellow;
+  background-color: #e4e1dd;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;

@@ -27,7 +27,7 @@ const App: React.FC = () => {
 };
 
 const Container = styled.div`
-  background-color: #ffe9d5;
+  background-color: ghostwhite;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   margin-top: 10%;
-  background-color: #ffe9d5;
+  background-color: ghostwhite;
 `;
 
 export default App;
