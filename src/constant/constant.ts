@@ -2,6 +2,7 @@ import { WorkshopInfo } from "../types/types";
 import defaultImage from "../assets/workshop/defualt.jpg";
 import parents from "../assets/workshop/workshop-parents.jpeg";
 import becomingParents from "../assets/workshop/workshop-becomingParetnts.jpeg";
+import mothers from "../assets/workshop/workshop-mother.jpeg";
 
 export const LANGUAGE = "he";
 
@@ -32,7 +33,7 @@ export const workshopData: Array<WorkshopInfo> = [
   {
     title: "מעגלי אמהות לאחר לידה",
     description: "פה צריך להיות את תיאור הסדנה בערך שלוש שורות של קשקושים",
-    image: defaultImage,
+    image: mothers,
   },
   {
     title: "משפחה בטבע",

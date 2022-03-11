@@ -18,8 +18,8 @@ const App: React.FC = () => {
               <Route exact path="/home" component={Home}/>
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/workshop" component={Workshop}/>
-              <Route exact path="/about" component={AboutMe}/>
-              <Route exact path="/singleConsult" component={Consult}/>
+              <Route exact path="/about-me" component={AboutMe}/>
+              <Route exact path="/personal-consult" component={Consult}/>
               <Redirect from='/' to={'/home'}/>
           </Switch>
 
@@ -30,7 +30,7 @@ const App: React.FC = () => {
 };
 
 const Container = styled.div`
-  background-color: #d9d9d8;
+  background-color: #ffe9d5;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   margin-top: 10%;
-  background-color: #d9d9d8;
+  background-color: #ffe9d5;
 `;
 
 export default App;

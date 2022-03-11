@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
 import { locale } from "../../locale/locale";
-import {NavLink} from "react-router-dom";
-
+import {NavLink } from "react-router-dom";
+import logo from "../../assets/logo.jpeg";
 interface Props {
 }
 
@@ -15,24 +15,23 @@ const Navbar: React.FC<Props> = () => (
       <NavbarItem  to='/workshop' >
         {locale("navBarItemWorkshop")}
       </NavbarItem>
-      <NavbarItem  to='/SingleConsult' >
+      <NavbarItem  to='/personal-consult' >
         {locale("navBarItemSingleConsult")}
       </NavbarItem>
-      <NavbarItem  to='/about' >
+      <NavbarItem  to='/about-me' >
         {locale("navBarItemAboutMe")}
       </NavbarItem>
       <NavbarItem  to='/home' >
         {locale("navBarItemHome")}
       </NavbarItem>
     </NavbarItemContainer>
-    <span>Logo</span>
+      <Logo src={logo} alt="logo"/>
   </Container>
 );
 
 const Container = styled.div`
   position: inherit;
   width: 100vw;
-  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,5 +62,13 @@ const NavbarItem = styled(NavLink)`
     box-shadow: 0 3px 9px rgba(0, 0, 0, 1);
   }
 `;
+
+const Logo = styled.img`
+width : 250px;
+height : 92px
+  
+
+`;
+
 
 export default Navbar;
