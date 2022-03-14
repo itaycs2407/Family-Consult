@@ -3,6 +3,7 @@ import styled from "@emotion/styled/macro";
 import { Fadein } from "../constant/style";
 import intro from "../assets/home-intro.jpeg";
 import { Link } from "react-router-dom";
+import { locale } from "../locale/locale";
 interface Props {}
 
 const Home: React.FC<Props> = () => {
@@ -11,16 +12,8 @@ const Home: React.FC<Props> = () => {
       <UpperContent>
         <Image src={intro} alt="home-intro" />
         <Intro>
-          <Header>קצת עלי</Header>
-          כאמא לשולשה ילדים אני מרגישה שהעידן בו אנו חיים מזמן לנו אתגרים
-          שהורינו לא חבו: רצון במימוש עצמי לצד הורות מספקת, עומס מידע, רשתות
-          חברתיות ועוד' . אנו מוצפים במידע על איך להיות הורים ומה כדאי לעשות
-          ואיך לנהוג ומתוך כל המידע והשיטות לעיתים קשה לנו לראות מה נכון לנו
-          ולמשפחתנו ואיך לאזן בין ההורות לשאר תחומי החיים. אני מאמינה שאפשר גם
-          להיות הורים טובים וגם למשש את עצמנו כאישיות נפרדת, שאין הורות אחת שהיא
-          נכונה ושכל הורה צריך למצוא את הדרך המתאימה עבורו ועבור משפחתו. יחד
-          נתמודד עם האתגרים, נמצא פתרונות ונעבור תהליך​ שיעזור לכם למצוא את
-          ההורים שטבעי לכם להיות.
+          <Header>{locale("homeIntroHeader")}</Header>
+          {locale("homeIntro")}
         </Intro>
       </UpperContent>
       <CardContainer>
