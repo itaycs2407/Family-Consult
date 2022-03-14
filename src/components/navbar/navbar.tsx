@@ -3,10 +3,17 @@ import styled from "@emotion/styled/macro";
 import { locale } from "../../locale/locale";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.jpeg";
-interface Props {}
+import { ReactComponent as WhatsappLogo } from "../../assets/Whatsapp-logo-icon-transparent.svg";
 
-const Navbar: React.FC<Props> = () => (
+const Navbar: React.FC = () => (
   <Container>
+    <WhatsappContainer
+      href="https://api.whatsapp.com/send?phone=+972587600202"
+      target="_blank"
+    >
+      <WhatsappLogo />
+    </WhatsappContainer>
+
     <NavbarItemContainer>
       <NavbarItem to="/contact">{locale("navBarItemContactMe")}</NavbarItem>
       <NavbarItem to="/workshop">{locale("navBarItemWorkshop")}</NavbarItem>
@@ -30,9 +37,9 @@ const Container = styled.div`
 `;
 
 const NavbarItemContainer = styled.div`
-  width: 60%;
   height: 100%;
   display: flex;
+  margin: auto;
   justify-content: space-between;
   align-items: center;
 `;
@@ -57,6 +64,12 @@ const NavbarItem = styled(NavLink)`
 const Logo = styled.img`
   width: 250px;
   height: 92px;
+`;
+
+const WhatsappContainer = styled.a`
+  width: 55px;
+  height: 55px;
+  margin-left: 20px;
 `;
 
 export default Navbar;
