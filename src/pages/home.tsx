@@ -8,9 +8,10 @@ interface Props {}
 const Home: React.FC<Props> = () => {
   return (
     <Container>
-      <Image src={intro} alt="home-intro" />
-      <ContentContainer>
-        <P>
+      <UpperContent>
+        <Image src={intro} alt="home-intro" />
+        <Intro>
+          <Header>קצת עלי</Header>
           כאמא לשולשה ילדים אני מרגישה שהעידן בו אנו חיים מזמן לנו אתגרים
           שהורינו לא חבו: רצון במימוש עצמי לצד הורות מספקת, עומס מידע, רשתות
           חברתיות ועוד' . אנו מוצפים במידע על איך להיות הורים ומה כדאי לעשות
@@ -20,8 +21,8 @@ const Home: React.FC<Props> = () => {
           נכונה ושכל הורה צריך למצוא את הדרך המתאימה עבורו ועבור משפחתו. יחד
           נתמודד עם האתגרים, נמצא פתרונות ונעבור תהליך​ שיעזור לכם למצוא את
           ההורים שטבעי לכם להיות.
-        </P>
-      </ContentContainer>
+        </Intro>
+      </UpperContent>
       <CardContainer>
         <Card to="/personal-consult">singleConsult</Card>
         <Card to="/workshop">workshop</Card>
@@ -33,23 +34,22 @@ const Home: React.FC<Props> = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
   animation: ${Fadein} 1s ease-in-out;
-`;
-
-const ContentContainer = styled.div`
-  display: flex;
 `;
 
 const Image = styled.img`
   width: 300px;
   height: 200px;
+  margin-left: 30px;
 `;
 
-const P = styled.p`
-  width: 30%;
+const Intro = styled.p`
+  width: 50%;
   text-align: right;
+  display: inline;
+  margin-right: 30px;
 `;
 
 const CardContainer = styled.div`
@@ -58,9 +58,21 @@ const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+const UpperContent = styled(CardContainer)`
+  margin-bottom: 50px;
+  justify-content: space-between;
+  width: 70%;
+`;
+
+const Header = styled.h1`
+  font-style: italic;
+`;
+
 const Card = styled(Link)`
   width: 600px;
   height: 200px;
   background-color: red;
 `;
+
 export default Home;
