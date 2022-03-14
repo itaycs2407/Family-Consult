@@ -19,6 +19,7 @@ const translate: Translation = {
     moreInfoPlaceholder: "תיאור קצר של הפנייה...",
     contactReason: "סיבת פנייה",
     contactReasons: ["ייעוץ פרטני", "סדנאות", "אחר"],
+    workshopPressForMoreDetails: "לחץ לקבלת פרטים",
   },
 };
 

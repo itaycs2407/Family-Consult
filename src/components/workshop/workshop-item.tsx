@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled/macro";
 import { WorkshopInfo } from "../../types/types";
 import Button from "../button";
+import { locale } from "../../locale/locale";
 
 interface Props {
   workshop: WorkshopInfo;
@@ -14,7 +15,7 @@ const WorkshopItem: React.FC<Props> = ({ workshop }) => (
     </ImageContainer>
     <Title>{workshop.title}</Title>
     <Description>
-      <Button title={"לחץ לקבלת פרטים"} />
+      <Button title={locale("workshopPressForMoreDetails") as string} />
     </Description>
   </Container>
 );
