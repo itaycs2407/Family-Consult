@@ -16,7 +16,7 @@ const Navbar: React.FC = () => (
 
     <NavbarItemContainer>
       <NavbarItem to="/contact">{locale("navBarItemContactMe")}</NavbarItem>
-      <NavbarItem to="/workshop">{locale("navBarItemWorkshop")}</NavbarItem>
+      <NavbarItem to="/workshops">{locale("navBarItemWorkshop")}</NavbarItem>
       <NavbarItem to="/personal-consult">
         {locale("navBarItemSingleConsult")}
       </NavbarItem>

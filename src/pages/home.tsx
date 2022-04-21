@@ -6,23 +6,21 @@ import { Link } from "react-router-dom";
 import { locale } from "../locale/locale";
 interface Props {}
 
-const Home: React.FC<Props> = () => {
-  return (
-    <Container>
-      <UpperContent>
-        <Image src={intro} alt="home-intro" />
-        <Intro>
-          <Header>{locale("homeIntroHeader")}</Header>
-          {locale("homeIntro")}
-        </Intro>
-      </UpperContent>
-      <CardContainer>
-        <Card to="/personal-consult">singleConsult</Card>
-        <Card to="/workshop">workshop</Card>
-      </CardContainer>
-    </Container>
-  );
-};
+const Home: React.FC<Props> = () => (
+  <Container>
+    <UpperContent>
+      <Image src={intro} alt="home-intro" />
+      <Intro>
+        <Header>{locale("homeIntroHeader")}</Header>
+        {locale("homeIntro")}
+      </Intro>
+    </UpperContent>
+    <CardContainer>
+      <Card to="/personal-consult">singleConsult</Card>
+      <Card to="/workshop">workshop</Card>
+    </CardContainer>
+  </Container>
+);
 
 const Container = styled.div`
   display: flex;

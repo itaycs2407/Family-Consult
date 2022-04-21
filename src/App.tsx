@@ -16,7 +16,7 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/home" component={Home} />
           <Route exact path="/contact" component={Contact} />
-          <Route exact path="/workshop" component={Workshop} />
+          <Route exact path="/workshops" component={Workshop} />
           <Route exact path="/about-me" component={AboutMe} />
           <Route exact path="/personal-consult" component={Consult} />
           <Redirect from="/" to={"/home"} />
@@ -36,7 +36,7 @@ const Container = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  margin-top: 10%;
+  margin-top: 30px;
   background-color: ghostwhite;
 `;
 
