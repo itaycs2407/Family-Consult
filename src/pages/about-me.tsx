@@ -1,20 +1,16 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
-import { Fadein } from "../constant/style";
-import Cover from "../assets/workshop/cover.jpeg";
+import { FadeInContainer, StyledImage } from "../constant/style";
 import Cover1 from "../assets/workshop/1.jpeg";
 import Header from "../assets/workshop/header.jpeg";
-import Cover3 from "../assets/workshop/3.jpeg";
 
 interface Props {}
 
 const AboutMe: React.FC<Props> = () => (
-  <Container>
+  <FadeInContainer>
     <ImageContainer>
-      <Image src={Cover1} alt="cover" />
-      <Image src={Cover1} alt="cover" />
-      <Image src={Cover1} alt="cover" />
-      <Image src={Header} alt="cover" />
+      <StyledImage src={Cover1} alt="cover" />
+      <StyledImage src={Header} alt="cover" />
     </ImageContainer>
     <h1>סדנת הורים לצעירים</h1>
 
@@ -40,23 +36,8 @@ const AboutMe: React.FC<Props> = () => (
       desktop publishing software like Aldus PageMaker including versions of
       Lorem Ipsum.
     </P>
-  </Container>
+  </FadeInContainer>
 );
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-
-  animation: ${Fadein} 1s ease-in-out;
-`;
-
-const Image = styled.img`
-  border-radius: 30px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
-`;
 
 const P = styled.p`
   width: 40%;

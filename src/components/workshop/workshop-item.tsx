@@ -3,22 +3,31 @@ import styled from "@emotion/styled/macro";
 import { WorkshopInfo } from "../../types/types";
 import Button from "../button";
 import { locale } from "../../locale/locale";
+import { useHistory } from "react-router-dom";
 
 interface Props {
   workshop: WorkshopInfo;
+  workshopKey: string;
 }
+const WorkshopItem: React.FC<Props> = ({ workshop, workshopKey }) => {
+  const history = useHistory();
 
-const WorkshopItem: React.FC<Props> = ({ workshop }) => (
-  <Container>
-    <ImageContainer>
-      <Image src={workshop.image} />
-    </ImageContainer>
-    <Title>{workshop.title}</Title>
-    <Description>
-      <Button title={locale("workshopPressForMoreDetails") as string} />
-    </Description>
-  </Container>
-);
+  return (
+    <Container
+      onClick={() => {
+        history.push(`/workshops/${workshopKey}`);
+      }}
+    >
+      <ImageContainer>
+        <Image src={workshop.image} />
+      </ImageContainer>
+      <Title>{workshop.title}</Title>
+      <Description>
+        <Button title={locale("workshopPressForMoreDetails") as string} />
+      </Description>
+    </Container>
+  );
+};
 
 const Container = styled.div`
   width: 280px;

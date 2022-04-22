@@ -5,7 +5,7 @@ import { LANGUAGE } from "../constant/constant";
 
 import Select from "react-select";
 import Button from "../components/button";
-import { Fadein } from "../constant/style";
+import { FadeInContainer } from "../constant/style";
 
 const Contact = () => {
   const [fullName, setFullName] = useState("");
@@ -22,7 +22,7 @@ const Contact = () => {
   }, [contactReason]);
 
   return (
-    <Container>
+    <FadeInContainer>
       <Card>
         <h1>{locale("contact")}</h1>
         <Input
@@ -70,17 +70,9 @@ const Contact = () => {
 
         <Button title={locale("send") as string} />
       </Card>
-    </Container>
+    </FadeInContainer>
   );
 };
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  animation: ${Fadein} 1s ease-in-out;
-`;
 
 const Card = styled.div`
   padding: 30px 60px;

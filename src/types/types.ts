@@ -1,4 +1,5 @@
 export interface WorkshopInfo {
+  key: string;
   title: string;
   description: string;
   image: string;
@@ -11,4 +12,3 @@ export type Translation = {
 };
 
 export type Language = "en" | "he";
-

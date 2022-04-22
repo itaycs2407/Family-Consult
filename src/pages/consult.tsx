@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
-import { Fadein } from "../constant/style";
+import {
+  FadeInContainer,
+  ImageContainer,
+  StyledImage,
+} from "../constant/style";
+import Bullet from "../components/Bullet";
+import { locale } from "../locale/locale";
 import Intro1 from "../assets/personalConsult/intro1.png";
 import Intro2 from "../assets/personalConsult/intro2.png";
 import Intro3 from "../assets/personalConsult/intro3.png";
 import Background from "../assets/personalConsult/background.jpeg";
-import { locale } from "../locale/locale";
-import Bullet from "../components/Bullet";
 
 interface Props {}
 
@@ -17,11 +21,11 @@ const Consult: React.FC<Props> = () => (
       backgroundSize: "auto auto",
     }}
   >
-    <Container>
+    <FadeInContainer>
       <ImageContainer>
-        <Image src={Intro1} alt="Intro1" />
-        <Image src={Intro3} alt="Intro3" />
-        <Image src={Intro2} alt="Intro2" />
+        <StyledImage src={Intro1} alt="Intro1" />
+        <StyledImage src={Intro3} alt="Intro3" />
+        <StyledImage src={Intro2} alt="Intro2" />
       </ImageContainer>
       <h1>{locale("personalConsultHeader")}</h1>
       <ContentContainer>
@@ -44,27 +48,9 @@ const Consult: React.FC<Props> = () => (
         <SumUpItem>בזום או בקלינקה</SumUpItem>
         <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
       </SumUpContainer>
-    </Container>
+    </FadeInContainer>
   </div>
 );
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  animation: ${Fadein} 1s ease-in-out;
-`;
-
-const ImageContainer = styled.div`
-  display: flex;
-  gap: 30px;
-`;
-
-const Image = styled.img`
-  border-radius: 30px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
-`;
 
 const ContentContainer = styled.p`
   width: 80%;

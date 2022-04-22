@@ -1,34 +1,31 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
-import { Fadein } from "../constant/style";
+import { FadeInContainer } from "../constant/style";
 import intro from "../assets/home-intro.jpeg";
+import Intro2 from "../assets/home-intro.jpeg";
 import { Link } from "react-router-dom";
 import { locale } from "../locale/locale";
 interface Props {}
 
 const Home: React.FC<Props> = () => (
-  <Container>
-    <UpperContent>
-      <Image src={intro} alt="home-intro" />
-      <Intro>
-        <Header>{locale("homeIntroHeader")}</Header>
-        {locale("homeIntro")}
-      </Intro>
-    </UpperContent>
-    <CardContainer>
-      <Card to="/personal-consult">singleConsult</Card>
-      <Card to="/workshop">workshop</Card>
-    </CardContainer>
-  </Container>
-);
+  <>
+    <Image src={Intro2} alt="home-intro" />
+    <FadeInContainer>
+      <UpperContent>
+        <Image src={intro} alt="home-intro" />
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  animation: ${Fadein} 1s ease-in-out;
-`;
+        <Intro>
+          <Header>{locale("homeIntroHeader")}</Header>
+          {locale("homeIntro")}
+        </Intro>
+      </UpperContent>
+      <CardContainer>
+        <Card to="/personal-consult">singleConsult</Card>
+        <Card to="/workshop">workshop</Card>
+      </CardContainer>
+    </FadeInContainer>
+  </>
+);
 
 const Image = styled.img`
   width: 300px;
