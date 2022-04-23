@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
 import { FadeInContainer, StyledImage } from "../constant/style";
-import Cover1 from "../assets/workshop/1.jpeg";
 import Header from "../assets/workshop/header.jpeg";
 
 interface Props {}
@@ -9,13 +8,9 @@ interface Props {}
 const AboutMe: React.FC<Props> = () => (
   <FadeInContainer>
     <ImageContainer>
-      <StyledImage src={Cover1} alt="cover" />
       <StyledImage src={Header} alt="cover" />
     </ImageContainer>
     <h1>סדנת הורים לצעירים</h1>
-
-    {/*<img src={Cover2} alt="cover" />*/}
-    {/*<img src={Cover3} alt="cover" />*/}
 
     <P>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
