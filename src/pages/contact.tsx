@@ -15,8 +15,8 @@ const Contact = () => {
   useEffect(() => {
     if (reason === undefined) return setContactReason(locale("contactReason"));
     if (reason === "consult")
-      return setContactReason(locale("contactReasonsAsObject").consult);
-    setContactReason(locale("contactReasonsAsObject").workshops);
+      return setContactReason(locale("contactReasons").consult);
+    setContactReason(locale("contactReasons").workshops);
   }, []);
 
   const [fullName, setFullName] = useState("");

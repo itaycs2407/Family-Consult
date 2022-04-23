@@ -17,8 +17,7 @@ const translate: any = {
     send: "שלח",
     moreInfoPlaceholder: "תיאור קצר של הפנייה...",
     contactReason: "סיבת פנייה",
-    contactReasons: ["ייעוץ פרטני", "סדנאות", "אחר"],
-    contactReasonsAsObject: {
+    contactReasons: {
       consult: "ייעוץ פרטני",
       workshops: "סדנאות",
       other: "אחר",
