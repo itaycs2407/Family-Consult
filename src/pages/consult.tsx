@@ -5,7 +5,7 @@ import {
   ImageContainer,
   StyledImage,
 } from "../constant/style";
-import Bullet from "../components/Bullet";
+import Bullet from "../components/bullet";
 import { locale } from "../locale/locale";
 import Intro1 from "../assets/personal-consult/intro1.png";
 import Intro2 from "../assets/personal-consult/intro2.png";
