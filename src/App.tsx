@@ -16,7 +16,7 @@ const App: React.FC = () => {
       <ContentContainer>
         <Switch>
           <Route exact path="/home" component={Home} />
-          <Route exact path="/contact" component={Contact} />
+          <Route path="/contact/:reason?" component={Contact} />
           <Route exact path="/workshops" component={Workshops} />
           <Route exact path="/about-me" component={AboutMe} />
           <Route exact path="/personal-consult" component={Consult} />

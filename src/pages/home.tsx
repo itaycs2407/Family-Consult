@@ -5,9 +5,8 @@ import intro from "../assets/home-intro.jpeg";
 import Intro2 from "../assets/home-intro.jpeg";
 import { Link } from "react-router-dom";
 import { locale } from "../locale/locale";
-interface Props {}
 
-const Home: React.FC<Props> = () => (
+const Home: React.FC = () => (
   <>
     <Image src={Intro2} alt="home-intro" />
     <FadeInContainer>

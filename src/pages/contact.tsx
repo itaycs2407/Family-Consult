@@ -1,47 +1,79 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled/macro";
 import { locale } from "../locale/locale";
 import { LANGUAGE } from "../constant/constant";
 
 import Select from "react-select";
-import { FadeInContainer, StyledButton } from "../constant/style";
+import { FadeInContainer, Header, StyledButton } from "../constant/style";
 import emailjs from "@emailjs/browser";
+import { ClipLoader } from "react-spinners";
+import { useParams } from "react-router-dom";
 
 const Contact = () => {
+  const { reason } = useParams<{ reason: string }>();
+
+  useEffect(() => {
+    if (reason === undefined) return setContactReason(locale("contactReason"));
+    if (reason === "consult")
+      return setContactReason(locale("contactReasonsAsObject").consult);
+    setContactReason(locale("contactReasonsAsObject").workshops);
+  }, []);
+
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [contactReason, setContactReason] = useState<string>("");
+  const [contactReason, setContactReason] = useState("");
   const [contactInfo, setContactInfo] = useState("");
+  const [successfullySent, setSuccessfullySent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const tParsms = {
+  const emailDetails = {
     fullName,
     email,
-    phoneNumber,
     contactReason,
+    phoneNumber,
     contactInfo,
   };
 
+  const clearFields = () => {
+    setFullName("");
+    setEmail("");
+    setPhoneNumber("");
+    setContactInfo("");
+    setContactReason("");
+  };
+
   const sendMail = () => {
+    setLoading(true);
     emailjs
-      .send("service_79of5uv", "template_ovqms4m", tParsms, "rOWzcKhk3XsaF3nJQ")
+      .send(
+        "service_79of5uv",
+        "template_ovqms4m",
+        emailDetails,
+        "rOWzcKhk3XsaF3nJQ"
+      )
       .then(() => {
-        alert("the mail was send");
+        setSuccessfullySent(true);
+
+        const timeoutId = setTimeout(() => {
+          setSuccessfullySent(false);
+          clearFields();
+          setLoading(false);
+          clearTimeout(timeoutId);
+        }, 3000);
       })
-      .catch(() => {
-        alert("something crashed");
-      });
+      .finally(() => setLoading(false));
   };
 
   return (
     <FadeInContainer>
       <Card>
-        <h1>{locale("contact")}</h1>
+        <Header>{locale("contact")}</Header>
         <Input
           type="text"
           value={fullName}
           onChange={(event) => setFullName(event.target.value)}
-          placeholder={locale("fullName") as string}
+          placeholder={locale("fullName")}
           autoFocus
           rtl={LANGUAGE === "he"}
         />
@@ -49,37 +81,48 @@ const Contact = () => {
           type="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          placeholder={locale("email") as string}
+          placeholder={locale("email")}
           rtl={LANGUAGE === "he"}
         />
         <Input
           type="tel"
           value={phoneNumber}
           onChange={(event) => setPhoneNumber(event.target.value)}
-          placeholder={locale("phoneNumber") as string}
+          placeholder={locale("phoneNumber")}
           rtl={LANGUAGE === "he"}
         />
         <SelectContainer rtl={LANGUAGE === "he"}>
           <Select
-            placeholder={locale("contactReason") as string}
+            placeholder={locale("contactReason")}
             onChange={(event) =>
               event !== null && setContactReason(event.value)
             }
-            options={(locale("contactReasons") as Array<string>).map(
-              (option) => ({
-                value: option,
-                label: option,
-              })
-            )}
+            value={{
+              value: contactReason,
+              label: contactReason,
+            }}
+            options={Object.values(
+              locale("contactReasons") as Array<string>
+            ).map((option) => ({
+              value: option,
+              label: option,
+            }))}
           />
         </SelectContainer>
         <ContactText
           value={contactInfo}
           onChange={(event) => setContactInfo(event.target.value)}
-          placeholder={locale("moreInfoPlaceholder") as string}
+          placeholder={locale("moreInfoPlaceholder")}
         />
+        <ConfirmMessage>
+          {successfullySent && locale("emailSendConfirmation")}
+        </ConfirmMessage>
         <StyledButton onClick={() => sendMail()}>
-          {locale("send") as string}
+          {loading ? (
+            <ClipLoader color="white" loading={true} size={16} />
+          ) : (
+            (locale("send") as string)
+          )}
         </StyledButton>
       </Card>
     </FadeInContainer>
@@ -130,6 +173,15 @@ const ContactText = styled.textarea`
   text-align: right;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   font-size: 16px;
+`;
+
+const ConfirmMessage = styled.div`
+  font-weight: 700;
+  height: 40px;
+  padding: 10px 30px;
+  font-style: italic;
+  font-size: 24px;
+  color: #44d944;
 `;
 
 export default Contact;

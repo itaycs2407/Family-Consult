@@ -11,9 +11,7 @@ import {
 import styled from "@emotion/styled/macro";
 import { locale } from "../locale/locale";
 
-interface Props {}
-
-const Workshop: React.FC<Props> = () => {
+const Workshop: React.FC = () => {
   const history = useHistory();
   const { workshopKey } = useParams<{ workshopKey: string }>();
 
@@ -39,7 +37,7 @@ const Workshop: React.FC<Props> = () => {
         <SumUpItem>בזום או בקלינקה</SumUpItem>
         <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
       </SumUpContainer>
-      <StyledButton onClick={() => history.push("/contact")}>
+      <StyledButton onClick={() => history.push(`/contact/${workshopKey}`)}>
         {locale("workshopSinglePageRedirectToContact")}
       </StyledButton>
     </FadeInContainer>

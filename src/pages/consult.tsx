@@ -54,7 +54,7 @@ const Consult: React.FC<Props> = () => {
           <SumUpItem>בזום או בקלינקה</SumUpItem>
           <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
         </SumUpContainer>
-        <StyledButton onClick={() => history.push("/contact")}>
+        <StyledButton onClick={() => history.push(`/contact/consult`)}>
           {locale("consultRedirectToContact")}
         </StyledButton>
       </FadeInContainer>

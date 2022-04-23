@@ -18,6 +18,11 @@ const translate: any = {
     moreInfoPlaceholder: "תיאור קצר של הפנייה...",
     contactReason: "סיבת פנייה",
     contactReasons: ["ייעוץ פרטני", "סדנאות", "אחר"],
+    contactReasonsAsObject: {
+      consult: "ייעוץ פרטני",
+      workshops: "סדנאות",
+      other: "אחר",
+    },
     workshopPressForMoreDetails: "לחץ לקבלת פרטים",
     homeIntroHeader: "קצת עלי",
     homeIntro:
@@ -54,6 +59,7 @@ const translate: any = {
     workshopSinglePageRedirectToContact: "להרשמה ופרטים נוספים",
     consultRedirectToContact: "להפנייה",
     workshopsHeader: "הסדנאות שלי",
+    emailSendConfirmation: "ההודעה נשלחה בהצלחה",
   },
 };
 
