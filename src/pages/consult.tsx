@@ -7,10 +7,10 @@ import {
 } from "../constant/style";
 import Bullet from "../components/Bullet";
 import { locale } from "../locale/locale";
-import Intro1 from "../assets/personalConsult/intro1.png";
-import Intro2 from "../assets/personalConsult/intro2.png";
-import Intro3 from "../assets/personalConsult/intro3.png";
-import Background from "../assets/personalConsult/background.jpeg";
+import Intro1 from "../assets/personal-consult/intro1.png";
+import Intro2 from "../assets/personal-consult/intro2.png";
+import Intro3 from "../assets/personal-consult/intro3.png";
+import Background from "../assets/personal-consult/background.jpeg";
 
 interface Props {}
 
