@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled/macro";
 import {
   FadeInContainer,
+  Header,
   ImageContainer,
   StyledImage,
 } from "../constant/style";
@@ -27,7 +28,7 @@ const Consult: React.FC<Props> = () => (
         <StyledImage src={Intro3} alt="Intro3" />
         <StyledImage src={Intro2} alt="Intro2" />
       </ImageContainer>
-      <h1>{locale("personalConsultHeader")}</h1>
+      <Header>{locale("personalConsultHeader")}</Header>
       <ContentContainer>
         {locale("personalConsultSentences").map(
           (sentence: string, index: number) => (

@@ -1,14 +1,15 @@
 import React from "react";
 import WorkshopItem from "../components/workshop/workshop-item";
 import styled from "@emotion/styled/macro";
-import { FadeInContainer } from "../constant/style";
+import { FadeInContainer, Header } from "../constant/style";
 import { workshopsInfo } from "../constant/workshopsData";
+import { locale } from "../locale/locale";
 
 interface Props {}
 
 const Workshops: React.FC<Props> = () => (
   <>
-    <Header>workshop header</Header>
+    <Header>{locale("workshopsHeader")}</Header>
     <StyledContainer>
       {workshopsInfo.map((workshop) => (
         <WorkshopItem
@@ -23,10 +24,6 @@ const Workshops: React.FC<Props> = () => (
 
 const StyledContainer = styled(FadeInContainer)`
   flex-direction: row;
-`;
-const Header = styled.h1`
-  text-align: center;
-  color: red;
 `;
 
 export default Workshops;

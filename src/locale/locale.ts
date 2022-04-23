@@ -51,6 +51,8 @@ const translate: any = {
     personalConsultSumUp:
       "יחד , נזהה את הקשיים הקיימים, נייצר פתרונות מעשיים המתאימים לכם וניצור שלווה ושמחה בבית",
     personalConsultFinalBullets: [],
+    workshopSinglePageRedirectToContact: "להרשמה ופרטים נוספים",
+    workshopsHeader: "הסדנאות שלי",
   },
 };
 

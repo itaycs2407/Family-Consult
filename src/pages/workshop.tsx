@@ -1,17 +1,20 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { workshopsData } from "../constant/workshopsData";
 import {
   FadeInContainer,
+  Header,
   ImageContainer,
   StyledButton,
   StyledImage,
 } from "../constant/style";
 import styled from "@emotion/styled/macro";
+import { locale } from "../locale/locale";
 
 interface Props {}
 
 const Workshop: React.FC<Props> = () => {
+  const history = useHistory();
   const { workshopKey } = useParams<{ workshopKey: string }>();
 
   if (!workshopKey && !(workshopKey in workshopsData)) {
@@ -29,14 +32,16 @@ const Workshop: React.FC<Props> = () => {
         ))}
       </ImageContainer>
 
-      <div>{workshopData.header}</div>
+      <Header>{workshopData.header}</Header>
       <div>{workshopData.content}</div>
       <SumUpContainer>
         <SumUpItem> קצר מועד</SumUpItem>
         <SumUpItem>בזום או בקלינקה</SumUpItem>
         <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
       </SumUpContainer>
-      <StyledButton>{"להרשמה ופרטים נוספים"}</StyledButton>
+      <StyledButton onClick={() => history.push("/contact")}>
+        {locale("workshopSinglePageRedirectToContact")}
+      </StyledButton>
     </FadeInContainer>
   );
 };

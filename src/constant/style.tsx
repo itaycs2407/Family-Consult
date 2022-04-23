@@ -49,3 +49,8 @@ export const StyledButton = styled.button`
     background-color: #ff6392;
   }
 `;
+
+export const Header = styled.h1`
+  text-align: center;
+  color: #ff0a78;
+`;
