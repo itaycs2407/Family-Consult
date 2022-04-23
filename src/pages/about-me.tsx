@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
 import { FadeInContainer, StyledImage } from "../constant/style";
-import Header from "../assets/workshop/header.jpeg";
+import Header from "../assets/header.jpg";
 
 interface Props {}
 
