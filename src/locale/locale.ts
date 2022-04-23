@@ -1,4 +1,4 @@
-import { Language, Translation } from "../types/types";
+import { Language } from "../types/types";
 
 const translate: any = {
   en: {

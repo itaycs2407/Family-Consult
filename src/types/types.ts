@@ -5,10 +5,4 @@ export interface WorkshopInfo {
   image: string;
 }
 
-export type Translation = {
-  [id: string]: {
-    [id: string]: string | Array<string>;
-  };
-};
-
 export type Language = "en" | "he";
