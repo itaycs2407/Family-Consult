@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
 import { WorkshopInfo } from "../../types/types";
-import Button from "../button";
 import { locale } from "../../locale/locale";
 import { useHistory } from "react-router-dom";
+import { StyledButton } from "../../constant/style";
 
 interface Props {
   workshop: WorkshopInfo;
@@ -23,7 +23,9 @@ const WorkshopItem: React.FC<Props> = ({ workshop, workshopKey }) => {
       </ImageContainer>
       <Title>{workshop.title}</Title>
       <Description>
-        <Button title={locale("workshopPressForMoreDetails") as string} />
+        <StyledButton>
+          {locale("workshopPressForMoreDetails") as string}
+        </StyledButton>
       </Description>
     </Container>
   );

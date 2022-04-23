@@ -4,8 +4,8 @@ import { locale } from "../locale/locale";
 import { LANGUAGE } from "../constant/constant";
 
 import Select from "react-select";
-import Button from "../components/button";
-import { FadeInContainer } from "../constant/style";
+import { FadeInContainer, StyledButton } from "../constant/style";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [fullName, setFullName] = useState("");
@@ -20,6 +20,25 @@ const Contact = () => {
 
     setContactInfo("");
   }, [contactReason]);
+
+  const tParsms = {
+    fullName,
+    email,
+    phoneNumber,
+    contactReason,
+    contactInfo,
+  };
+
+  const sendMail = () => {
+    emailjs
+      .send("service_79of5uv", "template_ovqms4m", tParsms, "rOWzcKhk3XsaF3nJQ")
+      .then(() => {
+        alert("the mail was send");
+      })
+      .catch(() => {
+        alert("something crashed");
+      });
+  };
 
   return (
     <FadeInContainer>
@@ -67,8 +86,9 @@ const Contact = () => {
           showMoreInfo={showMoreInfo}
           placeholder={locale("moreInfoPlaceholder") as string}
         />
-
-        <Button title={locale("send") as string} />
+        <StyledButton onClick={() => sendMail()}>
+          {locale("send") as string}
+        </StyledButton>
       </Card>
     </FadeInContainer>
   );

@@ -4,10 +4,10 @@ import { workshopsData } from "../constant/workshopsData";
 import {
   FadeInContainer,
   ImageContainer,
+  StyledButton,
   StyledImage,
 } from "../constant/style";
 import styled from "@emotion/styled/macro";
-import Button from "../components/button";
 
 interface Props {}
 
@@ -36,7 +36,7 @@ const Workshop: React.FC<Props> = () => {
         <SumUpItem>בזום או בקלינקה</SumUpItem>
         <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
       </SumUpContainer>
-      <Button title="להרשמה ופרטים נוספים" />
+      <StyledButton>{"להרשמה ופרטים נוספים"}</StyledButton>
     </FadeInContainer>
   );
 };
