@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled/macro";
 import { locale } from "../locale/locale";
 import { LANGUAGE } from "../constant/constant";
@@ -12,14 +12,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [contactReason, setContactReason] = useState<string>("");
-  const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [contactInfo, setContactInfo] = useState("");
-
-  useEffect(() => {
-    setShowMoreInfo(contactReason === locale("moreInfoKey"));
-
-    setContactInfo("");
-  }, [contactReason]);
 
   const tParsms = {
     fullName,
@@ -83,7 +76,6 @@ const Contact = () => {
         <ContactText
           value={contactInfo}
           onChange={(event) => setContactInfo(event.target.value)}
-          showMoreInfo={showMoreInfo}
           placeholder={locale("moreInfoPlaceholder") as string}
         />
         <StyledButton onClick={() => sendMail()}>
@@ -125,11 +117,9 @@ const SelectContainer = styled.div<{ rtl: boolean }>`
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 `;
 
-const ContactText = styled.textarea<{ showMoreInfo: boolean }>`
+const ContactText = styled.textarea`
   resize: none;
-  height: ${({ showMoreInfo }) => (showMoreInfo ? "150px" : "0px")};
-  visibility: ${({ showMoreInfo }) => (showMoreInfo ? "visible" : "hidden")};
-  opacity: ${({ showMoreInfo }) => (showMoreInfo ? 1 : 0)};
+  height: 200px;
   padding: 12px 20px;
   overflow: hidden;
   width: 86%;
@@ -140,7 +130,6 @@ const ContactText = styled.textarea<{ showMoreInfo: boolean }>`
   text-align: right;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   font-size: 16px;
-  transition: all 1s ease-in-out;
 `;
 
 export default Contact;

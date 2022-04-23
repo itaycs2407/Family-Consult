@@ -1,5 +1,5 @@
 import React from "react";
-import BulletMarker from "../assets/bullet/bullet.jpeg";
+import BulletMarker from "../assets/bullet/bullet-small.png";
 import styled from "@emotion/styled/macro";
 
 interface Props {

@@ -15,7 +15,6 @@ const translate: any = {
     email: "דואר אלקטרוני",
     phoneNumber: "טלפון",
     send: "שלח",
-    moreInfoKey: "אחר",
     moreInfoPlaceholder: "תיאור קצר של הפנייה...",
     contactReason: "סיבת פנייה",
     contactReasons: ["ייעוץ פרטני", "סדנאות", "אחר"],
