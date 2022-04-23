@@ -17,7 +17,7 @@ const Contact = () => {
     if (reason === "consult")
       return setContactReason(locale("contactReasons").consult);
     setContactReason(locale("contactReasons").workshops);
-  }, []);
+  }, [reason]);
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
