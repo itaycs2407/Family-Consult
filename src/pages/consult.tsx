@@ -6,6 +6,7 @@ import {
   ImageContainer,
   StyledButton,
   StyledImage,
+  SumUpItem,
 } from "../constant/style";
 import Bullet from "../components/bullet";
 import { locale } from "../locale/locale";
@@ -72,9 +73,4 @@ const SumUpContainer = styled.div`
   gap: 50px;
 `;
 
-const SumUpItem = styled.div`
-  padding: 10px 20px;
-  border: 1px solid black;
-  border-radius: 10px;
-`;
 export default Consult;

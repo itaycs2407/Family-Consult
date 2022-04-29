@@ -7,6 +7,7 @@ import {
   ImageContainer,
   StyledButton,
   StyledImage,
+  SumUpItem,
 } from "../constant/style";
 import styled from "@emotion/styled/macro";
 import { locale } from "../locale/locale";
@@ -47,12 +48,6 @@ const Workshop: React.FC = () => {
 const SumUpContainer = styled.div`
   display: flex;
   gap: 50px;
-`;
-
-const SumUpItem = styled.div`
-  padding: 10px 20px;
-  border: 1px solid black;
-  border-radius: 10px;
 `;
 
 export default Workshop;

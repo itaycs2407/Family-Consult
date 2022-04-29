@@ -54,3 +54,16 @@ export const Header = styled.h1`
   text-align: center;
   color: #ff0a78;
 `;
+
+const BreatheAnimation = keyframes`
+ 0% {  transform: scale(1); }
+ 50% {  transform: scale(1.1); }
+ 100% {  transform: scale(1); }
+`;
+
+export const SumUpItem = styled.div`
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  animation: ${BreatheAnimation} 1.5s infinite;
+`;
