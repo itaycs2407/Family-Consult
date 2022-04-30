@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled/macro";
 import { locale } from "../../locale/locale";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/logo.jpeg";
+import logo1 from "../../assets/logo1.png";
 import { ReactComponent as WhatsappLogo } from "../../assets/Whatsapp-logo-icon-transparent.svg";
 
 const Navbar: React.FC = () => (
@@ -23,7 +23,7 @@ const Navbar: React.FC = () => (
       <NavbarItem to="/about-me">{locale("navBarItemAboutMe")}</NavbarItem>
       <NavbarItem to="/home">{locale("navBarItemHome")}</NavbarItem>
     </NavbarItemContainer>
-    <Logo src={logo} alt="logo" />
+    <Logo src={logo1} alt="logo" />
   </Container>
 );
 
@@ -33,7 +33,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f7cad6;
+  background-color: #cbb0bc;
 `;
 
 const NavbarItemContainer = styled.div`
@@ -62,7 +62,7 @@ const NavbarItem = styled(NavLink)`
 `;
 
 const Logo = styled.img`
-  width: 250px;
+  width: 200px;
   height: 92px;
 `;
 

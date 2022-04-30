@@ -2,13 +2,13 @@ import React from "react";
 import styled from "@emotion/styled/macro";
 import { FadeInContainer } from "../constant/style";
 import intro from "../assets/home-intro.jpeg";
-import Intro2 from "../assets/home-intro.jpeg";
+import back1 from "../assets/background1.png";
+import back2 from "../assets/background2.png";
 import { Link } from "react-router-dom";
 import { locale } from "../locale/locale";
 
 const Home: React.FC = () => (
   <>
-    <Image src={Intro2} alt="home-intro" />
     <FadeInContainer>
       <UpperContent>
         <Image src={intro} alt="home-intro" />
@@ -19,8 +19,15 @@ const Home: React.FC = () => (
         </Intro>
       </UpperContent>
       <CardContainer>
-        <Card to="/personal-consult">singleConsult</Card>
-        <Card to="/workshop">workshop</Card>
+        <Card to="/personal-consult">
+          consult
+          <Image src={back1} alt="back1" />
+        </Card>
+
+        <Card to="/workshops">
+          workshops
+          <Image src={back2} alt="back2" />
+        </Card>
       </CardContainer>
     </FadeInContainer>
   </>
@@ -29,6 +36,8 @@ const Home: React.FC = () => (
 const Image = styled.img`
   width: 300px;
   height: 200px;
+  border-radius: 20px;
+  box-shadow: 2px 4px 2px black;
   margin-left: 30px;
 `;
 
@@ -59,7 +68,6 @@ const Header = styled.h1`
 const Card = styled(Link)`
   width: 600px;
   height: 200px;
-  background-color: red;
 `;
 
 export default Home;
