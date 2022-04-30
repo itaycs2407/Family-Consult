@@ -19,7 +19,9 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const BulletTitle = styled.div``;
+const BulletTitle = styled.div`
+  direction: rtl;
+`;
 
 const StyledBulletMarker = styled.img`
   margin-left: 10px;

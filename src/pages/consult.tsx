@@ -22,7 +22,7 @@ const Consult: React.FC<Props> = () => {
   const history = useHistory();
 
   return (
-    <div
+    <Container
       style={{
         backgroundImage: "url(" + Background + ")",
         backgroundSize: "auto auto",
@@ -59,9 +59,11 @@ const Consult: React.FC<Props> = () => {
           {locale("consultRedirectToContact")}
         </StyledButton>
       </FadeInContainer>
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div``;
 
 const ContentContainer = styled.p`
   width: 80%;

@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled/macro";
 import { locale } from "../locale/locale";
-import { LANGUAGE } from "../constant/constant";
+import {
+  EMAIL_JS_PUBLIC_KEY,
+  EMAIL_JS_SERVICE_ID,
+  EMAIL_JS_TEMPLATE_ID,
+  LANGUAGE,
+} from "../constant/constant";
 
 import Select from "react-select";
 import { FadeInContainer, Header, StyledButton } from "../constant/style";
@@ -47,10 +52,10 @@ const Contact = () => {
     setLoading(true);
     emailjs
       .send(
-        "service_79of5uv",
-        "template_ovqms4m",
+        EMAIL_JS_SERVICE_ID,
+        EMAIL_JS_TEMPLATE_ID,
         emailDetails,
-        "rOWzcKhk3XsaF3nJQ"
+        EMAIL_JS_PUBLIC_KEY
       )
       .then(() => {
         setSuccessfullySent(true);
