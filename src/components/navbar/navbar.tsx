@@ -7,10 +7,7 @@ import { ReactComponent as WhatsappLogo } from "../../assets/Whatsapp-logo-icon-
 
 const Navbar: React.FC = () => (
   <Container>
-    <WhatsappContainer
-      href="https://api.whatsapp.com/send?phone=+972587600202"
-      target="_blank"
-    >
+    <WhatsappContainer href="https://wa.me/972587600202" target="_blank">
       <WhatsappLogo />
     </WhatsappContainer>
 
