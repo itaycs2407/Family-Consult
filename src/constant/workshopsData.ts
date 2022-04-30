@@ -1,5 +1,5 @@
 import { WorkshopInfo } from "../types/types";
-import defaultImage from "../assets/workshop/defualt.jpg";
+import defaultImage from "../assets/workshop/defualt.png";
 import parents from "../assets/workshop/workshop-parents.jpeg";
 import becomingParents from "../assets/workshop/workshop-becomingParetnts.jpeg";
 import mothers from "../assets/workshop/workshop-mother.jpeg";
