@@ -1,5 +1,6 @@
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled/macro";
+import { deviceMax } from "./constant";
 
 export const Fadein = keyframes`
 from {
@@ -11,8 +12,9 @@ from {
   `;
 
 export const StyledImage = styled.img`
-  border-radius: 30px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  @media screen and ${deviceMax.mobileS} {
+    display: none;
+  }
 `;
 
 export const ImageContainer = styled.div`

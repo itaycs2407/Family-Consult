@@ -1,3 +1,5 @@
+import { css } from "@emotion/react";
+
 export const LANGUAGE = "he";
 
 export const colors = {
@@ -8,7 +10,7 @@ export const colors = {
   5: "#e4e1dd",
 };
 
-const size = {
+export const size = {
   mobileS: "320px",
   mobileM: "375px",
   mobileL: "425px",
@@ -18,7 +20,7 @@ const size = {
   desktop: "2560px",
 };
 
-export const device = {
+export const deviceMin = {
   mobileS: `(min-width: ${size.mobileS})`,
   mobileM: `(min-width: ${size.mobileM})`,
   mobileL: `(min-width: ${size.mobileL})`,
@@ -29,6 +31,22 @@ export const device = {
   desktopL: `(min-width: ${size.desktop})`,
 };
 
+export const deviceMax = {
+  mobileS: `(max-width: ${size.mobileS})`,
+  mobileM: `(max-width: ${size.mobileM})`,
+  mobileL: `(max-width: ${size.mobileL})`,
+  tablet: `(max-width: ${size.tablet})`,
+  laptop: `(max-width: ${size.laptop})`,
+  laptopL: `(max-width: ${size.laptopL})`,
+  desktop: `(max-width: ${size.desktop})`,
+  desktopL: `(max-width: ${size.desktop})`,
+};
 export const EMAIL_JS_SERVICE_ID = "service_79of5uv";
 export const EMAIL_JS_TEMPLATE_ID = "template_ovqms4m";
 export const EMAIL_JS_PUBLIC_KEY = "rOWzcKhk3XsaF3nJQ";
+
+export const Test = css`
+  @media ${deviceMax.mobileS} {
+    display: none;
+  }
+`;
