@@ -8,7 +8,6 @@ import { ReactComponent as MenuIcon } from "../../menuIcon.svg";
 
 import { deviceMax } from "../../constant/constant";
 
-
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
@@ -63,7 +62,7 @@ const NavbarItemContainer = styled.div`
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  @media screen and ${deviceMax.mobileS} {
+  @media screen and ${deviceMax.mobileL} {
     display: none;
     flex-direction: column;
     gap: 20px;
@@ -75,7 +74,7 @@ const Hamburger = styled(MenuIcon)`
   margin: 20px;
   cursor: pointer;
   position: relative;
-  @media ${deviceMax.mobileS} {
+  @media ${deviceMax.mobileL} {
     display: initial;
   }
 `;

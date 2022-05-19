@@ -54,7 +54,7 @@ const SumUpContainer = styled.div`
   display: flex;
   gap: 50px;
 
-  @media screen and ${deviceMax.mobileS} {
+  @media screen and ${deviceMax.mobileL} {
     display: none;
     flex-direction: column;
     gap: 20px;
@@ -63,7 +63,7 @@ const SumUpContainer = styled.div`
 
 const Content = styled.div`
   text-align: right;
-  @media screen and ${deviceMax.mobileS} {
+  @media screen and ${deviceMax.mobileL} {
     max-width: 300px;
     gap: 20px;
   }
