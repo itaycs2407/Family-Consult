@@ -15,6 +15,7 @@ import Intro2 from "../assets/personal-consult/intro2.png";
 import Intro3 from "../assets/personal-consult/intro3.png";
 import Background from "../assets/personal-consult/background.jpeg";
 import { useHistory } from "react-router-dom";
+import { deviceMax } from "../constant/constant";
 
 interface Props {}
 
@@ -22,7 +23,7 @@ const Consult: React.FC<Props> = () => {
   const history = useHistory();
 
   return (
-    <Container
+    <div
       style={{
         backgroundImage: "url(" + Background + ")",
         backgroundSize: "auto auto",
@@ -59,11 +60,9 @@ const Consult: React.FC<Props> = () => {
           {locale("consultRedirectToContact")}
         </StyledButton>
       </FadeInContainer>
-    </Container>
+    </div>
   );
 };
-
-const Container = styled.div``;
 
 const ContentContainer = styled.p`
   width: 80%;
@@ -73,6 +72,12 @@ const ContentContainer = styled.p`
 const SumUpContainer = styled.div`
   display: flex;
   gap: 50px;
+
+  @media screen and ${deviceMax.mobileL} {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 export default Consult;

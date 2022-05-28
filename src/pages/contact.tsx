@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled/macro";
 import { locale } from "../locale/locale";
 import {
+  deviceMax,
   EMAIL_JS_PUBLIC_KEY,
   EMAIL_JS_SERVICE_ID,
   EMAIL_JS_TEMPLATE_ID,
@@ -145,8 +146,11 @@ const Card = styled.div`
   gap: 20px;
   flex-direction: column;
   align-items: center;
+  @media ${deviceMax.mobileL} {
+    width: 85%;
+    margin: 10%;
+  }
 `;
-
 const Input = styled.input<{ rtl: boolean }>`
   padding: 5px 10px;
   height: 25px;

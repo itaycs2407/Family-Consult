@@ -63,8 +63,8 @@ const SumUpContainer = styled.div`
 
 const Content = styled.div`
   text-align: right;
+  width: 85%;
   @media screen and ${deviceMax.mobileL} {
-    max-width: 300px;
     gap: 20px;
   }
 `;

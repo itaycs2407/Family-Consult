@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
-import { FadeInContainer, StyledImage } from "../constant/style";
+import { FadeInContainer } from "../constant/style";
 import Header from "../assets/header.jpg";
-import { deviceMax } from "../constant/constant";
 
 interface Props {}
 
 const AboutMe: React.FC<Props> = () => (
   <FadeInContainer>
     <ImageContainer>
-      <StyledImage src={Header} alt="cover" />
+      <img src={Header} alt="cover" />
     </ImageContainer>
     <h1>סדנת הורים לצעירים</h1>
 
@@ -44,10 +43,6 @@ const P = styled.p`
 const ImageContainer = styled.div`
   display: flex;
   gap: 0 30px;
-
-  @media ${deviceMax.mobileL} {
-    //justify-content: center;
-  }
 `;
 
 export default AboutMe;
