@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled/macro";
 import { FadeInContainer, StyledImage } from "../constant/style";
 import Header from "../assets/header.jpg";
+import { deviceMax } from "../constant/constant";
 
 interface Props {}
 
@@ -35,13 +36,18 @@ const AboutMe: React.FC<Props> = () => (
 );
 
 const P = styled.p`
-  width: 40%;
+  width: 90%;
   font-size: 22px;
+  direction: rtl;
 `;
 
 const ImageContainer = styled.div`
   display: flex;
   gap: 0 30px;
+
+  @media ${deviceMax.mobileL} {
+    //justify-content: center;
+  }
 `;
 
 export default AboutMe;

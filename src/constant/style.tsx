@@ -12,7 +12,7 @@ from {
   `;
 
 export const StyledImage = styled.img`
-  @media screen and ${deviceMax.mobileS} {
+  @media screen and ${deviceMax.mobileL} {
     display: none;
   }
 `;
