@@ -29,17 +29,16 @@ const App: React.FC = () => {
 };
 
 const Container = styled.div`
-  background-color: ghostwhite;
   height: 100vh;
+  width: 99vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  //align-items: center;
 `;
 
 const ContentContainer = styled.div`
-  margin-top: 30px;
-  background-color: ghostwhite;
+  width: 100%;
 `;
 
 export default App;

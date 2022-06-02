@@ -1,40 +1,119 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
-import { FadeInContainer } from "../constant/style";
-import Header from "../assets/header.jpg";
+import { Fadein, FadeInContainer } from "../constant/style";
+import HilaPersonal from "../assets/hilaHome.jpeg";
+import second from "../assets/homepage/middle.png";
+import { keyframes } from "@emotion/react";
 
-interface Props {}
+const AboutMe: React.FC = () => {
+  const subTitle = " ומומחית לגיל הרך" + " MA " + "יועצת משפחתית ";
+  return (
+    <FadeInContainer>
+      <UpperContent>
+        <Content>
+          <H1>הילה כהן</H1>
+          <H2>{subTitle}</H2>
+        </Content>
 
-const AboutMe: React.FC<Props> = () => (
-  <FadeInContainer>
-    <ImageContainer>
-      <img src={Header} alt="cover" />
-    </ImageContainer>
-    <h1>סדנת הורים לצעירים</h1>
+        <AbsoluteStyledImage src={HilaPersonal} alt={second} />
 
-    <P>
-      נעים להכיר שמי הילה כהן, יועצת משפחתית מוסמכת המתמחה בגיל הרך. נשואה ואמא
-      לשלושה ילדים בהשכלתי בעלת תואר שני מתאם המכללה האקדמית תל אביב יפו בלימודי
-      משפחה בהתמחות בייעוץ למשפחות. ותואר ראשון בחינוך לגיל הרך. יועצת בגישה
-      מערכתית, השמה במוקד ההתערבות את המערכת המשפחתית - הקשרים ומערכות היחסים
-      בין חברי המשפחה. הייעוץ מדויק וממוקד מטרה ולכן גם קצר מועד . מלווה ומייעצת
-      להורים לקראת המעבר להורות ובהורות, מעבירה סדנאות והרצאות פרטיות ומנחת
-      מעגלי אימהות בחופשת לידה. בעלת ניסיון רב בעבודה עם ילדים, הורים וצוותים
-      חינוכיים . אני מזמינה אתכם לצאת יחד לדרך משמעותית ומקדמת להורות המיטבית
-      והייחודית שלכם. שלכם, הילה כהן
-    </P>
-  </FadeInContainer>
-);
+        <Description>
+          <Sentence>
+            נעים להכיר שמי הילה כהן, יועצת משפחתית מוסמכת המתמחה בגיל הרך.
+          </Sentence>
+          <Sentence>
+            נשואה ואמא לשלושה ילדים. בהשכלתי בעלת תואר שני מתאם המכללה האקדמית
+            תל אביב יפו בלימודי משפחה בהתמחות בייעוץ למשפחות ותואר ראשון בחינוך
+            לגיל הרך.
+          </Sentence>
+          <Sentence>
+            יועצת בגישה מערכתית, השמה במוקד ההתערבות את המערכת המשפחתית - הקשרים
+            ומערכות היחסים בין חברי המשפחה. הייעוץ מדויק וממוקד מטרה ולכן גם קצר
+            מועד.
+          </Sentence>
+          <Sentence>
+            מלווה ומייעצת להורים לקראת המעבר להורות ובהורות, מעבירה סדנאות
+            והרצאות פרטיות ומנחת מעגלי אימהות בחופשת לידה.
+          </Sentence>
+          <Sentence>
+            בעלת ניסיון רב בעבודה עם ילדים, הורים וצוותים חינוכיים.
+          </Sentence>
+          <Sentence>
+            אני מזמינה אתכם לצאת יחד לדרך משמעותית ומקדמת להורות המיטבית
+            והייחודית שלכם.
+          </Sentence>
 
-const P = styled.p`
-  width: 90%;
+          <Sentence>שלכם, הילה כהן</Sentence>
+        </Description>
+      </UpperContent>
+    </FadeInContainer>
+  );
+};
+
+const AbsoluteStyledImage = styled.img`
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  border-radius: 20px;
+  animation: ${Fadein} 0.75s;
+`;
+
+const Content = styled.div`
+  text-align: right;
+`;
+
+const Sentence = styled.div`
+  margin-top: 10px;
+`;
+
+const CardContainer = styled.div`
+  gap: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const UpperContent = styled(CardContainer)`
+  position: relative;
+  margin-bottom: 50px;
+  justify-content: right;
+  align-items: flex-start;
+  padding: 15% 0 0;
+  background-color: #fde2e4ff;
+`;
+
+const Description = styled.div`
+  margin-top: 20px;
+  width: 40%;
+  position: absolute;
+  top: 100%;
+  right: 10%;
   font-size: 22px;
   direction: rtl;
 `;
 
-const ImageContainer = styled.div`
-  display: flex;
-  gap: 0 30px;
+export const MoveFromRight = keyframes`
+from {
+  right: -10%;
+}
+  to {
+    right : 10%;  
+  }
+`;
+
+const H1 = styled.h1`
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  animation: ${MoveFromRight} 1s ease-out;
+`;
+
+const H2 = styled.h2`
+  position: absolute;
+  top: 70%;
+  right: 10%;
+  animation: ${MoveFromRight} 1s ease-out;
 `;
 
 export default AboutMe;

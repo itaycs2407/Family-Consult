@@ -21,6 +21,7 @@ const WorkshopItem: React.FC<Props> = ({ workshop, workshopKey }) => {
       <ImageContainer>
         <Image src={workshop.image} />
       </ImageContainer>
+
       <Title>{workshop.title}</Title>
       <Description>
         <StyledButton>

@@ -1,7 +1,7 @@
 export interface WorkshopInfo {
   key: string;
   title: string;
-  description: string;
+  description?: string;
   image: string;
 }
 

@@ -12,6 +12,8 @@ import {
 import styled from "@emotion/styled/macro";
 import { locale } from "../locale/locale";
 import { deviceMax } from "../constant/constant";
+import { StyledImageContainer } from "./home";
+import Bullet from "../components/bullet";
 
 const Workshop: React.FC = () => {
   const history = useHistory();
@@ -26,18 +28,26 @@ const Workshop: React.FC = () => {
 
   return (
     <FadeInContainer>
-      <ImageContainer>
-        {workshopData.images.map((image: string, index: number) => {
-          return index === 0 ? (
-            <ResponsiveImage key={image} src={image} alt={image} />
-          ) : (
-            <StyledImage key={image} src={image} alt={image} />
-          );
-        })}
-      </ImageContainer>
+      <StyledImageContainer>
+        <ImageContainer>
+          {workshopData.images.map((image: string, index: number) => {
+            return index === 0 ? (
+              <ResponsiveImage key={image} src={image} alt={image} />
+            ) : (
+              <StyledImage key={image} src={image} alt={image} />
+            );
+          })}
+        </ImageContainer>
+      </StyledImageContainer>
 
       <Header>{workshopData.header}</Header>
-      <Content>{workshopData.content}</Content>
+
+      <Content>
+        {workshopData.content.map((line: string, index: number) => (
+          <Bullet key={index} title={line} />
+        ))}
+      </Content>
+
       <SumUpContainer>
         <SumUpItem> קצר מועד</SumUpItem>
         <SumUpItem>בזום או בקלינקה</SumUpItem>
@@ -63,7 +73,10 @@ const SumUpContainer = styled.div`
 
 const Content = styled.div`
   text-align: right;
-  width: 85%;
+  margin: 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 12%;
   @media screen and ${deviceMax.mobileL} {
     gap: 20px;
   }

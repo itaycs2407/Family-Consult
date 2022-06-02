@@ -10,6 +10,19 @@ export const colors = {
   5: "#e4e1dd",
 };
 
+export const newColors = {
+  champagnepink: "#eddcd2ff",
+  linen: "#fff1e6ff",
+  mistyrose: "#fde2e4ff",
+  mimipink: "#fad2e1ff",
+  powderblue: "#c5deddff",
+  mintcream: "#dbe7e4ff",
+  isabelline: "#f0efebff",
+  aliceblue: "#d6e2e9ff",
+  beaublue: "#bcd4e6ff",
+  palecerulean: "#99c1deff",
+};
+
 export const size = {
   mobileS: "320px",
   mobileM: "375px",

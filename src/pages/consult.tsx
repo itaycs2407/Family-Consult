@@ -13,9 +13,9 @@ import { locale } from "../locale/locale";
 import Intro1 from "../assets/personal-consult/intro1.png";
 import Intro2 from "../assets/personal-consult/intro2.png";
 import Intro3 from "../assets/personal-consult/intro3.png";
-import Background from "../assets/personal-consult/background.jpeg";
 import { useHistory } from "react-router-dom";
 import { deviceMax } from "../constant/constant";
+import { StyledImageContainer } from "./home";
 
 interface Props {}
 
@@ -23,44 +23,40 @@ const Consult: React.FC<Props> = () => {
   const history = useHistory();
 
   return (
-    <div
-      style={{
-        backgroundImage: "url(" + Background + ")",
-        backgroundSize: "auto auto",
-      }}
-    >
-      <FadeInContainer>
+    <FadeInContainer>
+      <StyledImageContainer>
         <ImageContainer>
           <StyledImage src={Intro1} alt="Intro1" />
           <StyledImage src={Intro3} alt="Intro3" />
           <StyledImage src={Intro2} alt="Intro2" />
         </ImageContainer>
-        <Header>{locale("personalConsultHeader")}</Header>
-        <ContentContainer>
-          {locale("personalConsultSentences").map(
-            (sentence: string, index: number) => (
-              <p key={index}>{sentence}</p>
-            )
-          )}
+      </StyledImageContainer>
 
-          {locale("personalConsultBullets").map(
-            (bullet: string, index: number) => (
-              <Bullet key={index} title={bullet} />
-            )
-          )}
+      <Header>{locale("personalConsultHeader")}</Header>
+      <ContentContainer>
+        {locale("personalConsultSentences").map(
+          (sentence: string, index: number) => (
+            <p key={index}>{sentence}</p>
+          )
+        )}
 
-          <p>{locale("personalConsultSumUp")}</p>
-        </ContentContainer>
-        <SumUpContainer>
-          <SumUpItem> קצר מועד</SumUpItem>
-          <SumUpItem>בזום או בקלינקה</SumUpItem>
-          <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
-        </SumUpContainer>
-        <StyledButton onClick={() => history.push(`/contact/consult`)}>
-          {locale("consultRedirectToContact")}
-        </StyledButton>
-      </FadeInContainer>
-    </div>
+        {locale("personalConsultBullets").map(
+          (bullet: string, index: number) => (
+            <Bullet key={index} title={bullet} />
+          )
+        )}
+
+        <p>{locale("personalConsultSumUp")}</p>
+      </ContentContainer>
+      <SumUpContainer>
+        <SumUpItem> קצר מועד</SumUpItem>
+        <SumUpItem>בזום או בקלינקה</SumUpItem>
+        <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
+      </SumUpContainer>
+      <StyledButton onClick={() => history.push(`/contact/consult`)}>
+        {locale("consultRedirectToContact")}
+      </StyledButton>
+    </FadeInContainer>
   );
 };
 

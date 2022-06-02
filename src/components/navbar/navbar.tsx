@@ -11,25 +11,14 @@ import { deviceMax } from "../../constant/constant";
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <Container>
-      <WhatsappContainer href="https://wa.me/972587600202" target="_blank">
-        <WhatsappLogo />
-      </WhatsappContainer>
+    <>
+      <StyledStrip>054-6715252</StyledStrip>
+      <Container>
+        <WhatsappContainer href="https://wa.me/972587600202" target="_blank">
+          <WhatsappLogo />
+        </WhatsappContainer>
 
-      <NavbarItemContainer>
-        <NavbarItem to="/contact">{locale("navBarItemContactMe")}</NavbarItem>
-        <NavbarItem to="/workshops">{locale("navBarItemWorkshop")}</NavbarItem>
-        <NavbarItem to="/personal-consult">
-          {locale("navBarItemSingleConsult")}
-        </NavbarItem>
-        <NavbarItem to="/about-me">{locale("navBarItemAboutMe")}</NavbarItem>
-        <NavbarItem to="/home">{locale("navBarItemHome")}</NavbarItem>
-      </NavbarItemContainer>
-
-      <Logo src={logo1} alt="logo" />
-      <Hamburger onClick={() => setShowMenu((prev) => !prev)} />
-      {showMenu && (
-        <ResponsiveMenu onClick={() => setShowMenu(false)}>
+        <NavbarItemContainer>
           <NavbarItem to="/contact">{locale("navBarItemContactMe")}</NavbarItem>
           <NavbarItem to="/workshops">
             {locale("navBarItemWorkshop")}
@@ -39,26 +28,51 @@ const Navbar: React.FC = () => {
           </NavbarItem>
           <NavbarItem to="/about-me">{locale("navBarItemAboutMe")}</NavbarItem>
           <NavbarItem to="/home">{locale("navBarItemHome")}</NavbarItem>
-        </ResponsiveMenu>
-      )}
-    </Container>
+        </NavbarItemContainer>
+
+        <Logo src={logo1} alt="logo" />
+        <Hamburger onClick={() => setShowMenu((prev) => !prev)} />
+        {showMenu && (
+          <ResponsiveMenu onClick={() => setShowMenu(false)}>
+            <NavbarItem to="/contact">
+              {locale("navBarItemContactMe")}
+            </NavbarItem>
+            <NavbarItem to="/workshops">
+              {locale("navBarItemWorkshop")}
+            </NavbarItem>
+            <NavbarItem to="/personal-consult">
+              {locale("navBarItemSingleConsult")}
+            </NavbarItem>
+            <NavbarItem to="/about-me">
+              {locale("navBarItemAboutMe")}
+            </NavbarItem>
+            <NavbarItem to="/home">{locale("navBarItemHome")}</NavbarItem>
+          </ResponsiveMenu>
+        )}
+      </Container>
+    </>
   );
 };
 
 const Container = styled.div`
-  position: inherit;
-  width: 100vw;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   min-width: 325px;
-  background-color: #cbb0bc;
+  justify-content: space-between;
+  background-color: white;
+`;
+
+export const StyledStrip = styled.div`
+  background-color: #dbdcd5;
+  color: #990a43;
+  padding: 5px 0 5px 15px;
+  font-size: 18px;
+  font-weight: 650;
+  width: 100%;
 `;
 
 const NavbarItemContainer = styled.div`
   height: 100%;
   display: flex;
-  margin: auto;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
@@ -78,25 +92,26 @@ const Hamburger = styled(MenuIcon)`
     display: initial;
   }
 `;
+
 const NavbarItem = styled(NavLink)`
   min-width: 100px;
   text-decoration: none;
-  margin: 0 15px;
-  background-color: #e4e1dd;
-  border-radius: 10px;
+  margin: 5px 15px;
+  background-color: #eab5c1;
+  border-radius: 14px;
   text-align: center;
   cursor: pointer;
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 9px rgba(147, 8, 162, 0.2);
   transition: 0.2s ease-in;
 
   &:hover {
     transform: translateY(15%);
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 1);
+    box-shadow: 0 3px 9px rgba(147, 8, 162, 0.2);
   }
 `;
 
 const Logo = styled.img`
-  width: 200px;
+  width: 180px;
   height: 92px;
 `;
 
