@@ -73,7 +73,7 @@ const SumUpContainer = styled.div`
 
 const Content = styled.div`
   text-align: right;
-  margin: 5% 0 5%;
+  margin: 0 0 5%;
   display: flex;
   flex-direction: column;
   padding: 0 12%;
