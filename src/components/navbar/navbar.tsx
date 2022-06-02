@@ -3,6 +3,9 @@ import styled from "@emotion/styled/macro";
 import { locale } from "../../locale/locale";
 import { NavLink } from "react-router-dom";
 import logo1 from "../../assets/logo1.png";
+import facebook from "../../assets/navStrip/facebook.png";
+import youtube from "../../assets/navStrip/youtube.png";
+import instagram from "../../assets/navStrip/instagram.png";
 import { ReactComponent as WhatsappLogo } from "../../assets/Whatsapp-logo-icon-transparent.svg";
 import { ReactComponent as MenuIcon } from "../../menuIcon.svg";
 
@@ -12,7 +15,12 @@ const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
-      <StyledStrip>054-6715252</StyledStrip>
+      <StyledStrip>
+        054-6715252
+        <SocialImage src={facebook} alt="facebook" />
+        <SocialImage src={youtube} alt="youtube" />
+        <SocialImage src={instagram} alt="instagram" />
+      </StyledStrip>
       <Container>
         <WhatsappContainer href="https://wa.me/972587600202" target="_blank">
           <WhatsappLogo />
@@ -64,10 +72,12 @@ const Container = styled.div`
 export const StyledStrip = styled.div`
   background-color: #dbdcd5;
   color: #990a43;
-  padding: 5px 0 5px 15px;
+  display: flex;
+  align-items: center;
+  padding: 5px 0 5px 20px;
   font-size: 18px;
   font-weight: 650;
-  width: 100%;
+  //width: 100%;
 `;
 
 const NavbarItemContainer = styled.div`
@@ -130,11 +140,16 @@ const ResponsiveMenu = styled.div`
   right: 0;
   display: flex;
   flex-direction: column-reverse;
-
   gap: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   background-color: white;
   border-radius: 20px;
+`;
+
+const SocialImage = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
 `;
 
 export default Navbar;

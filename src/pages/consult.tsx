@@ -17,9 +17,7 @@ import { useHistory } from "react-router-dom";
 import { deviceMax } from "../constant/constant";
 import { StyledImageContainer } from "./home";
 
-interface Props {}
-
-const Consult: React.FC<Props> = () => {
+const Consult: React.FC = () => {
   const history = useHistory();
 
   return (
