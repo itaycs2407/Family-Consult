@@ -6,8 +6,7 @@ import second from "../assets/homepage/middle.png";
 import { keyframes } from "@emotion/react";
 
 const AboutMe: React.FC = () => {
-  //ts-ignore no-useless-concat
-  const subTitle = " ומומחית לגיל הרך" + " MA " + "יועצת משפחתית ";
+  const subTitle = "ומומחית לגיל הרך MA יועצת משפחתית";
   return (
     <FadeInContainer>
       <UpperContent>

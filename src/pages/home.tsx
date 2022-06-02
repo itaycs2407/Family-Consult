@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   //ts-ignore no-useless-concat
-  const subTitle = " ומומחית לגיל הרך" + " MA " + "יועצת משפחתית ";
+  const subTitle = "ומומחית לגיל הרך MA יועצת משפחתית";
   return (
     <FadeInContainer>
       <UpperContent>
