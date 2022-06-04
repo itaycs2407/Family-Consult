@@ -46,14 +46,14 @@ const Consult: React.FC = () => {
 
         <p>{locale("personalConsultSumUp")}</p>
       </ContentContainer>
+      <WorkshopStyledButton onClick={() => history.push(`/contact/consult`)}>
+        צרו קשר לקביעת פגישת היכרות
+      </WorkshopStyledButton>
       <SumUpContainer>
         <SumUpItem> קצר מועד</SumUpItem>
         <SumUpItem>בזום או בקלינקה</SumUpItem>
         <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
       </SumUpContainer>
-      <WorkshopStyledButton onClick={() => history.push(`/contact/consult`)}>
-        {locale("consultRedirectToContact")}
-      </WorkshopStyledButton>
     </FadeInContainer>
   );
 };

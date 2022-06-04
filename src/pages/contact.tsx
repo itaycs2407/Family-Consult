@@ -33,6 +33,10 @@ const Contact = () => {
   const [successfullySent, setSuccessfullySent] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const emailDetails = {
     fullName,
     email,
