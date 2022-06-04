@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
 import { Fadein, FadeInContainer } from "../constant/style";
-import HilaPersonal from "../assets/hilaHome.jpeg";
+import HilaPersonal from "../assets/hilaHome.jpg";
 import second from "../assets/homepage/middle.png";
 import { keyframes } from "@emotion/react";
 
@@ -55,6 +55,7 @@ const AbsoluteStyledImage = styled.img`
   top: 15%;
   left: 10%;
   border-radius: 20px;
+  width: 30%;
   animation: ${Fadein} 0.75s;
 `;
 
