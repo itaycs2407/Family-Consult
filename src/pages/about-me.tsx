@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "@emotion/styled/macro";
 import { Fadein, FadeInContainer } from "../constant/style";
 import HilaPersonal from "../assets/hilaHome.jpg";
@@ -14,6 +14,11 @@ const AboutMe: React.FC = () => {
       מומחית לגיל הרך
     </span>
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <FadeInContainer>
       <UpperContent>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "@emotion/styled/macro";
 import {
   FadeInContainer,
@@ -19,6 +19,10 @@ import { ResponsiveImage, WorkshopStyledButton } from "./workshop";
 
 const Consult: React.FC = () => {
   const history = useHistory();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <FadeInContainer>

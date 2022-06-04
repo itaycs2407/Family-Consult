@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { workshopsData } from "../constant/workshopsData";
 import {
@@ -17,6 +17,9 @@ import Bullet from "../components/bullet";
 
 const Workshop: React.FC = () => {
   const history = useHistory();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { workshopKey } = useParams<{ workshopKey: string }>();
 
   if (!workshopKey && !(workshopKey in workshopsData)) {
