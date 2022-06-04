@@ -5,9 +5,9 @@ import Heart from "../assets/home-intro.jpeg";
 import back1 from "../assets/background1.png";
 import second from "../assets/homepage/middle.png";
 import { Link } from "react-router-dom";
+import { deviceMax } from "../constant/constant";
 
 const Home: React.FC = () => {
-  //ts-ignore no-useless-concat
   const subTitle = "ומומחית לגיל הרך MA יועצת משפחתית";
   return (
     <FadeInContainer>
@@ -22,22 +22,22 @@ const Home: React.FC = () => {
       <CardContainer>
         <Card to="/personal-consult" url={back1}>
           <div>
-            <h1>ייעוץ</h1>
+            <CardHeader>ייעוץ</CardHeader>
             <p>
               אני מאמינה בהדרכה אישית והמותאמת למשפחה שלכם. ביחד ניצור שינוי,
               נשפר את האווירה בבית וניתן מענה מותאם ומדויק לאתגרים שאיתם אתם
               מתמודדים
             </p>
-            <p>פרקטי </p>
-            <p>קצר מועד </p>
-            <p>בזום או בקליניקה</p>
+            <ResponsiveParagraph>פרקטי </ResponsiveParagraph>
+            <ResponsiveParagraph>קצר מועד </ResponsiveParagraph>
+            <ResponsiveParagraph>בזום או בקליניקה</ResponsiveParagraph>
             <ReadMore>לקריאה נוספת...</ReadMore>
           </div>
         </Card>
 
         <Card to="/workshops" url={back1}>
           <div>
-            <h1>סדנאות</h1>
+            <CardHeader>סדנאות</CardHeader>
             <p>
               סדנאות לזוגות בהריון , לאמהות לאחר לידה, להורים חזון הורי, סמכות
               הורית, גמילה, יחסים בין אחים ועוד
@@ -59,11 +59,21 @@ const H1 = styled.h1`
   position: absolute;
   top: 50%;
   right: 10%;
+  @media screen and ${deviceMax.mobileL} {
+    font-size: 14px;
+    top: 30%;
+    right: 2%;
+  }
 `;
 const H2 = styled.h2`
   position: absolute;
   top: 70%;
   right: 10%;
+  @media screen and ${deviceMax.mobileL} {
+    font-size: 10px;
+    top: 60%;
+    right: 2%;
+  }
 `;
 
 export const StyledImageContainer = styled.div`
@@ -82,8 +92,13 @@ const AbsoluteStyledImage = styled.img`
   left: 10%;
   border-radius: 20px;
   box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.5);
-
   animation: ${Fadein} 0.75s;
+
+  @media screen and ${deviceMax.mobileL} {
+    width: 200px;
+    height: 150px;
+    left: 3%;
+  }
 `;
 
 const Content = styled.div`
@@ -95,6 +110,10 @@ const CardContainer = styled.div`
   width: 100%;
   justify-content: space-around;
   margin-top: 200px;
+
+  @media screen and ${deviceMax.mobileL} {
+    margin-top: 100px;
+  }
 `;
 
 const UpperContent = styled.div`
@@ -121,8 +140,22 @@ const Card = styled(Link)<{ url: string }>`
   box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.5);
   transition: all 1s;
 
+  @media screen and ${deviceMax.mobileL} {
+    width: 160px;
+    padding: 10px;
+  }
   &:hover {
     transform: scale(1.05);
+  }
+`;
+
+const CardHeader = styled.h1`
+  color: #ff0a78;
+`;
+
+const ResponsiveParagraph = styled.p`
+  @media ${deviceMax.mobileL} {
+    display: none;
   }
 `;
 

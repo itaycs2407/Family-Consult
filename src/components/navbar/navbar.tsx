@@ -132,8 +132,8 @@ const WhatsappContainer = styled.a`
 `;
 
 const ResponsiveMenu = styled.div`
-  width: 220px;
-  margin: 5px;
+  width: 120px;
+  margin: 5px 30px;
   padding: 15px 5px;
   position: absolute;
   top: 75px;
@@ -141,6 +141,7 @@ const ResponsiveMenu = styled.div`
   display: flex;
   flex-direction: column-reverse;
   gap: 10px;
+  z-index: 1000;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   background-color: white;
   border-radius: 20px;

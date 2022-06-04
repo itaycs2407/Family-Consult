@@ -77,6 +77,7 @@ const CardContainer = styled.div`
 
 const UpperContent = styled(CardContainer)`
   position: relative;
+  z-index: 0;
   margin-bottom: 50px;
   justify-content: right;
   align-items: flex-start;
