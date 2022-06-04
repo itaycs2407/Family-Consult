@@ -130,8 +130,8 @@ const Logo = styled.img`
 `;
 
 const WhatsappContainer = styled.a`
-  width: 55px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
   margin-left: 20px;
 `;
 
