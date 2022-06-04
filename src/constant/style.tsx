@@ -48,7 +48,7 @@ export const StyledButton = styled.button`
   border: none;
   box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5),
     7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
-  background: #edafb8;
+  background: #ec5e6a;
 
   &:hover {
     background-color: #ff6392;
@@ -70,5 +70,5 @@ export const SumUpItem = styled.div`
   padding: 10px 20px;
   border: 1px solid black;
   border-radius: 10px;
-  animation: ${BreatheAnimation} 1.5s infinite;
+  animation: ${BreatheAnimation} 3s infinite;
 `;

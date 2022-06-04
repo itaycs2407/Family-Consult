@@ -4,7 +4,6 @@ import {
   FadeInContainer,
   Header,
   ImageContainer,
-  StyledButton,
   StyledImage,
   SumUpItem,
 } from "../constant/style";
@@ -16,7 +15,7 @@ import Intro3 from "../assets/personal-consult/intro3.png";
 import { useHistory } from "react-router-dom";
 import { deviceMax } from "../constant/constant";
 import { StyledImageContainer } from "./home";
-import { ResponsiveImage } from "./workshop";
+import { ResponsiveImage, WorkshopStyledButton } from "./workshop";
 
 const Consult: React.FC = () => {
   const history = useHistory();
@@ -35,7 +34,7 @@ const Consult: React.FC = () => {
       <ContentContainer>
         {locale("personalConsultSentences").map(
           (sentence: string, index: number) => (
-            <p key={index}>{sentence}</p>
+            <P key={index}>{sentence}</P>
           )
         )}
 
@@ -52,9 +51,9 @@ const Consult: React.FC = () => {
         <SumUpItem>בזום או בקלינקה</SumUpItem>
         <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
       </SumUpContainer>
-      <StyledButton onClick={() => history.push(`/contact/consult`)}>
+      <WorkshopStyledButton onClick={() => history.push(`/contact/consult`)}>
         {locale("consultRedirectToContact")}
-      </StyledButton>
+      </WorkshopStyledButton>
     </FadeInContainer>
   );
 };
@@ -64,6 +63,9 @@ const ContentContainer = styled.p`
   text-align: right;
 `;
 
+const P = styled.p`
+  direction: rtl;
+`;
 const SumUpContainer = styled.div`
   display: flex;
   gap: 50px;

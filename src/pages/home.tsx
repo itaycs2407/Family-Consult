@@ -8,11 +8,11 @@ import { Link } from "react-router-dom";
 import { deviceMax } from "../constant/constant";
 
 const Home: React.FC = () => {
-  const subTitle = <span> ומומחית לגיל הרך MA יועצת משפחתית </span>;
+  const subTitle = <span> מומחית לגיל הרך MA יועצת משפחתית </span>;
   const responsiveSubTitle = (
     <span>
       MA יועצת משפחתית <br />
-      ומומחית לגיל הרך
+      מומחית לגיל הרך
     </span>
   );
   return (

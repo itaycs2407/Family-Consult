@@ -7,11 +7,11 @@ import { keyframes } from "@emotion/react";
 import { deviceMax } from "../constant/constant";
 
 const AboutMe: React.FC = () => {
-  const subTitle = <span> ומומחית לגיל הרך MA יועצת משפחתית </span>;
+  const subTitle = <span> מומחית לגיל הרך MA יועצת משפחתית </span>;
   const responsiveSubTitle = (
     <span>
       MA יועצת משפחתית <br />
-      ומומחית לגיל הרך
+      מומחית לגיל הרך
     </span>
   );
   return (
@@ -27,7 +27,8 @@ const AboutMe: React.FC = () => {
 
         <Description>
           <Sentence>
-            נעים להכיר שמי הילה כהן, יועצת משפחתית מוסמכת המתמחה בגיל הרך.
+            נעים להכיר, שמי הילה כהן. <br />
+            יועצת משפחתית מוסמכת המתמחה בגיל הרך.
           </Sentence>
           <Sentence>
             נשואה ואמא לשלושה ילדים. בהשכלתי בעלת תואר שני מתאם המכללה האקדמית
@@ -51,7 +52,8 @@ const AboutMe: React.FC = () => {
             והייחודית שלכם.
           </Sentence>
 
-          <Sentence>שלכם, הילה כהן</Sentence>
+          <Sentence>שלכם,</Sentence>
+          <Sentence> הילה כהן</Sentence>
         </Description>
       </UpperContent>
     </FadeInContainer>
@@ -97,7 +99,7 @@ const UpperContent = styled(CardContainer)`
 `;
 
 const Description = styled.div`
-  margin-top: 20px;
+  margin-top: 70px;
   width: 40%;
   position: absolute;
   top: 100%;
@@ -106,6 +108,7 @@ const Description = styled.div`
   direction: rtl;
   @media screen and ${deviceMax.mobileL} {
     font-size: 12px;
+    width: 80%;
     margin-bottom: 50px;
   }
 `;

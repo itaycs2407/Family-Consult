@@ -25,6 +25,7 @@ const Workshop: React.FC = () => {
 
   // @ts-ignore
   const workshopData = workshopsData[workshopKey];
+  const { withBullet, withSumUpItems } = workshopData;
 
   return (
     <FadeInContainer>
@@ -41,21 +42,34 @@ const Workshop: React.FC = () => {
       </StyledImageContainer>
 
       <Header>{workshopData.header}</Header>
-
       <Content>
-        {workshopData.content.map((line: string, index: number) => (
-          <Bullet key={index} title={line} />
-        ))}
+        {(workshopData.contentPromo || []).map(
+          (line: string, index: number) => (
+            <Title key={index}>{line}</Title>
+          )
+        )}
+
+        {workshopData.content.map((line: string, index: number) =>
+          withBullet ? (
+            <Bullet key={index} title={line} />
+          ) : (
+            <Title key={index}>{line}</Title>
+          )
+        )}
       </Content>
 
-      <SumUpContainer>
-        <SumUpItem> קצר מועד</SumUpItem>
-        <SumUpItem>בזום או בקלינקה</SumUpItem>
-        <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
-      </SumUpContainer>
-      <StyledButton onClick={() => history.push(`/contact/${workshopKey}`)}>
+      {withSumUpItems && (
+        <SumUpContainer>
+          {workshopData.sumUpItems.map((item: string, index: number) => (
+            <SumUpItem key={index}>{item}</SumUpItem>
+          ))}
+        </SumUpContainer>
+      )}
+      <WorkshopStyledButton
+        onClick={() => history.push(`/contact/${workshopKey}`)}
+      >
         {locale("workshopSinglePageRedirectToContact")}
-      </StyledButton>
+      </WorkshopStyledButton>
     </FadeInContainer>
   );
 };
@@ -71,15 +85,25 @@ const SumUpContainer = styled.div`
   }
 `;
 
+const Title = styled.div`
+  direction: rtl;
+  margin-bottom: 10px;
+`;
+
 const Content = styled.div`
   text-align: right;
   margin: 0 0 5%;
   display: flex;
   flex-direction: column;
   padding: 0 12%;
+
   @media screen and ${deviceMax.mobileL} {
     gap: 20px;
   }
+`;
+
+export const WorkshopStyledButton = styled(StyledButton)`
+  margin: 20px 0 20px;
 `;
 
 export const ResponsiveImage = styled.img`
