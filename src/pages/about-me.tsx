@@ -106,6 +106,7 @@ const Description = styled.div`
   direction: rtl;
   @media screen and ${deviceMax.mobileL} {
     font-size: 12px;
+    margin-bottom: 50px;
   }
 `;
 

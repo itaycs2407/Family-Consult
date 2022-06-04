@@ -146,8 +146,8 @@ const Card = styled.div`
   gap: 20px;
   flex-direction: column;
   align-items: center;
-  @media ${deviceMax.mobileL} {
-    width: 85%;
+  @media screen and ${deviceMax.mobileL} {
+    width: 60%;
     margin: 10%;
   }
 `;
