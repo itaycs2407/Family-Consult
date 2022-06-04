@@ -9,28 +9,26 @@ import Consult from "./pages/consult";
 import { Redirect, Route, Switch } from "react-router-dom";
 import Workshop from "./pages/workshop";
 
-const App: React.FC = () => {
-  return (
-    <Container>
-      <Navbar />
-      <ContentContainer>
-        <Switch>
-          <Route exact path="/home" component={Home} />
-          <Route path="/contact/:reason?" component={Contact} />
-          <Route exact path="/workshops" component={Workshops} />
-          <Route exact path="/about-me" component={AboutMe} />
-          <Route exact path="/personal-consult" component={Consult} />
-          <Route exact path="/workshops/:workshopKey" component={Workshop} />
-          <Redirect from="/" to={"/home"} />
-        </Switch>
-      </ContentContainer>
-    </Container>
-  );
-};
+const App: React.FC = () => (
+  <Container>
+    <Navbar />
+    <ContentContainer>
+      <Switch>
+        <Route exact path="/home" component={Home} />
+        <Route path="/contact/:reason?" component={Contact} />
+        <Route exact path="/workshops" component={Workshops} />
+        <Route exact path="/about-me" component={AboutMe} />
+        <Route exact path="/personal-consult" component={Consult} />
+        <Route exact path="/workshops/:workshopKey" component={Workshop} />
+        <Redirect from="/" to={"/home"} />
+      </Switch>
+    </ContentContainer>
+  </Container>
+);
 
 const Container = styled.div`
   height: 100vh;
-  width: 99vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

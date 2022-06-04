@@ -82,7 +82,7 @@ const Content = styled.div`
   }
 `;
 
-const ResponsiveImage = styled.img`
+export const ResponsiveImage = styled.img`
   border-radius: 30px;
   width: 320px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);

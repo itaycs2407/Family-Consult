@@ -16,6 +16,7 @@ import Intro3 from "../assets/personal-consult/intro3.png";
 import { useHistory } from "react-router-dom";
 import { deviceMax } from "../constant/constant";
 import { StyledImageContainer } from "./home";
+import { ResponsiveImage } from "./workshop";
 
 const Consult: React.FC = () => {
   const history = useHistory();
@@ -24,7 +25,7 @@ const Consult: React.FC = () => {
     <FadeInContainer>
       <StyledImageContainer>
         <ImageContainer>
-          <StyledImage src={Intro1} alt="Intro1" />
+          <ResponsiveImage src={Intro1} alt="Intro1" />
           <StyledImage src={Intro3} alt="Intro3" />
           <StyledImage src={Intro2} alt="Intro2" />
         </ImageContainer>
