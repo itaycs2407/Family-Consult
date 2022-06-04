@@ -66,6 +66,7 @@ const Container = styled.div`
   display: flex;
   min-width: 325px;
   justify-content: space-between;
+  align-items: center;
   background-color: white;
 `;
 

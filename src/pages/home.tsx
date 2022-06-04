@@ -8,13 +8,20 @@ import { Link } from "react-router-dom";
 import { deviceMax } from "../constant/constant";
 
 const Home: React.FC = () => {
-  const subTitle = "ומומחית לגיל הרך MA יועצת משפחתית";
+  const subTitle = <span> ומומחית לגיל הרך MA יועצת משפחתית </span>;
+  const responsiveSubTitle = (
+    <span>
+      MA יועצת משפחתית <br />
+      ומומחית לגיל הרך
+    </span>
+  );
   return (
     <FadeInContainer>
       <UpperContent>
         <Content>
           <H1>הילה כהן</H1>
           <H2>{subTitle}</H2>
+          <ResponsiveSubTitle>{responsiveSubTitle}</ResponsiveSubTitle>
         </Content>
         <AbsoluteStyledImage src={Heart} alt={second} />
       </UpperContent>
@@ -70,9 +77,7 @@ const H2 = styled.h2`
   top: 70%;
   right: 10%;
   @media screen and ${deviceMax.mobileL} {
-    font-size: 10px;
-    top: 60%;
-    right: 2%;
+    display: none;
   }
 `;
 
@@ -126,11 +131,14 @@ const UpperContent = styled.div`
   align-items: flex-start;
   padding-top: 15%;
   background-color: #fde2e4ff;
+  @media screen and ${deviceMax.mobileL} {
+    height: 50px;
+  }
 `;
 
 const Card = styled(Link)<{ url: string }>`
   width: 500px;
-  height: 300px;
+  max-height: 300px;
   padding: 50px;
   text-align: center;
   text-decoration: none;
@@ -151,6 +159,18 @@ const Card = styled(Link)<{ url: string }>`
 
 const CardHeader = styled.h1`
   color: #ff0a78;
+`;
+
+const ResponsiveSubTitle = styled.h2`
+  display: none;
+
+  @media screen and ${deviceMax.mobileL} {
+    display: initial;
+    position: absolute;
+    font-size: 10px;
+    top: 60%;
+    right: 2%;
+  }
 `;
 
 const ResponsiveParagraph = styled.p`
