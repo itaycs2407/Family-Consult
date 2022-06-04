@@ -78,7 +78,10 @@ export const StyledStrip = styled.div`
   padding: 5px 0 5px 20px;
   font-size: 18px;
   font-weight: 650;
-  //width: 100%;
+
+  @media screen and ${deviceMax.mobileL} {
+    justify-content: center;
+  }
 `;
 
 const NavbarItemContainer = styled.div`

@@ -4,15 +4,23 @@ import { Fadein, FadeInContainer } from "../constant/style";
 import HilaPersonal from "../assets/hilaHome.jpg";
 import second from "../assets/homepage/middle.png";
 import { keyframes } from "@emotion/react";
+import { deviceMax } from "../constant/constant";
 
 const AboutMe: React.FC = () => {
-  const subTitle = "ומומחית לגיל הרך MA יועצת משפחתית";
+  const subTitle = <span> ומומחית לגיל הרך MA יועצת משפחתית </span>;
+  const responsiveSubTitle = (
+    <span>
+      MA יועצת משפחתית <br />
+      ומומחית לגיל הרך
+    </span>
+  );
   return (
     <FadeInContainer>
       <UpperContent>
         <Content>
           <H1>הילה כהן</H1>
           <H2>{subTitle}</H2>
+          <ResponsiveSubTitle>{responsiveSubTitle}</ResponsiveSubTitle>
         </Content>
 
         <AbsoluteStyledImage src={HilaPersonal} alt={second} />
@@ -83,6 +91,9 @@ const UpperContent = styled(CardContainer)`
   align-items: flex-start;
   padding: 15% 0 0;
   background-color: #fde2e4ff;
+  @media screen and ${deviceMax.mobileL} {
+    height: 50px;
+  }
 `;
 
 const Description = styled.div`
@@ -93,6 +104,9 @@ const Description = styled.div`
   right: 10%;
   font-size: 22px;
   direction: rtl;
+  @media screen and ${deviceMax.mobileL} {
+    font-size: 12px;
+  }
 `;
 
 export const MoveFromRight = keyframes`
@@ -100,22 +114,57 @@ from {
   right: -10%;
 }
   to {
-    right : 10%;  
+    right :10%;  
   }
 `;
 
-const H1 = styled.h1`
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  animation: ${MoveFromRight} 1s ease-out;
+export const ResponsiveMoveFromRight = keyframes`
+from {
+  right: -10%;
+}
+  to {
+    right : 2%;  
+  }
 `;
 
-const H2 = styled.h2`
+const ResponsiveSubTitle = styled.h2`
+  display: none;
   position: absolute;
   top: 70%;
   right: 10%;
   animation: ${MoveFromRight} 1s ease-out;
+
+  @media screen and ${deviceMax.mobileL} {
+    animation: ${ResponsiveMoveFromRight} 1s ease-out;
+    display: initial;
+    position: absolute;
+    font-size: 10px;
+    top: 60%;
+    right: 2%;
+  }
+`;
+const H1 = styled.h1`
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  animation: ${MoveFromRight} 1s ease-out;
+
+  @media screen and ${deviceMax.mobileL} {
+    animation: ${ResponsiveMoveFromRight} 1s ease-out;
+    font-size: 14px;
+    top: 30%;
+    right: 2%;
+  }
+`;
+
+const H2 = styled.h2`
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  animation: ${MoveFromRight} 1s ease-out;
+  @media screen and ${deviceMax.mobileL} {
+    display: none;
+  }
 `;
 
 export default AboutMe;
