@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import styled from "@emotion/styled/macro";
 import { locale } from "../../locale/locale";
 import { NavLink } from "react-router-dom";
-import logo1 from "../../assets/logo1.png";
-import facebook from "../../assets/navStrip/facebook.png";
-import youtube from "../../assets/navStrip/youtube.png";
-import instagram from "../../assets/navStrip/instagram.png";
 import { ReactComponent as WhatsappLogo } from "../../assets/Whatsapp-logo-icon-transparent.svg";
 import { ReactComponent as MenuIcon } from "../../menuIcon.svg";
 
@@ -15,33 +11,13 @@ const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
-      <StyledStrip>
-        054-6715252
-        <SocialImage src={facebook} alt="facebook" />
-        <SocialImage src={youtube} alt="youtube" />
-        <SocialImage src={instagram} alt="instagram" />
-      </StyledStrip>
-      <Container>
+      <StyledStrip>054-6715252</StyledStrip>
+      <MenuContainer>
         <WhatsappContainer href="https://wa.me/972587600202" target="_blank">
           <WhatsappLogo />
         </WhatsappContainer>
-
-        <NavbarItemContainer>
-          <NavbarItem to="/contact">{locale("navBarItemContactMe")}</NavbarItem>
-          <NavbarItem to="/workshops">
-            {locale("navBarItemWorkshop")}
-          </NavbarItem>
-          <NavbarItem to="/personal-consult">
-            {locale("navBarItemSingleConsult")}
-          </NavbarItem>
-          <NavbarItem to="/about-me">{locale("navBarItemAboutMe")}</NavbarItem>
-          <NavbarItem to="/home">{locale("navBarItemHome")}</NavbarItem>
-        </NavbarItemContainer>
-
-        <Logo src={logo1} alt="logo" />
-        <Hamburger onClick={() => setShowMenu((prev) => !prev)} />
-        {showMenu && (
-          <ResponsiveMenu onClick={() => setShowMenu(false)}>
+        <Container>
+          <NavbarItemContainer>
             <NavbarItem to="/contact">
               {locale("navBarItemContactMe")}
             </NavbarItem>
@@ -55,9 +31,28 @@ const Navbar: React.FC = () => {
               {locale("navBarItemAboutMe")}
             </NavbarItem>
             <NavbarItem to="/home">{locale("navBarItemHome")}</NavbarItem>
-          </ResponsiveMenu>
-        )}
-      </Container>
+          </NavbarItemContainer>
+
+          <Hamburger onClick={() => setShowMenu((prev) => !prev)} />
+          {showMenu && (
+            <ResponsiveMenu onClick={() => setShowMenu(false)}>
+              <NavbarItem to="/contact">
+                {locale("navBarItemContactMe")}
+              </NavbarItem>
+              <NavbarItem to="/workshops">
+                {locale("navBarItemWorkshop")}
+              </NavbarItem>
+              <NavbarItem to="/personal-consult">
+                {locale("navBarItemSingleConsult")}
+              </NavbarItem>
+              <NavbarItem to="/about-me">
+                {locale("navBarItemAboutMe")}
+              </NavbarItem>
+              <NavbarItem to="/home">{locale("navBarItemHome")}</NavbarItem>
+            </ResponsiveMenu>
+          )}
+        </Container>
+      </MenuContainer>
     </>
   );
 };
@@ -65,8 +60,10 @@ const Navbar: React.FC = () => {
 const Container = styled.div`
   display: flex;
   min-width: 325px;
-  justify-content: space-between;
+  min-height: 50px;
+  justify-content: center;
   align-items: center;
+  transform: translateX(50%);
   background-color: white;
 `;
 
@@ -97,6 +94,10 @@ const NavbarItemContainer = styled.div`
   }
 `;
 
+const MenuContainer = styled.div`
+  display: flex;
+`;
+
 const Hamburger = styled(MenuIcon)`
   display: none;
   margin: 20px;
@@ -124,11 +125,6 @@ const NavbarItem = styled(NavLink)`
   }
 `;
 
-const Logo = styled.img`
-  width: 180px;
-  height: 92px;
-`;
-
 const WhatsappContainer = styled.a`
   width: 40px;
   height: 40px;
@@ -149,12 +145,6 @@ const ResponsiveMenu = styled.div`
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   background-color: white;
   border-radius: 20px;
-`;
-
-const SocialImage = styled.img`
-  width: 20px;
-  height: 20px;
-  margin-left: 20px;
 `;
 
 export default Navbar;
