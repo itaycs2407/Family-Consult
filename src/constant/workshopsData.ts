@@ -24,21 +24,29 @@ export const workshopsInfo: Array<WorkshopInfo> = [
   {
     key: "parents",
     title: "הרצאות וסדנאות להורים",
+    description:
+      "הרצאות וסדנאות מגוונות בנושאים שונים מעולם ההורות, לקבוצות פרטיות ולארגונים, בהתאמה לצורכי הקבוצה",
     image: becomingParents,
   },
   {
     key: "parentsPrepare",
     title: "הכנה להורות",
+    description:
+      "סדנה חשובה להורים לעתיד הכוללת הכנה, מידע וכלים מעשיים להתמודדות עם התקופה הצפויה והאתגרים הטמונים בה",
     image: parents,
   },
   {
     key: "natureMothers",
     title: "מעגלי אמהות לאחר לידה בטבע",
+    description:
+      "מעגלי אמהות אחת לשבוע בחיק הטבע ליצירת זמן איכותי לאם ולתינוק וקבלת כלים חשובים להתנהלות נכונה ולהתפתחות התינוק",
     image: mothers,
   },
   {
     key: "mothers",
     title: "מפגשי אמהות לאחר לידה",
+    description:
+      "מפגשים חווייתייים ומעצימים אחת לשבוע, לאם ולתינוק באווירה נעימה ועם המון ערך וכלים מעשיים",
     image: defaultImage,
   },
 ];

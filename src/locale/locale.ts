@@ -62,6 +62,7 @@ const translate: any = {
     personalConsultSumUp: "אל תשארו עם האתגרים לבד",
     personalConsultFinalBullets: [],
     workshopSinglePageRedirectToContact: "להרשמה ופרטים נוספים",
+    sendDetails: "להשארת פרטים",
     consultRedirectToContact: "להפנייה",
     workshopsHeader: "הסדנאות שלי",
     emailSendConfirmation: "ההודעה נשלחה בהצלחה",
