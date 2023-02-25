@@ -72,3 +72,7 @@ export const SumUpItem = styled.div`
   border-radius: 10px;
   animation: ${BreatheAnimation} 3s infinite;
 `;
+
+export const SpaceLine = styled.div`
+  height: 20px;
+`;

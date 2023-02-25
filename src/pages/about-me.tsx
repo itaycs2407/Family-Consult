@@ -5,6 +5,7 @@ import HilaPersonal from "../assets/hilaHome.jpg";
 import second from "../assets/homepage/middle.png";
 import { keyframes } from "@emotion/react";
 import { deviceMax } from "../constant/constant";
+import { aboutMe } from "../constant/aboutMe";
 
 const AboutMe: React.FC = () => {
   const subTitle = <span> מומחית לגיל הרך MA יועצת משפחתית </span>;
@@ -31,34 +32,13 @@ const AboutMe: React.FC = () => {
         <AbsoluteStyledImage src={HilaPersonal} alt={second} />
 
         <Description>
-          <Sentence>
-            נעים להכיר, שמי הילה כהן. <br />
-            יועצת משפחתית מוסמכת המתמחה בגיל הרך.
-          </Sentence>
-          <Sentence>
-            נשואה ואמא לשלושה ילדים. בהשכלתי בעלת תואר שני מתאם המכללה האקדמית
-            תל אביב יפו בלימודי משפחה בהתמחות בייעוץ למשפחות ותואר ראשון בחינוך
-            לגיל הרך.
-          </Sentence>
-          <Sentence>
-            יועצת בגישה מערכתית, השמה במוקד ההתערבות את המערכת המשפחתית - הקשרים
-            ומערכות היחסים בין חברי המשפחה. הייעוץ מדויק וממוקד מטרה ולכן גם קצר
-            מועד.
-          </Sentence>
-          <Sentence>
-            מלווה ומייעצת להורים לקראת המעבר להורות ובהורות, מעבירה סדנאות
-            והרצאות פרטיות ומנחת מעגלי אימהות בחופשת לידה.
-          </Sentence>
-          <Sentence>
-            בעלת ניסיון רב בעבודה עם ילדים, הורים וצוותים חינוכיים.
-          </Sentence>
-          <Sentence>
-            אני מזמינה אתכם לצאת יחד לדרך משמעותית ומקדמת להורות המיטבית
-            והייחודית שלכם.
-          </Sentence>
-
-          <Sentence>שלכם,</Sentence>
-          <Sentence> הילה כהן</Sentence>
+          {aboutMe.map((line, index) => {
+            return (
+              <Sentence key={index} bold={line.bold}>
+                {line.content}
+              </Sentence>
+            );
+          })}
         </Description>
       </UpperContent>
     </FadeInContainer>
@@ -78,8 +58,9 @@ const Content = styled.div`
   text-align: right;
 `;
 
-const Sentence = styled.div`
+const Sentence = styled.div<{ bold?: boolean }>`
   margin-top: 10px;
+  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
 `;
 
 const CardContainer = styled.div`
@@ -105,7 +86,7 @@ const UpperContent = styled(CardContainer)`
 
 const Description = styled.div`
   margin-top: 70px;
-  width: 40%;
+  width: 55%;
   position: absolute;
   top: 100%;
   right: 10%;

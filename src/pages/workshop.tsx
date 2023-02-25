@@ -4,6 +4,7 @@ import {
   FadeInContainer,
   Header,
   ImageContainer,
+  SpaceLine,
   StyledButton,
   StyledImage,
 } from "../constant/style";
@@ -12,6 +13,9 @@ import { deviceMax } from "../constant/constant";
 import { StyledImageContainer } from "./home";
 import { workshopsData } from "../constant/workshopsData";
 import ContactUs from "../components/shred/ContactUs";
+import Tool, { ToolsProps } from "../components/shred/Tool";
+import Card, { CardProps } from "../components/shred/Card";
+import Bullet from "../components/bullet";
 
 const Workshop: React.FC = () => {
   useEffect(() => {
@@ -25,6 +29,7 @@ const Workshop: React.FC = () => {
 
   // @ts-ignore
   const workshopData = workshopsData[workshopKey];
+  const { withBullet } = workshopData;
 
   return (
     <FadeInContainer>
@@ -41,25 +46,84 @@ const Workshop: React.FC = () => {
       </StyledImageContainer>
       <Header>{workshopData.header}</Header>
       <Content>
-        {workshopData.newContentPromo.map(
-          (
-            line: {
-              content: string;
-              bold: boolean;
-              color?: string;
-            },
-            index: number
-          ) => {
-            return (
-              <Title key={index} bold={line.bold} color={line.color}>
-                {line.content}
-              </Title>
-            );
-          }
+        {workshopData.newContentPromo && (
+          <>
+            {workshopData.newContentPromo.map(
+              (
+                line: {
+                  content: string;
+                  bold: boolean;
+                  color?: string;
+                },
+                index: number
+              ) => {
+                return (
+                  <Title key={index} bold={line.bold} color={line.color}>
+                    {line.content === "" ? <SpaceLine /> : line.content}
+                  </Title>
+                );
+              }
+            )}
+          </>
         )}
       </Content>
-      <ToolsContainer>this is the tools container</ToolsContainer>
-      <SumUpContainer></SumUpContainer>
+      {workshopData.tools && (
+        <Tools>
+          <Title>{workshopData.tools.header.content}</Title>
+          <ToolsWrapper>
+            {workshopData.tools.toolsData.map(
+              (tool: ToolsProps, index: number) => (
+                <Tool
+                  key={index}
+                  content={tool.content}
+                  title={tool.title}
+                  icon={tool.icon}
+                />
+              )
+            )}
+          </ToolsWrapper>
+        </Tools>
+      )}
+      {workshopData.cards && (
+        <Cards>
+          <Title>{workshopData.cards.header.content}</Title>
+          <CardsWrapper>
+            {workshopData.cards.cardsData.map(
+              (card: CardProps, index: number) => (
+                <Card
+                  key={index}
+                  title={card.title}
+                  content={card.content}
+                  image={card.image}
+                />
+              )
+            )}
+          </CardsWrapper>
+        </Cards>
+      )}
+      {workshopData.content && (
+        <BulletsContainer>
+          {workshopData.content.map((line: string, index: number) =>
+            withBullet ? (
+              <Bullet key={index} title={line} />
+            ) : (
+              <Title key={index}>{line}</Title>
+            )
+          )}
+        </BulletsContainer>
+      )}
+
+      {workshopData.sumUp && (
+        <SumUpContainer>
+          {workshopData.sumUp.map(
+            (line: { content: string }, index: number) => (
+              <div key={index}>
+                {line.content === "" ? <SpaceLine /> : line.content}
+              </div>
+            )
+          )}
+        </SumUpContainer>
+      )}
 
       <ContactUs workshopKey={workshopKey} />
     </FadeInContainer>
@@ -96,12 +160,49 @@ export const ResponsiveImage = styled.img`
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
 `;
 
-const ToolsContainer = styled.div`
+const Tools = styled.div`
   background-color: #fde2e4ff;
-  height: 100%;
   display: flex;
+  gap: 20px;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 20px;
   width: 100%;
 `;
-const SumUpContainer = styled.div``;
+
+const Cards = styled.div`
+  background-color: #fde2e4ff;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+`;
+
+const ToolsWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
+const CardsWrapper = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+`;
+
+const SumUpContainer = styled.div`
+  text-align: center;
+  direction: rtl;
+`;
+
+const BulletsContainer = styled.div`
+  background-color: #fde2e4ff;
+  width: 100%;
+  align-self: flex-end;
+  padding: 0 12%;
+`;
+
 export default Workshop;

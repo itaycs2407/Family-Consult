@@ -20,6 +20,8 @@ import Mother1 from "../assets/workshop/mothers/mothers1.png";
 import Mother2 from "../assets/workshop/mothers/mothers2.png";
 import Mother3 from "../assets/workshop/mothers/mothers3.png";
 
+import { ReactComponent as A } from "../assets/homepage/consult.svg";
+
 export const workshopsInfo: Array<WorkshopInfo> = [
   {
     key: "parents",
@@ -60,14 +62,26 @@ export const workshopsData = {
     images: [parents1, parents2, parents3],
     header: getHeader("parents"),
     withBullet: true,
-    withSumUpItems: true,
-    sumUpItems: ["מותאם לצרכי הקבוצה", "בזום או אצלכם", "פרקטי וחוויתי"],
-    contentPromo: [
-      "חווית הההורות מזמנת לנו רגעים מספקים אך גם דילומות ואתגרים. בואו להתמודד איתם יחד!",
-      "מגוון סדנאות חויתיות המעניקות כלים פרקטים להורות מיטיבית.",
-      "הסדנאות מותאמות לצורכי הקבוצה וניתן להזמין סדנה של כמה מפגשים או הרצאה בודדת.",
-      "מתאים לארגונים ולקבוצות פרטיות.",
+    newContentPromo: [
+      {
+        content: "להיות הורים זה התפקיד הכי חשוב ומשמעותי שקיבלנו,",
+        bold: false,
+      },
+      { content: "אבל חייבים להודות שלא הכל ורוד ונצנצים...", bold: false },
+      { content: "חוויית ההורות אמנם מספקת לנו המון רגעים יפים", bold: true },
+      {
+        content: "אך גם מציפה הרבה דילמות ואתגרים שלא הכרנו קודם.",
+        bold: true,
+      },
+      { content: "כדי להתמודד עם הקשיים הללו,", bold: false },
+      { content: "יצרתי סדרת סדנאות והרצאות להורים", bold: false },
+      { content: "המעניקה כלים יישומיים וחשובים", bold: false },
+      { content: "להתנהלות נכונה ולשיפור האווירה בבית.", bold: false },
+      { content: "הסדנאות מתאימות לארגונים ולקבוצות פרטיות,", bold: true },
+      { content: "ומותאמות לצורכי הקבוצה.", bold: true },
+      { content: "ניתן להזמין סדנה של כמה מפגשים או הרצאה בודדת.", bold: true },
     ],
+
     content: [
       "העצמת הסמכות ההורית",
       " גבולות ואווירה נעימה בבית",
@@ -117,7 +131,7 @@ export const workshopsData = {
       header: { content: "הכלים שתקבלו בסדנה", color: "pink" },
       toolsData: [
         {
-          icon: "",
+          icon: <A height="50px" width="50px" />,
           title: { content: "הפחתת המתח", bold: true },
           content: {
             content:
@@ -125,7 +139,7 @@ export const workshopsData = {
           },
         },
         {
-          icon: "",
+          icon: <A height="50px" width="50px" />,
           title: { content: "הכנה לעתיד לבוא", bold: true },
           content: {
             content:
@@ -133,7 +147,7 @@ export const workshopsData = {
           },
         },
         {
-          icon: "",
+          icon: <A height="50px" width="50px" />,
           title: { content: "בניית תקשורת זוגית טובה", bold: true },
           content: {
             content:
@@ -141,7 +155,7 @@ export const workshopsData = {
           },
         },
         {
-          icon: "",
+          icon: <A height="50px" width="50px" />,
           title: {
             content: "התמודדות נכונה עם התקופה הראשונה של התינוק",
             bold: true,
@@ -172,16 +186,89 @@ export const workshopsData = {
   natureMothers: {
     images: [natureMother1, natureMother2, natureMother3],
     header: getHeader("natureMothers"),
-    withBullet: false,
-    withSumUpItems: false,
-    contentPromo: [],
-    sumUpItems: [],
-    content: [
-      "נמצאת לאחר לידה ? נמאס לך להסתובב בקניונים? מחפשת מקום שלך יהיה נעים וכיף להגיע אליו ושבו אפשר להתייעץ לחלוק חוויות ולקבל ידע מקצועי ?",
-      "הצטרפי למעגלי אמהות בטבע - זמן איכות שלך ושל תינוקך בחיק הטבע.",
-      "השהות בטבע יכולה לתרום לתחושת הרווחה האישית שלך בנוסף , תינוקות רבים רגועים יותר בחוץ. החשיפה לעולם הטבע  כבר בגיל הרך  תורמת לפיתוח כושר ההתבוננות והחקר, מפתחת  עצמאות, סקרנות ויוזמה.",
-      "אנו ניפגש בבקרים, אחת לשבוע אמהות ותינוקות. החלק ראשון יוקדש לך אמא יקרה, לאתגרים העומדים לפניך, השינוי וההפיכה לאם, חווית הלידה, זוגיות לאחר לידה איך יוצרים איזון ומוצאים גם זמן לעצמי וגם לתינוק? ועוד. החלק השני יוקדש לפעילות חוויתית עם התינוק.ת שבה תקבלי כלים מעשיים העוסקים בהתפתחות תינוקך.",
-      "בפרויקט זה אני משלבת בין הכשרתי כיועצת משפחות והן בהכשרתי כמורת דרך מוסמכת בחלק מסידרת המפגשים נערוך גם טיול עגלות.",
+    newContentPromo: [
+      { content: "ילדת? מזל טוב!", bold: false },
+      { content: "נמאס לך להסתובב בקניונים?", bold: false },
+      { content: "", bold: false },
+      {
+        content:
+          "מחפשת מקום שלך יהיה נעים וכיף להגיע עליו, שבו אפשר להתייעץ לחלוק",
+        bold: false,
+      },
+      { content: "חוויות ולקבל ידע מקצועי?", bold: false },
+      { content: "הצטרפי למעגלי אמהות בטבע,", bold: true, color: "pink" },
+      {
+        content: "לזמן איכות מעשיר שלך ושל תינוקך",
+        bold: true,
+        color: "pink",
+      },
+      {
+        content: "באווירה נעימה, במקום בו אפשר להתייעץ,",
+        bold: true,
+        color: "pink",
+      },
+      {
+        content: "לחלוק חוויות ולקבל ידע מקצועי.",
+        bold: true,
+        color: "pink",
+      },
+      { content: "" },
+      { content: "" },
+      { content: "" },
+      { content: "אחרי לידה, לא קל לנו." },
+      { content: "הגוף כואב, הלילות השתנו," },
+      { content: "אין זמן לעצמנו והכל מרגיש בבלאגן." },
+      {
+        content: "השהות בטבע יכולה לתרום לתחושת הרווחה האישית שלך",
+        bold: true,
+      },
+      { content: "וגם להרגיע את התינוק ולהעניק לך זמן לנשום.", bold: true },
+      { content: "מעבר לזה, החשיפה לעולם הטבע כבר בגיל הרך", bold: true },
+      { content: "תורמת לפיתוח כושר ההתבוננות והחקר,", bold: true },
+      { content: "מפתחת עצמאות, סקרנות ויוזמה.", bold: true },
+    ],
+    cards: {
+      header: { content: "אז מה המפגש כולל:", color: "pink" },
+      cardsData: [
+        {
+          title: {
+            content: "את במרכז!",
+          },
+          content: {
+            content:
+              "החלק הראשון במפגש יוקדש לך אמא יקרה,\n" +
+              "לאתגרים העומדים בפנייך,\n" +
+              "השינוי וההפיכה לאם,\n" +
+              "חוויית הלידה, זוגיות לאחר לידה,\n" +
+              "איך ליצור איזון ולמצוא גם זמן לעצמך וגם לתינוק,",
+          },
+          image: "string",
+        },
+        {
+          title: {
+            content: "חוויות משותפות",
+          },
+          content: {
+            content:
+              "החלק השני של המפגש יוקדש לפעילות חוויתית עם התינוק\n" +
+              "בה תצברי רגעים יפים וזכרונות קסומים\n" +
+              "וגם תקבלי כלי מעשיים העוסקים בהתפתחות תינוקך.",
+          },
+          image: "string",
+        },
+      ],
+    },
+
+    sumUp: [
+      {
+        content: "רוצה להעניק לעצמך בוקר מפנק ורגוע בחיק הטבע אחת לשבוע?",
+        color: "pink",
+      },
+      {
+        content:
+          "רוצה להיות חלק ממעגל אמהות שחווה את אותן חוויות ואתגרים כמוך?",
+        color: "pink",
+      },
     ],
   },
   mothers: {
