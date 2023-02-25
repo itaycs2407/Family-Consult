@@ -130,7 +130,7 @@ const Workshop: React.FC = () => {
   );
 };
 
-const Title = styled.div<{ bold?: boolean; color?: string }>`
+export const Title = styled.div<{ bold?: boolean; color?: string }>`
   direction: rtl;
   margin-bottom: 10px;
   font-weight: ${({ bold }) => (bold ? "bold" : "normal")};

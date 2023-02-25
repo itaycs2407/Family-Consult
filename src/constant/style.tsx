@@ -57,6 +57,7 @@ export const StyledButton = styled.button`
 
 export const Header = styled.h1`
   text-align: center;
+  direction: rtl;
   color: #ff0a78;
 `;
 

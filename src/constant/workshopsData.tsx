@@ -20,7 +20,10 @@ import Mother1 from "../assets/workshop/mothers/mothers1.png";
 import Mother2 from "../assets/workshop/mothers/mothers2.png";
 import Mother3 from "../assets/workshop/mothers/mothers3.png";
 
-import { ReactComponent as A } from "../assets/homepage/consult.svg";
+import { ReactComponent as FutureToCome } from "../assets/workshop/parentsPrepare/futureToCome.svg";
+import { ReactComponent as MartialComm } from "../assets/workshop/parentsPrepare/martialComm.svg";
+import { ReactComponent as Right } from "../assets/workshop/parentsPrepare/right.svg";
+import { ReactComponent as StressRest } from "../assets/workshop/parentsPrepare/stressRest.svg";
 
 export const workshopsInfo: Array<WorkshopInfo> = [
   {
@@ -131,7 +134,7 @@ export const workshopsData = {
       header: { content: "הכלים שתקבלו בסדנה", color: "pink" },
       toolsData: [
         {
-          icon: <A height="50px" width="50px" />,
+          icon: <StressRest height="50px" width="50px" />,
           title: { content: "הפחתת המתח", bold: true },
           content: {
             content:
@@ -139,7 +142,7 @@ export const workshopsData = {
           },
         },
         {
-          icon: <A height="50px" width="50px" />,
+          icon: <FutureToCome height="50px" width="50px" />,
           title: { content: "הכנה לעתיד לבוא", bold: true },
           content: {
             content:
@@ -147,7 +150,7 @@ export const workshopsData = {
           },
         },
         {
-          icon: <A height="50px" width="50px" />,
+          icon: <MartialComm height="50px" width="50px" />,
           title: { content: "בניית תקשורת זוגית טובה", bold: true },
           content: {
             content:
@@ -155,7 +158,7 @@ export const workshopsData = {
           },
         },
         {
-          icon: <A height="50px" width="50px" />,
+          icon: <Right height="50px" width="50px" />,
           title: {
             content: "התמודדות נכונה עם התקופה הראשונה של התינוק",
             bold: true,
@@ -213,7 +216,7 @@ export const workshopsData = {
         color: "pink",
       },
       { content: "" },
-      { content: "" },
+      { content: "אבל למה טבע?", bold: true },
       { content: "" },
       { content: "אחרי לידה, לא קל לנו." },
       { content: "הגוף כואב, הלילות השתנו," },

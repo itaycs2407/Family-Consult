@@ -7,18 +7,20 @@ export interface ToolsProps {
   content: {
     content: string;
   };
+  height?: number;
 }
-const Tool: React.FC<ToolsProps> = ({ icon, title, content }) => (
-  <Container>
+const Tool: React.FC<ToolsProps> = ({ icon, title, content, height }) => (
+  <Container height={height}>
     <div>{icon}</div>
     <Header bold={title.bold}>{title.content}</Header>
     <div>{content.content}</div>
   </Container>
 );
 
-const Container = styled.div`
+const Container = styled.div<{ height?: number }>`
   width: 250px;
-  height: 200px;
+  min-height: 200px;
+  height: ${({ height }) => (height ? `${height}px` : "fit-content")};
   padding: 15px;
   direction: rtl;
   text-align: center;

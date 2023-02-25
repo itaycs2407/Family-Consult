@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import styled from "@emotion/styled/macro";
 import { Fadein, FadeInContainer } from "../constant/style";
 import HilaPersonal from "../assets/hilaHome.jpg";
+import AboutMe1 from "../assets/aboutMe1.svg";
 import second from "../assets/homepage/middle.png";
 import { keyframes } from "@emotion/react";
 import { deviceMax } from "../constant/constant";
 import { aboutMe } from "../constant/aboutMe";
+import ContactUs from "../components/shred/ContactUs";
 
 const AboutMe: React.FC = () => {
   const subTitle = <span> מומחית לגיל הרך MA יועצת משפחתית </span>;
@@ -21,34 +23,43 @@ const AboutMe: React.FC = () => {
   }, []);
 
   return (
-    <FadeInContainer>
-      <UpperContent>
-        <Content>
-          <H1>הילה כהן</H1>
-          <H2>{subTitle}</H2>
-          <ResponsiveSubTitle>{responsiveSubTitle}</ResponsiveSubTitle>
-        </Content>
+    <>
+      <FadeInContainer>
+        <UpperContent>
+          <Content>
+            <H1>הילה כהן</H1>
+            <H2>{subTitle}</H2>
+            <ResponsiveSubTitle>{responsiveSubTitle}</ResponsiveSubTitle>
+          </Content>
 
-        <AbsoluteStyledImage src={HilaPersonal} alt={second} />
+          <AbsoluteStyledImage src={HilaPersonal} alt={second} />
+          <AbsoluteStyledImage
+            src={AboutMe1}
+            alt={second}
+            top={480}
+            left={10}
+          />
 
-        <Description>
-          {aboutMe.map((line, index) => {
-            return (
-              <Sentence key={index} bold={line.bold}>
-                {line.content}
-              </Sentence>
-            );
-          })}
-        </Description>
-      </UpperContent>
-    </FadeInContainer>
+          <Description>
+            {aboutMe.map((line, index) => {
+              return (
+                <Sentence key={index} bold={line.bold} color={line.color}>
+                  {line.content}
+                </Sentence>
+              );
+            })}
+            <ContactUs />
+          </Description>
+        </UpperContent>
+      </FadeInContainer>
+    </>
   );
 };
 
-const AbsoluteStyledImage = styled.img`
+export const AbsoluteStyledImage = styled.img<{ top?: number; left?: number }>`
   position: absolute;
-  top: 15%;
-  left: 10%;
+  top: ${(props) => (props.top ? props.top : 15)}%;
+  left: ${(props) => (props.left ? props.left : 10)}%;
   border-radius: 20px;
   width: 30%;
   animation: ${Fadein} 0.75s;
@@ -58,9 +69,10 @@ const Content = styled.div`
   text-align: right;
 `;
 
-const Sentence = styled.div<{ bold?: boolean }>`
+const Sentence = styled.div<{ bold?: boolean; color?: string }>`
   margin-top: 10px;
   font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
+  color: ${({ color }) => color ?? "black"};
 `;
 
 const CardContainer = styled.div`
