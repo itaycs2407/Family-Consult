@@ -15,7 +15,6 @@ import { workshopsData } from "../constant/workshopsData";
 import ContactUs from "../components/shred/ContactUs";
 import Tool, { ToolsProps } from "../components/shred/Tool";
 import Card, { CardProps } from "../components/shred/Card";
-import Bullet from "../components/bullet";
 
 const Workshop: React.FC = () => {
   useEffect(() => {
@@ -29,7 +28,6 @@ const Workshop: React.FC = () => {
 
   // @ts-ignore
   const workshopData = workshopsData[workshopKey];
-  const { withBullet } = workshopData;
 
   return (
     <FadeInContainer>
@@ -100,17 +98,6 @@ const Workshop: React.FC = () => {
             )}
           </CardsWrapper>
         </Cards>
-      )}
-      {workshopData.content && (
-        <BulletsContainer>
-          {workshopData.content.map((line: string, index: number) =>
-            withBullet ? (
-              <Bullet key={index} title={line} />
-            ) : (
-              <Title key={index}>{line}</Title>
-            )
-          )}
-        </BulletsContainer>
       )}
 
       {workshopData.sumUp && (
@@ -185,6 +172,9 @@ const Cards = styled.div`
 const ToolsWrapper = styled.div`
   display: flex;
   gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
 `;
 
 const CardsWrapper = styled.div`
@@ -196,13 +186,6 @@ const CardsWrapper = styled.div`
 const SumUpContainer = styled.div`
   text-align: center;
   direction: rtl;
-`;
-
-const BulletsContainer = styled.div`
-  background-color: #fde2e4ff;
-  width: 100%;
-  align-self: flex-end;
-  padding: 0 12%;
 `;
 
 export default Workshop;

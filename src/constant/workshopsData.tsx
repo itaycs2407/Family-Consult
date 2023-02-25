@@ -25,6 +25,15 @@ import { ReactComponent as MartialComm } from "../assets/workshop/parentsPrepare
 import { ReactComponent as Right } from "../assets/workshop/parentsPrepare/right.svg";
 import { ReactComponent as StressRest } from "../assets/workshop/parentsPrepare/stressRest.svg";
 
+import { ReactComponent as ChildrenAsParents } from "../assets/workshop/parents/childrenAsPartners.svg";
+import { ReactComponent as Communication } from "../assets/workshop/parents/communication.svg";
+import { ReactComponent as Faith } from "../assets/workshop/parents/faith.svg";
+import { ReactComponent as GardenMature } from "../assets/workshop/parents/gardenMature.svg";
+import { ReactComponent as NiceClimate } from "../assets/workshop/parents/niceClimate.svg";
+import { ReactComponent as PowerParents } from "../assets/workshop/parents/powerParent.svg";
+import { ReactComponent as Rehab } from "../assets/workshop/parents/rehab.svg";
+import { ReactComponent as Sex } from "../assets/workshop/parents/sex.svg";
+
 export const workshopsInfo: Array<WorkshopInfo> = [
   {
     key: "parents",
@@ -64,7 +73,6 @@ export const workshopsData = {
   parents: {
     images: [parents1, parents2, parents3],
     header: getHeader("parents"),
-    withBullet: true,
     newContentPromo: [
       {
         content: "להיות הורים זה התפקיד הכי חשוב ומשמעותי שקיבלנו,",
@@ -84,19 +92,77 @@ export const workshopsData = {
       { content: "ומותאמות לצורכי הקבוצה.", bold: true },
       { content: "ניתן להזמין סדנה של כמה מפגשים או הרצאה בודדת.", bold: true },
     ],
-
-    content: [
-      "העצמת הסמכות ההורית",
-      " גבולות ואווירה נעימה בבית",
-      "כיצד להאמין בילד ולסמוך עליו",
-      "ילדים כשותפים במשפחה",
-      "יצירת תקשורת משמעותית",
-      "מניות בגיל הרך",
-      "גמילה מחיתולים",
-      "הסתגלות לגן",
-      "מעבר מהגן לכיתה א",
-      "חופשות עם ילדים",
-    ],
+    tools: {
+      header: {
+        content: "הסדנאות וההרצאות מועברות בנושאים הבאים:",
+        color: "pink",
+      },
+      toolsData: [
+        {
+          icon: <PowerParents height="50px" width="50px" />,
+          title: { content: "העצמת הסמכות ההורית", bold: true },
+          content: {
+            content:
+              "הבנת הכוח שלנו כהורים ויצירת סמכות הורית בבית תוך חיזוק מערכת היחסים עם הילד",
+          },
+        },
+        {
+          icon: <NiceClimate height="50px" width="50px" />,
+          title: { content: "גבולות ואווירה נעימה בבית", bold: true },
+          content: {
+            content:
+              "כיצד להציב גבולות בלי לגרור תגובות נגד, ולשפר את האווירה הכללית בבית",
+          },
+        },
+        {
+          icon: <Faith height="50px" width="50px" />,
+          title: { content: "אמון בילד", bold: true },
+          content: {
+            content:
+              "כיצד להאמין בילד ולסמוך עליו וכך לחזק אצלו את תחושת המסוגלות והביטחון העצמי.",
+          },
+        },
+        {
+          icon: <ChildrenAsParents height="50px" width="50px" />,
+          title: { content: "ילדים כשותפים במשפחה", bold: true },
+          content: {
+            content:
+              "כיצד להעניק לילדים מקום של כבוד ולשתף אותם בהתנהלות המשפחתית וכך להגדיל את הביטחון העצמי ויכולת המסוגלות שלהם",
+          },
+        },
+        {
+          icon: <Communication height="50px" width="50px" />,
+          title: { content: "יצירת תקשורת משמעותית", bold: true },
+          content: {
+            content:
+              "כיצד לנהל עם הילד תקשורת משמעותית, מכילה ופתוחה שתלווה אתכם שנים קדימה",
+          },
+        },
+        {
+          icon: <Sex height="50px" width="50px" />,
+          title: { content: "מיניות בגיל הרך", bold: true },
+          content: {
+            content: "נעסוק בשאלת המיניות בגיל הרך ונלמד איך להתמודד עם הנושא",
+          },
+        },
+        {
+          icon: <Rehab height="50px" width="50px" />,
+          title: { content: "גמילה מחיתולים", bold: true },
+          content: {
+            content:
+              "השלב ממנו כל הורה מפחד! נלמד איך לעבור את התקופה בצורה הטובה והמהירה ביותר",
+          },
+        },
+        {
+          icon: <GardenMature height="50px" width="50px" />,
+          title: { content: "הסתגלות לגן", bold: true },
+          content: {
+            content:
+              "נקבל כלים מעשיים וחשובים כדי להקל את המעבר של הילד לגן ולאפשר לו להסתגל בצורה טובה",
+          },
+        },
+      ],
+    },
   },
   parentsPrepare: {
     images: [parentsPrepare1, parentsPrepare2, parentsPrepare3],
