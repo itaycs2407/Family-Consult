@@ -109,7 +109,7 @@ const Home: React.FC = () => {
               }
               title={item.title}
               content={item.content}
-              height={270}
+              height={330}
             />
           ))}
         </WhyWithMeContainer>
