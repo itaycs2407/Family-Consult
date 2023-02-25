@@ -200,6 +200,17 @@ export const workshopsData = {
       header: { content: "הכלים שתקבלו בסדנה", color: "pink" },
       toolsData: [
         {
+          icon: <Right height="50px" width="50px" />,
+          title: {
+            content: "התמודדות נכונה עם התקופה הראשונה של התינוק",
+            bold: true,
+          },
+          content: {
+            content:
+              "התקופה הראשונה של התינוק בבית היא מאתגרת ומרגשת כאחד! בסדנה נקבל כלים פרקטיים להתמודדות מיטבית בתקופה הזו.",
+          },
+        },
+        {
           icon: <StressRest height="50px" width="50px" />,
           title: { content: "הפחתת המתח", bold: true },
           content: {
@@ -221,17 +232,6 @@ export const workshopsData = {
           content: {
             content:
               "נבין כיצד לבנות תקשורת זוגית טובה כבסיס חזק ויציב למשפחה המתרחבת.",
-          },
-        },
-        {
-          icon: <Right height="50px" width="50px" />,
-          title: {
-            content: "התמודדות נכונה עם התקופה הראשונה של התינוק",
-            bold: true,
-          },
-          content: {
-            content:
-              "התקופה הראשונה של התינוק בבית היא מאתגרת ומרגשת כאחד! בסדנה נקבל כלים פרקטיים להתמודדות מיטבית בתקופה הזו.",
           },
         },
       ],
