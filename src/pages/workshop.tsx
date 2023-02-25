@@ -1,22 +1,19 @@
 import React, { useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import { workshopsData } from "../constant/workshopsData";
+import { useParams } from "react-router-dom";
 import {
   FadeInContainer,
   Header,
   ImageContainer,
   StyledButton,
   StyledImage,
-  SumUpItem,
 } from "../constant/style";
 import styled from "@emotion/styled/macro";
-import { locale } from "../locale/locale";
 import { deviceMax } from "../constant/constant";
 import { StyledImageContainer } from "./home";
-import Bullet from "../components/bullet";
+import { workshopsData } from "../constant/workshopsData";
+import ContactUs from "../components/shred/ContactUs";
 
 const Workshop: React.FC = () => {
-  const history = useHistory();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -28,7 +25,6 @@ const Workshop: React.FC = () => {
 
   // @ts-ignore
   const workshopData = workshopsData[workshopKey];
-  const { withBullet, withSumUpItems } = workshopData;
 
   return (
     <FadeInContainer>
@@ -43,54 +39,38 @@ const Workshop: React.FC = () => {
           })}
         </ImageContainer>
       </StyledImageContainer>
-
       <Header>{workshopData.header}</Header>
       <Content>
-        {(workshopData.contentPromo || []).map(
-          (line: string, index: number) => (
-            <Title key={index}>{line}</Title>
-          )
-        )}
-
-        {workshopData.content.map((line: string, index: number) =>
-          withBullet ? (
-            <Bullet key={index} title={line} />
-          ) : (
-            <Title key={index}>{line}</Title>
-          )
+        {workshopData.newContentPromo.map(
+          (
+            line: {
+              content: string;
+              bold: boolean;
+              color?: string;
+            },
+            index: number
+          ) => {
+            return (
+              <Title key={index} bold={line.bold} color={line.color}>
+                {line.content}
+              </Title>
+            );
+          }
         )}
       </Content>
+      <ToolsContainer>this is the tools container</ToolsContainer>
+      <SumUpContainer></SumUpContainer>
 
-      {withSumUpItems && (
-        <SumUpContainer>
-          {workshopData.sumUpItems.map((item: string, index: number) => (
-            <SumUpItem key={index}>{item}</SumUpItem>
-          ))}
-        </SumUpContainer>
-      )}
-      <WorkshopStyledButton
-        onClick={() => history.push(`/contact/${workshopKey}`)}
-      >
-        {locale("workshopSinglePageRedirectToContact")}
-      </WorkshopStyledButton>
+      <ContactUs workshopKey={workshopKey} />
     </FadeInContainer>
   );
 };
 
-const SumUpContainer = styled.div`
-  display: flex;
-  gap: 50px;
-
-  @media screen and ${deviceMax.mobileL} {
-    display: none;
-    flex-direction: column;
-    gap: 20px;
-  }
-`;
-
-const Title = styled.div`
+const Title = styled.div<{ bold?: boolean; color?: string }>`
   direction: rtl;
   margin-bottom: 10px;
+  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
+  color: ${({ color }) => (color ? color : "black")};
 `;
 
 const Content = styled.div`
@@ -98,6 +78,7 @@ const Content = styled.div`
   margin: 0 0 5%;
   display: flex;
   flex-direction: column;
+  align-self: flex-end;
   padding: 0 12%;
 
   @media screen and ${deviceMax.mobileL} {
@@ -115,4 +96,12 @@ export const ResponsiveImage = styled.img`
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
 `;
 
+const ToolsContainer = styled.div`
+  background-color: #fde2e4ff;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
+const SumUpContainer = styled.div``;
 export default Workshop;

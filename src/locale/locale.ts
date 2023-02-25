@@ -66,6 +66,8 @@ const translate: any = {
     consultRedirectToContact: "להפנייה",
     workshopsHeader: "הסדנאות שלי",
     emailSendConfirmation: "ההודעה נשלחה בהצלחה",
+    contactUsTitle:
+      "לפרטים נוספים והצטרפות, השאירו שם, טלפון ומייל ואחזור אליכם תוך 24 שעות",
   },
 };
 

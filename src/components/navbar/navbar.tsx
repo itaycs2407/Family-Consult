@@ -11,11 +11,14 @@ const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
-      <StyledStrip>054-6715252</StyledStrip>
-      <MenuContainer>
-        <WhatsappContainer href="https://wa.me/972587600202" target="_blank">
+      <StyledStrip>
+        <WhatsappContainer href="https://wa.me/972546715252" target="_blank">
           <WhatsappLogo />
         </WhatsappContainer>
+        054-6715252
+      </StyledStrip>
+
+      <MenuContainer>
         <Container>
           <NavbarItemContainer>
             <NavbarItem to="/contact">
@@ -63,7 +66,6 @@ const Container = styled.div`
   min-height: 50px;
   justify-content: center;
   align-items: center;
-  transform: translateX(50%);
   background-color: white;
 `;
 
@@ -72,7 +74,7 @@ export const StyledStrip = styled.div`
   color: #990a43;
   display: flex;
   align-items: center;
-  padding: 5px 0 5px 20px;
+  padding: 3px 0 3px 20px;
   font-size: 18px;
   font-weight: 650;
 
@@ -96,6 +98,7 @@ const NavbarItemContainer = styled.div`
 
 const MenuContainer = styled.div`
   display: flex;
+  justify-content: center;
 `;
 
 const Hamburger = styled(MenuIcon)`
@@ -129,6 +132,7 @@ const WhatsappContainer = styled.a`
   width: 40px;
   height: 40px;
   margin-left: 20px;
+  margin-right: 20px;
 `;
 
 const ResponsiveMenu = styled.div`
