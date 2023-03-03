@@ -6,7 +6,7 @@ import AboutMe1 from "../assets/aboutMe1.svg";
 import second from "../assets/homepage/middle.png";
 import { keyframes } from "@emotion/react";
 import { deviceMax } from "../constant/constant";
-import { aboutMe } from "../constant/aboutMe";
+import { aboutMePart1, aboutMePart2 } from "../constant/aboutMe";
 import ContactUs from "../components/shred/ContactUs";
 
 const AboutMe: React.FC = () => {
@@ -32,41 +32,57 @@ const AboutMe: React.FC = () => {
             <ResponsiveSubTitle>{responsiveSubTitle}</ResponsiveSubTitle>
           </Content>
 
-          <AbsoluteStyledImage src={HilaPersonal} alt={second} />
-          <AbsoluteStyledImage
-            src={AboutMe1}
-            alt={second}
-            top={480}
-            left={10}
-          />
+          <Description backgroundColor={"pink"}>
+            <AbsoluteStyledImage src={HilaPersonal} alt={second} left={15} />
 
-          <Description>
-            {aboutMe.map((line, index) => {
+            {aboutMePart1.map((line, index) => {
               return (
                 <Sentence key={index} bold={line.bold} color={line.color}>
                   {line.content}
                 </Sentence>
               );
             })}
-            <ContactUs />
+          </Description>
+
+          <Description backgroundColor={"blanchedalmond"}>
+            <AbsoluteStyledImage
+              src={AboutMe1}
+              alt={second}
+              left={20}
+              top={10}
+            />
+
+            {aboutMePart2.map((line, index) => {
+              return (
+                <Sentence key={index} bold={line.bold} color={line.color}>
+                  {line.content}
+                </Sentence>
+              );
+            })}
           </Description>
         </UpperContent>
+        <ContactUs />
       </FadeInContainer>
     </>
   );
 };
 
-export const AbsoluteStyledImage = styled.img<{ top?: number; left?: number }>`
+export const AbsoluteStyledImage = styled.img<{
+  top?: number;
+  left?: number;
+}>`
   position: absolute;
   top: ${(props) => (props.top ? props.top : 15)}%;
   left: ${(props) => (props.left ? props.left : 10)}%;
-  border-radius: 20px;
-  width: 30%;
+
+  border-radius: 50px;
+  width: 20%;
   animation: ${Fadein} 0.75s;
 `;
 
 const Content = styled.div`
   text-align: right;
+  padding-right: 10%;
 `;
 
 const Sentence = styled.div<{ bold?: boolean; color?: string }>`
@@ -76,7 +92,6 @@ const Sentence = styled.div<{ bold?: boolean; color?: string }>`
 `;
 
 const CardContainer = styled.div`
-  gap: 20px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -84,26 +99,31 @@ const CardContainer = styled.div`
 `;
 
 const UpperContent = styled(CardContainer)`
-  position: relative;
+  display: flex;
+  flex-direction: column;
   z-index: 0;
   margin-bottom: 50px;
+  padding-bottom: 50px;
   justify-content: right;
-  align-items: flex-start;
-  padding: 15% 0 0;
-  background-color: #fde2e4ff;
+  align-items: flex-end;
   @media screen and ${deviceMax.mobileL} {
     height: 50px;
   }
 `;
 
-const Description = styled.div`
+const Description = styled.div<{ backgroundColor: string }>`
   margin-top: 70px;
-  width: 55%;
-  position: absolute;
-  top: 100%;
-  right: 10%;
+  width: 100%;
+  position: relative;
+  padding: 5% 10%;
   font-size: 22px;
   direction: rtl;
+  background: ${({ backgroundColor }) => backgroundColor};
+
+  &:last-child {
+    margin-top: 0;
+    padding: 5% 10%;
+  }
   @media screen and ${deviceMax.mobileL} {
     font-size: 12px;
     width: 80%;
@@ -146,9 +166,6 @@ const ResponsiveSubTitle = styled.h2`
   }
 `;
 const H1 = styled.h1`
-  position: absolute;
-  top: 30%;
-  right: 10%;
   animation: ${MoveFromRight} 1s ease-out;
 
   @media screen and ${deviceMax.mobileL} {
@@ -160,9 +177,6 @@ const H1 = styled.h1`
 `;
 
 const H2 = styled.h2`
-  position: absolute;
-  top: 50%;
-  right: 10%;
   animation: ${MoveFromRight} 1s ease-out;
   @media screen and ${deviceMax.mobileL} {
     display: none;

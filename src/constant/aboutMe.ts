@@ -1,4 +1,8 @@
-export const aboutMe = [
+export const aboutMePart1: {
+  content: string;
+  bold?: boolean;
+  color?: string;
+}[] = [
   { content: "הילה כהן, נעים להכיר", bold: false },
   { content: "נשואה ואמא לשלושה ילדים,", bold: false },
   { content: "בעלת תואר ראשון בחינוך לגיל הרך,", bold: false },
@@ -59,9 +63,16 @@ export const aboutMe = [
     bold: false,
   },
   {
-    content: "התכוננו, קראנו, למדנו, ואפילו התנסנו על האחיינים - ",
+    content: "התכוננו, קראנו, למדנו, ואפילו התנסנו על האחיינים",
     bold: false,
   },
+];
+
+export const aboutMePart2: {
+  content: string;
+  bold?: boolean;
+  color?: string;
+}[] = [
   {
     content: "השנים הראשונות של הילד בבית הן המאתגרות ביותר!",
     bold: true,
@@ -123,17 +134,17 @@ export const aboutMe = [
   {
     content: "אני מזמינה אתכם לצאת יחד איתי לדרך משמעותית ומקדמת",
     bold: true,
-    color: "pink",
+    color: "deeppink",
   },
   {
     content: "להורות המיטבית והייחודית שלכם שתיצור אווירה נעימה ורגועה בבית",
     bold: true,
-    color: "pink",
+    color: "deeppink",
   },
   {
     content: "ותעניק לילדים שלכם את הטוב ביותר!",
     bold: true,
-    color: "pink",
+    color: "deeppink",
   },
 ];
 
