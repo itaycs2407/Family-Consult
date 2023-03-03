@@ -22,7 +22,7 @@ import { AbsoluteStyledImage } from "./about-me";
 import { useHistory } from "react-router-dom";
 
 const Home: React.FC = () => {
-  const subTitle = <span> מומחית לגיל הרך MA יועצת משפחתית </span>;
+  const subTitle = <span> הילה כהן, יועצת משפחתית MA מומחית לגיל הרך</span>;
   const responsiveSubTitle = (
     <span>
       MA יועצת משפחתית <br />
@@ -40,8 +40,15 @@ const Home: React.FC = () => {
       <FadeInContainer>
         <UpperContent>
           <Content>
-            <H1>הילה כהן</H1>
-            <H2>{subTitle}</H2>
+            <H1>
+              איך להתקדם להורות המיטבית והייחודית שלכם
+              <br />
+              ולהעניק לילדים שלכם את הטוב ביותר
+            </H1>
+            <H2>
+              <br />
+              {subTitle}
+            </H2>
             <ResponsiveSubTitle>{responsiveSubTitle}</ResponsiveSubTitle>
           </Content>
           <AbsoluteStyledImage src={Heart} alt={second} />
@@ -51,12 +58,15 @@ const Home: React.FC = () => {
           <CardWithImage
             image={Consult}
             redirectText={"להמשך קריאה "}
-            title={"ייעוץ"}
+            title={"ייעוץ - הדרכת הורים"}
             redirectTo={"/personal-consult"}
             content={
-              " אני מאמינה בהדרכה אישית והמותאמת למשפחה שלכם. ביחד ניצור שינוי,\n" +
-              "              נשפר את האווירה בבית וניתן מענה מותאם ומדויק לאתגרים שאיתם אתם\n" +
-              "              מתמודדים"
+              " חוויית ההורות אמנם מספקת לנו המון רגעים יפים \n" +
+              "אך גם מציפה הרבה דילמות ואתגרים שלא הכרנו קודם" +
+              "צריכים ליווי והדרכה בהורות שלכם?\n" +
+              "יש לכם שאלה ספציפית?\n" +
+              "במפגשי ייעוץ פרקטיים, ממוקדים ומותאמים לערכי המשפחה שלכם\n" +
+              "נוכל להגיע לפתרונות בזמן קצר.\n"
             }
           />
 
@@ -77,7 +87,6 @@ const Home: React.FC = () => {
       </FadeInContainer>
 
       <WhoAmI>
-        <AbsoluteStyledImage src={HilaPersonal} />
         <>
           {HomepageAboutMe.map(
             (
@@ -134,6 +143,7 @@ const Button = styled(StyledButton)`
   position: absolute;
   right: 0;
   bottom: 0;
+  margin-bottom: 50px;
   margin-right: 120px;
 `;
 
@@ -149,7 +159,10 @@ const H1 = styled.h1`
 `;
 const H2 = styled.h2`
   position: absolute;
-  top: 50%;
+  direction: rtl;
+  color: red;
+  font-style: italic;
+  top: 60%;
   right: 10%;
   @media screen and ${deviceMax.mobileL} {
     display: none;
@@ -164,22 +177,6 @@ export const StyledImageContainer = styled.div`
   width: 100%;
 `;
 
-// const AbsoluteStyledImage = styled.img`
-//   width: 100%;
-//   height: 350px;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.5);
-//   animation: ${Fadein} 0.75s;
-//
-//   @media screen and ${deviceMax.mobileL} {
-//     width: 200px;
-//     height: 150px;
-//     left: 3%;
-//   }
-// `;
-
 const Content = styled.div`
   text-align: right;
   z-index: 1000;
@@ -191,7 +188,7 @@ const WhyWithMeWrapper = styled.div`
   gap: 50px 100px;
   flex-direction: column;
   justify-content: center;
-  padding: 200px 50px 50px;
+  padding: 50px;
 `;
 
 const WhyWithMeContainer = styled.div`
@@ -212,6 +209,7 @@ const WhoAmI = styled.div`
 const CardContainer = styled.div`
   display: flex;
   height: 350px;
+  padding: 50px;
   width: 100%;
   gap: 50px;
   justify-content: center;
