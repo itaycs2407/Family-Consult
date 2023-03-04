@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "@emotion/styled/macro";
 import { Fadein, FadeInContainer } from "../constant/style";
 import HilaPersonal from "../assets/hilaHome.jpg";
-import AboutMe1 from "../assets/aboutMe1.svg";
+import AboutMe1 from "../assets/aboutMe1.png";
 import second from "../assets/homepage/middle.png";
 import { keyframes } from "@emotion/react";
 import { deviceMax } from "../constant/constant";
@@ -33,7 +33,7 @@ const AboutMe: React.FC = () => {
           </Content>
 
           <Description backgroundColor={"pink"}>
-            <AbsoluteStyledImage src={HilaPersonal} alt={second} left={15} />
+            <AbsoluteStyledImage src={HilaPersonal} alt={second} left={20} />
 
             {aboutMePart1.map((line, index) => {
               return (
@@ -75,7 +75,7 @@ export const AbsoluteStyledImage = styled.img<{
   top: ${(props) => (props.top ? props.top : 15)}%;
   left: ${(props) => (props.left ? props.left : 10)}%;
 
-  border-radius: 50px;
+  border-radius: 100px;
   width: 20%;
   animation: ${Fadein} 0.75s;
 `;

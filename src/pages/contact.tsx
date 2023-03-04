@@ -141,6 +141,7 @@ const Contact = () => {
 
 const Card = styled.div`
   padding: 30px 60px;
+  margin-top: 50px;
   width: 500px;
   border-radius: 15px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);

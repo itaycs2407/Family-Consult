@@ -13,11 +13,10 @@ import parents2 from "../assets/workshop/parents/parents2.png";
 import parents3 from "../assets/workshop/parents/parents3.png";
 
 import natureMother1 from "../assets/workshop/natureMother/natureMother1.png";
-import natureMother2 from "../assets/workshop/natureMother/natureMother2.png";
 import natureMother3 from "../assets/workshop/natureMother/natureMother3.jpg";
 
 import Mother1 from "../assets/workshop/mothers/mothers1.png";
-import Mother2 from "../assets/workshop/mothers/mothers2.png";
+import Mother2 from "../assets/workshop/mothers/mothers2.svg";
 import Mother3 from "../assets/workshop/mothers/mothers3.png";
 
 import { ReactComponent as FutureToCome } from "../assets/workshop/parentsPrepare/futureToCome.svg";
@@ -253,7 +252,7 @@ export const workshopsData = {
     ],
   },
   natureMothers: {
-    images: [natureMother1, natureMother2, natureMother3],
+    images: [natureMother1, natureMother3],
     header: getHeader("natureMothers"),
     newContentPromo: [
       { content: "ילדת? מזל טוב!", bold: false },
@@ -265,21 +264,21 @@ export const workshopsData = {
         bold: false,
       },
       { content: "חוויות ולקבל ידע מקצועי?", bold: false },
-      { content: "הצטרפי למעגלי אמהות בטבע,", bold: true, color: "pink" },
+      { content: "הצטרפי למעגלי אמהות בטבע,", bold: true, color: "deeppink" },
       {
         content: "לזמן איכות מעשיר שלך ושל תינוקך",
         bold: true,
-        color: "pink",
+        color: "deeppink",
       },
       {
         content: "באווירה נעימה, במקום בו אפשר להתייעץ,",
         bold: true,
-        color: "pink",
+        color: "deeppink",
       },
       {
         content: "לחלוק חוויות ולקבל ידע מקצועי.",
         bold: true,
-        color: "pink",
+        color: "deeppink",
       },
       { content: "" },
       { content: "אבל למה טבע?", bold: true },
@@ -341,7 +340,7 @@ export const workshopsData = {
     ],
   },
   mothers: {
-    images: [Mother1, Mother2, Mother3],
+    images: [Mother1, Mother3],
     header: getHeader("mothers"),
     withBullet: false,
     withSumUpItems: false,
