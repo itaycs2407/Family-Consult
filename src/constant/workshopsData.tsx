@@ -11,6 +11,7 @@ import parentsPrepare3 from "../assets/workshop/parentsPrepare/parentsPrepare3.p
 import parents1 from "../assets/workshop/parents/parents1.png";
 import parents2 from "../assets/workshop/parents/parents2.png";
 import parents3 from "../assets/workshop/parents/parents3.png";
+import promoImage from "../assets/workshop/parents/promoImage.jpg";
 
 import natureMother1 from "../assets/workshop/natureMother/natureMother1.png";
 import natureMother3 from "../assets/workshop/natureMother/natureMother3.jpg";
@@ -72,6 +73,7 @@ export const workshopsData = {
   parents: {
     images: [parents1, parents2, parents3],
     header: getHeader("parents"),
+    promoImage: promoImage,
     newContentPromo: [
       {
         content: "להיות הורים זה התפקיד הכי חשוב ומשמעותי שקיבלנו,",

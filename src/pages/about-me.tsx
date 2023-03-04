@@ -70,12 +70,14 @@ const AboutMe: React.FC = () => {
 export const AbsoluteStyledImage = styled.img<{
   top?: number;
   left?: number;
+  shadow?: boolean;
 }>`
   position: absolute;
-  top: ${(props) => (props.top ? props.top : 15)}%;
-  left: ${(props) => (props.left ? props.left : 10)}%;
-
-  border-radius: 100px;
+  top: ${({ top }) => (top ? top : 15)}%;
+  left: ${({ left }) => (left ? left : 10)}%;
+  box-shadow: ${({ shadow }) =>
+    shadow ? "0 5px 10px rgba(0, 0, 0, 0.8)" : "none"};
+  border-radius: 20px;
   width: 20%;
   animation: ${Fadein} 0.75s;
 `;

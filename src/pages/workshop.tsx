@@ -15,6 +15,9 @@ import { workshopsData } from "../constant/workshopsData";
 import ContactUs from "../components/shred/ContactUs";
 import Tool, { ToolsProps } from "../components/shred/Tool";
 import Card, { CardProps } from "../components/shred/Card";
+import AboutMe1 from "../assets/aboutMe1.png";
+import second from "../assets/homepage/middle.png";
+import { AbsoluteStyledImage } from "./about-me";
 
 const Workshop: React.FC = () => {
   useEffect(() => {
@@ -44,6 +47,15 @@ const Workshop: React.FC = () => {
       </StyledImageContainer>
       <Header>{workshopData.header}</Header>
       <Content>
+        {workshopData.promoImage && (
+          <AbsoluteStyledImage
+            src={workshopData.promoImage}
+            alt={second}
+            left={35}
+            top={10}
+            shadow={true}
+          />
+        )}
         {workshopData.newContentPromo && (
           <>
             {workshopData.newContentPromo.map(
@@ -126,8 +138,10 @@ export const Title = styled.div<{ bold?: boolean; color?: string }>`
 
 const Content = styled.div`
   text-align: right;
+  position: relative;
   margin: 0 0 5%;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-self: flex-end;
   padding: 0 12%;
