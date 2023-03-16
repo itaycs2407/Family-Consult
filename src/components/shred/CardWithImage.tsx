@@ -56,6 +56,8 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   text-align: center;
   position: absolute;
+  width: 100%;
+  font-weight: bold;
   bottom: 5%;
   left: 50%;
 

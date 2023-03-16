@@ -8,13 +8,13 @@ import {
 } from "../constant/style";
 import Heart from "../assets/home-intro.jpeg";
 import second from "../assets/homepage/middle.png";
+import intro from "../assets/homepage/home-intro.png";
 import Consult from "../assets/homepage/consult.svg";
 import Workshop from "../assets/homepage/workshop.svg";
 import mark from "../assets/homepage/mark.svg";
 import { deviceMax } from "../constant/constant";
 import CardWithImage from "../components/shred/CardWithImage";
 
-import HilaPersonal from "../assets/homepage/WhatsApp Image 2023-02-25 at 17.24.09.jpeg";
 import Tool from "../components/shred/Tool";
 import { HomepageAboutMe, WhyWorkWithMe } from "../constant/aboutMe";
 import { Title } from "./workshop";
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
             </H2>
             <ResponsiveSubTitle>{responsiveSubTitle}</ResponsiveSubTitle>
           </Content>
-          <AbsoluteStyledImage src={Heart} alt={second} />
+          <StyledAbsoluteStyledImage src={Heart} alt={second} />
         </UpperContent>
 
         <CardContainer>
@@ -106,6 +106,7 @@ const Home: React.FC = () => {
           )}
         </>
         <Button onClick={() => history.push("/about-me")}>להמשך קריאה</Button>
+        <AbsoluteStyledImage src={intro} alt={second} />
       </WhoAmI>
       <WhyWithMeWrapper>
         <StyledHeader>5 סיבות למה כדאי לעבוד איתי</StyledHeader>
@@ -147,10 +148,16 @@ const Button = styled(StyledButton)`
   margin-right: 120px;
 `;
 
+const StyledAbsoluteStyledImage = styled(AbsoluteStyledImage)`
+  width: 25%;
+  height: 90%;
+`;
+
 const H1 = styled.h1`
   position: absolute;
   top: 35%;
   right: 10%;
+  font-size: 36px;
   @media screen and ${deviceMax.mobileL} {
     font-size: 14px;
     top: 30%;
@@ -202,7 +209,7 @@ const WhyWithMeContainer = styled.div`
 
 const WhoAmI = styled.div`
   background: beige;
-  padding: 120px;
+  padding: 60px 120px 120px;
   position: relative;
 `;
 

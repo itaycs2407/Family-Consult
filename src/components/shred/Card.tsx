@@ -7,24 +7,21 @@ export interface CardProps {
   content: { content: string };
 }
 
-const Card: React.FC<CardProps> = ({ title, image, content }) => {
-  return (
-    <Container>
-      <Content>
-        <div>{title.content}</div>
-        <div>{content.content}</div>
-      </Content>
-      <img src={image} alt={"image"} />
-    </Container>
-  );
-};
+const Card: React.FC<CardProps> = ({ title, image, content }) => (
+  <Container>
+    <ContentContainer>
+      <Header>{title.content}</Header>
+      <Content>{content.content}</Content>
+    </ContentContainer>
+    <Image src={image} alt={"image"} />
+  </Container>
+);
 
 const Container = styled.div`
-  width: 250px;
-  height: 200px;
-  padding: 15px;
   direction: rtl;
   text-align: right;
+  width: 500px;
+  height: 300px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   background-color: white;
   display: flex;
@@ -32,8 +29,20 @@ const Container = styled.div`
   border-radius: 20px;
 `;
 
-const Content = styled.div`
+const Header = styled.div`
+  font-weight: bold;
+`;
+
+const Content = styled.div``;
+
+const Image = styled.img`
+  border-radius: 150px;
+  height: 300px;
+  width: 300px;
+`;
+const ContentContainer = styled.div`
   display: flex;
+  padding: 15px;
   flex-direction: column;
 `;
 

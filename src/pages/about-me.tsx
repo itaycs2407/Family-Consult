@@ -3,6 +3,7 @@ import styled from "@emotion/styled/macro";
 import { Fadein, FadeInContainer } from "../constant/style";
 import HilaPersonal from "../assets/hilaHome.jpg";
 import AboutMe1 from "../assets/aboutMe1.png";
+import aboutMe2 from "../assets/aboutme2.png";
 import second from "../assets/homepage/middle.png";
 import { keyframes } from "@emotion/react";
 import { deviceMax } from "../constant/constant";
@@ -50,6 +51,13 @@ const AboutMe: React.FC = () => {
               alt={second}
               left={20}
               top={10}
+            />
+
+            <AbsoluteStyledImage
+              src={aboutMe2}
+              alt={second}
+              left={20}
+              top={50}
             />
 
             {aboutMePart2.map((line, index) => {

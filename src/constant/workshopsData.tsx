@@ -17,8 +17,10 @@ import natureMother1 from "../assets/workshop/natureMother/natureMother1.png";
 import natureMother3 from "../assets/workshop/natureMother/natureMother3.jpg";
 
 import Mother1 from "../assets/workshop/mothers/mothers1.png";
-import Mother2 from "../assets/workshop/mothers/mothers2.svg";
+import Mother2 from "../assets/workshop/mothers/mothers2.png";
 import Mother3 from "../assets/workshop/mothers/mothers3.png";
+import card1 from "../assets/workshop/mothers/card1.png";
+import card2 from "../assets/workshop/mothers/card2.png";
 
 import { ReactComponent as FutureToCome } from "../assets/workshop/parentsPrepare/futureToCome.svg";
 import { ReactComponent as MartialComm } from "../assets/workshop/parentsPrepare/martialComm.svg";
@@ -344,16 +346,102 @@ export const workshopsData = {
   mothers: {
     images: [Mother1, Mother3],
     header: getHeader("mothers"),
-    withBullet: false,
-    withSumUpItems: false,
-    contentPromo: [],
-    sumUpItems: [],
-    content: [
-      "נמצאת לאחר לידה ומחפשת מקום בו, יהיה לך נעים וכיף להגיע אליו ?",
-      "מקום בו אפשר להתייעץ לחלוק חוויות ולקבל ידע מקצועי?",
-      "הצטרפי לבוקר של כיף מעשיר ומפנק.",
-      "אנו ניפגש בבקרים, אחת לשבוע אמהות ותינקות. החלק ראשון יוקדש לך אמא יקרה, לאתגרים העומדים לפניך, השינוי וההפיכה לאם, חווית הלידה, זוגיות לאחר לידה איך יוצרים איזון ומוצאים גם זמן לעצמי וגם לתינוק? ועוד.",
-      "החלק השני יוקדש לפעילות חוויתית עם התינוק.ת שבה תקבלי כלים מעשיים העוסקים בהתפתחות תינוקך.",
+    promoImage: Mother2,
+    newContentPromo: [
+      {
+        content: "ילדת? מזל טוב!",
+        bold: false,
+      },
+      {
+        content: "הגעת הביתה עם התינוק החדש",
+        bold: false,
+      },
+      {
+        content: 'וישר קיבלת "מתנה" -',
+        bold: false,
+      },
+      {
+        content: "חופשת לידה!",
+        bold: true,
+      },
+      {
+        content: "",
+      },
+      {
+        content: "אז חופשה, זה לא.",
+        bold: true,
+      },
+      {
+        content: "את מוצאת את עצמך קמה בלילה כמה פעמים",
+        bold: false,
+      },
+      {
+        content: "להחליף חיתול, להאכיל או סתם לבדוק שהתינוק נושם...",
+        bold: false,
+      },
+      {
+        content: "ובמהלך היום את מבלה כל הזמן עם הקטנצ'יק",
+        bold: false,
+      },
+      {
+        content: "וכבר כמעט שוכחת איך לדבר עם אנשים מבוגרים!",
+        bold: false,
+      },
+      {
+        content: "",
+      },
+      {
+        content: "מגיע לך זמן איכותי לעצמך ",
+        bold: true,
+      },
+      {
+        content: "עם אמהות שנמצאות באותה תקופה עמוסה",
+        bold: true,
+      },
+      {
+        content: "ומחפשות רגע מפלט,",
+        bold: true,
+      },
+      {
+        content: "מקום נעים שכיף להגיע אליו,",
+        bold: true,
+      },
+      {
+        content: "מקום מכיל שמאפשר להתייעץ, לחלוק חוויות ולקבל ידע מקצועי!",
+        bold: true,
+      },
     ],
+    cards: {
+      header: { content: "אז מה המפגש כולל:", color: "pink" },
+      cardsData: [
+        {
+          title: {
+            content: "את במרכז!",
+          },
+          content: {
+            content:
+              "החלק הראשון במפגש יוקדש לך אמא יקרה, \n" +
+              "לאתגרים העומדים בפנייך,\n" +
+              "השינוי וההפיכה לאם,\n" +
+              "חוויית הלידה, זוגיות לאחר לידה,\n" +
+              "איך ליצור איזון ולמצוא גם זמן לעצמך וגם לתינוק,\n" +
+              "ועוד...",
+          },
+          image: card1,
+        },
+        {
+          title: {
+            content: "חוויות משותפות",
+          },
+          content: {
+            content:
+              "החלק השני של המפגש יוקדש לפעילות חוויתית עם התינוק \n" +
+              "בה תצברי רגעים יפים וזכרונות קסומים\n" +
+              "וגם תקבלי כלי מעשיים העוסקים בהתפתחות תינוקך.\n",
+          },
+          image: card2,
+        },
+      ],
+    },
   },
 };
