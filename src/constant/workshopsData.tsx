@@ -7,20 +7,21 @@ import mothers from "../assets/workshop/workshop-mother.jpeg";
 import parentsPrepare1 from "../assets/workshop/parentsPrepare/parentsPrepare1.png";
 import parentsPrepare2 from "../assets/workshop/parentsPrepare/parentsPrepare2.png";
 import parentsPrepare3 from "../assets/workshop/parentsPrepare/parentsPrepare3.png";
+import promoImageParentsPrepare from "../assets/workshop/parentsPrepare/white-image.png";
 
 import parents1 from "../assets/workshop/parents/parents1.png";
 import parents2 from "../assets/workshop/parents/parents2.png";
 import parents3 from "../assets/workshop/parents/parents3.png";
-import promoImage from "../assets/workshop/parents/promoImage.jpg";
+import promoImageParents from "../assets/workshop/parents/promoImage.jpg";
 
 import natureMother1 from "../assets/workshop/natureMother/natureMother1.png";
 import natureMother3 from "../assets/workshop/natureMother/natureMother3.jpg";
 
 import Mother1 from "../assets/workshop/mothers/mothers1.png";
-import Mother2 from "../assets/workshop/mothers/mothers2.png";
 import Mother3 from "../assets/workshop/mothers/mothers3.png";
 import card1 from "../assets/workshop/mothers/card1.png";
 import card2 from "../assets/workshop/mothers/card2.png";
+import promoImageMother from "../assets/workshop/mothers/mothers2.png";
 
 import { ReactComponent as FutureToCome } from "../assets/workshop/parentsPrepare/futureToCome.svg";
 import { ReactComponent as MartialComm } from "../assets/workshop/parentsPrepare/martialComm.svg";
@@ -75,7 +76,7 @@ export const workshopsData = {
   parents: {
     images: [parents1, parents2, parents3],
     header: getHeader("parents"),
-    promoImage: promoImage,
+    promoImage: promoImageParents,
     newContentPromo: [
       {
         content: "להיות הורים זה התפקיד הכי חשוב ומשמעותי שקיבלנו,",
@@ -169,6 +170,7 @@ export const workshopsData = {
   },
   parentsPrepare: {
     images: [parentsPrepare1, parentsPrepare2, parentsPrepare3],
+    promoImage: promoImageParentsPrepare,
     header: getHeader("parentsPrepare"),
     withBullet: false,
     withSumUpItems: false,
@@ -300,7 +302,7 @@ export const workshopsData = {
       { content: "מפתחת עצמאות, סקרנות ויוזמה.", bold: true },
     ],
     cards: {
-      header: { content: "אז מה המפגש כולל:", color: "pink" },
+      header: { content: "אז מה המפגש כולל?", color: "pink" },
       cardsData: [
         {
           title: {
@@ -346,7 +348,7 @@ export const workshopsData = {
   mothers: {
     images: [Mother1, Mother3],
     header: getHeader("mothers"),
-    promoImage: Mother2,
+    promoImage: promoImageMother,
     newContentPromo: [
       {
         content: "ילדת? מזל טוב!",
@@ -412,7 +414,7 @@ export const workshopsData = {
       },
     ],
     cards: {
-      header: { content: "אז מה המפגש כולל:", color: "pink" },
+      header: { content: "אז מה המפגש כולל?", color: "pink" },
       cardsData: [
         {
           title: {

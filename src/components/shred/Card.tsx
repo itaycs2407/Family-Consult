@@ -31,12 +31,14 @@ const Container = styled.div`
 
 const Header = styled.div`
   font-weight: bold;
+  margin-bottom: 10px;
 `;
 
 const Content = styled.div``;
 
 const Image = styled.img`
-  border-radius: 150px;
+  border-radius: 20px 0 0 20px;
+
   height: 300px;
   width: 300px;
 `;
