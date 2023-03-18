@@ -20,6 +20,7 @@ import { HomepageAboutMe, WhyWorkWithMe } from "../constant/aboutMe";
 import { Title } from "./workshop";
 import { AbsoluteStyledImage } from "./about-me";
 import { useHistory } from "react-router-dom";
+import ContactUs from "../components/shred/ContactUs";
 
 const Home: React.FC = () => {
   const subTitle = <span> הילה כהן, יועצת משפחתית MA מומחית לגיל הרך</span>;
@@ -106,7 +107,7 @@ const Home: React.FC = () => {
           )}
         </>
         <Button onClick={() => history.push("/about-me")}>להמשך קריאה</Button>
-        <AbsoluteStyledImage src={intro} alt={second} />
+        <AbsoluteStyledImage src={intro} alt={second} height="80%" />
       </WhoAmI>
       <WhyWithMeWrapper>
         <StyledHeader>5 סיבות למה כדאי לעבוד איתי</StyledHeader>
@@ -127,14 +128,10 @@ const Home: React.FC = () => {
       <Recommendation>
         <StyledHeader>המלצות</StyledHeader>
       </Recommendation>
+      <ContactUs />
     </>
   );
 };
-
-const ReadMore = styled.div`
-  direction: rtl;
-  color: red;
-`;
 
 const Recommendation = styled.div`
   background: bisque;

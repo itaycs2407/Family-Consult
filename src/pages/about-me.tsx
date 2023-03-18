@@ -45,7 +45,7 @@ const AboutMe: React.FC = () => {
             })}
           </Description>
 
-          <Description backgroundColor={"blanchedalmond"}>
+          <Description backgroundColor={"honeydew"}>
             <AbsoluteStyledImage
               src={AboutMe1}
               alt={second}
@@ -57,7 +57,7 @@ const AboutMe: React.FC = () => {
               src={AboutMe2}
               alt={second}
               left={20}
-              top={50}
+              top={60}
             />
 
             {aboutMePart2.map((line, index) => {
@@ -86,7 +86,7 @@ export const AbsoluteStyledImage = styled.img<{
   box-shadow: ${({ shadow }) =>
     shadow ? "0 5px 10px rgba(0, 0, 0, 0.8)" : "none"};
   border-radius: 20px;
-  width: 20%;
+  width: 15%;
   animation: ${Fadein} 0.75s;
 `;
 
@@ -132,7 +132,7 @@ const Description = styled.div<{ backgroundColor: string }>`
 
   &:last-child {
     margin-top: 0;
-    padding: 5% 10%;
+    padding: 1% 10% 5%;
   }
   @media screen and ${deviceMax.mobileL} {
     font-size: 12px;
