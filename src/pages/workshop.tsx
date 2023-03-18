@@ -161,7 +161,7 @@ export const ResponsiveImage = styled.img`
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
 `;
 
-const Tools = styled.div`
+export const Tools = styled.div`
   background-color: #fde2e4ff;
   display: flex;
   gap: 20px;
@@ -183,7 +183,7 @@ const Cards = styled.div`
   width: 100%;
 `;
 
-const ToolsWrapper = styled.div`
+export const ToolsWrapper = styled.div`
   display: flex;
   gap: 20px;
   justify-content: center;

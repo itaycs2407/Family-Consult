@@ -19,7 +19,7 @@ const Tool: React.FC<ToolsProps> = ({ icon, title, content, height }) => (
 
 const Container = styled.div<{ height?: number }>`
   width: 250px;
-  min-height: 200px;
+  min-height: 250px;
   height: ${({ height }) => (height ? `${height}px` : "fit-content")};
   padding: 15px;
   direction: rtl;
@@ -33,6 +33,7 @@ const Container = styled.div<{ height?: number }>`
 
 const Header = styled.div<{ bold: boolean }>`
   font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
+  margin: 10px;
 `;
 
 export default Tool;
