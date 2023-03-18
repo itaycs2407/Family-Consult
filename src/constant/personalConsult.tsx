@@ -1,5 +1,16 @@
 import { ReactComponent as Faith } from "../assets/workshop/parents/faith.svg";
 
+import { ReactComponent as Rehab } from "../assets/personal-consult/toolsIcons/rehab.svg";
+import { ReactComponent as FamilyEnlarge } from "../assets/personal-consult/toolsIcons/familyEnlarge.svg";
+import { ReactComponent as FixingConnections } from "../assets/personal-consult/toolsIcons/fixingConnections.svg";
+import { ReactComponent as FixingFamily } from "../assets/personal-consult/toolsIcons/fixingFamily.svg";
+import { ReactComponent as Negative } from "../assets/personal-consult/toolsIcons/negative.svg";
+import { ReactComponent as NewFrame } from "../assets/personal-consult/toolsIcons/newFrame.svg";
+import { ReactComponent as NewParents } from "../assets/personal-consult/toolsIcons/newParents.svg";
+import { ReactComponent as ParentsAut } from "../assets/personal-consult/toolsIcons/parentsAut.svg";
+import { ReactComponent as Brothers } from "../assets/personal-consult/toolsIcons/brothers.svg";
+import { ReactComponent as Prepare } from "../assets/personal-consult/toolsIcons/prepare.svg";
+
 export const personalConsultData: {
   intro: { content: string; bold?: boolean; color?: string }[];
   tools?: {
@@ -117,7 +128,7 @@ export const personalConsultData: {
   ],
   tools: [
     {
-      icon: <Faith height="50px" width="50px" />,
+      icon: <FixingConnections height="50px" width="50px" />,
       title: {
         content: "שיפור האווירה והתקשורת במשפחה",
         bold: true,
@@ -128,7 +139,7 @@ export const personalConsultData: {
       },
     },
     {
-      icon: <Faith height="50px" width="50px" />,
+      icon: <ParentsAut height="50px" width="50px" />,
       title: {
         content: "סמכות הורית",
         bold: true,
@@ -139,7 +150,7 @@ export const personalConsultData: {
       },
     },
     {
-      icon: <Faith height="50px" width="50px" />,
+      icon: <FixingFamily height="50px" width="50px" />,
       title: {
         content: "שיפור היחסים בתוך המשפחה",
         bold: true,
@@ -151,7 +162,7 @@ export const personalConsultData: {
     },
 
     {
-      icon: <Faith height="50px" width="50px" />,
+      icon: <NewFrame height="50px" width="50px" />,
       title: {
         content: "כניסה למסגרות חדשות",
         bold: true,
@@ -162,7 +173,7 @@ export const personalConsultData: {
       },
     },
     {
-      icon: <Faith height="50px" width="50px" />,
+      icon: <Rehab height="50px" width="50px" />,
       title: {
         content: "גמילה",
         bold: true,
@@ -174,7 +185,7 @@ export const personalConsultData: {
     },
 
     {
-      icon: <Faith height="50px" width="50px" />,
+      icon: <FamilyEnlarge height="50px" width="50px" />,
       title: {
         content: "הרחבת המשפחה",
         bold: true,
@@ -185,7 +196,7 @@ export const personalConsultData: {
       },
     },
     {
-      icon: <Faith height="50px" width="50px" />,
+      icon: <Brothers height="50px" width="50px" />,
       title: {
         content: "חיזוק היחסים בין האחים",
         bold: true,
@@ -196,7 +207,7 @@ export const personalConsultData: {
       },
     },
     {
-      icon: <Faith height="50px" width="50px" />,
+      icon: <Negative height="50px" width="50px" />,
       title: {
         content: "התמודדות עם התנהגויות שליליות של הילדים",
         bold: true,
@@ -207,7 +218,7 @@ export const personalConsultData: {
       },
     },
     {
-      icon: <Faith height="50px" width="50px" />,
+      icon: <NewParents height="50px" width="50px" />,
       title: {
         content: "תמיכה וייעוץ להורים חדשים",
         bold: true,
@@ -218,7 +229,7 @@ export const personalConsultData: {
       },
     },
     {
-      icon: <Faith height="50px" width="50px" />,
+      icon: <Prepare height="50px" width="50px" />,
       title: {
         content: "הכנה להורות",
         bold: true,
