@@ -136,7 +136,7 @@ export const Title = styled.div<{ bold?: boolean; color?: string }>`
   color: ${({ color }) => (color ? color : "black")};
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
   text-align: right;
   position: relative;
   margin: 0 0 5%;

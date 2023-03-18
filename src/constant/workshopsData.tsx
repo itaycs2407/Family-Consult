@@ -16,11 +16,14 @@ import promoImageParents from "../assets/workshop/parents/promoImage.jpg";
 
 import natureMother1 from "../assets/workshop/natureMother/natureMother1.png";
 import natureMother3 from "../assets/workshop/natureMother/natureMother3.jpg";
+import natureMotherCard1 from "../assets/workshop/natureMother/card1.png";
+import natureMotherCard2 from "../assets/workshop/natureMother/card2.png";
+import promoImageNatureMother from "../assets/workshop/natureMother/naturePromo.png";
 
 import Mother1 from "../assets/workshop/mothers/mothers1.png";
 import Mother3 from "../assets/workshop/mothers/mothers3.png";
-import card1 from "../assets/workshop/mothers/card1.png";
-import card2 from "../assets/workshop/mothers/card2.png";
+import MotherCard1 from "../assets/workshop/mothers/card1.png";
+import MotherCard2 from "../assets/workshop/mothers/card2.png";
 import promoImageMother from "../assets/workshop/mothers/mothers2.png";
 
 import { ReactComponent as FutureToCome } from "../assets/workshop/parentsPrepare/futureToCome.svg";
@@ -260,6 +263,7 @@ export const workshopsData = {
   natureMothers: {
     images: [natureMother1, natureMother3],
     header: getHeader("natureMothers"),
+    promoImage: promoImageNatureMother,
     newContentPromo: [
       { content: "ילדת? מזל טוב!", bold: false },
       { content: "נמאס לך להסתובב בקניונים?", bold: false },
@@ -316,7 +320,7 @@ export const workshopsData = {
               "חוויית הלידה, זוגיות לאחר לידה,\n" +
               "איך ליצור איזון ולמצוא גם זמן לעצמך וגם לתינוק,",
           },
-          image: "string",
+          image: natureMotherCard1,
         },
         {
           title: {
@@ -328,7 +332,7 @@ export const workshopsData = {
               "בה תצברי רגעים יפים וזכרונות קסומים\n" +
               "וגם תקבלי כלי מעשיים העוסקים בהתפתחות תינוקך.",
           },
-          image: "string",
+          image: natureMotherCard2,
         },
       ],
     },
@@ -429,7 +433,7 @@ export const workshopsData = {
               "איך ליצור איזון ולמצוא גם זמן לעצמך וגם לתינוק,\n" +
               "ועוד...",
           },
-          image: card1,
+          image: MotherCard1,
         },
         {
           title: {
@@ -441,7 +445,7 @@ export const workshopsData = {
               "בה תצברי רגעים יפים וזכרונות קסומים\n" +
               "וגם תקבלי כלי מעשיים העוסקים בהתפתחות תינוקך.\n",
           },
-          image: card2,
+          image: MotherCard2,
         },
       ],
     },

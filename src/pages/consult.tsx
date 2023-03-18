@@ -1,21 +1,19 @@
 import React, { useEffect } from "react";
-import styled from "@emotion/styled/macro";
 import {
   FadeInContainer,
   Header,
   ImageContainer,
+  SpaceLine,
   StyledImage,
-  SumUpItem,
 } from "../constant/style";
-import Bullet from "../components/bullet";
 import { locale } from "../locale/locale";
 import Intro1 from "../assets/personal-consult/intro1.png";
 import Intro2 from "../assets/personal-consult/intro2.png";
 import Intro3 from "../assets/personal-consult/intro3.png";
 import { useHistory } from "react-router-dom";
-import { deviceMax } from "../constant/constant";
 import { StyledImageContainer } from "./home";
-import { ResponsiveImage, WorkshopStyledButton } from "./workshop";
+import { Content, ResponsiveImage, Title } from "./workshop";
+import { personalConsultData } from "../constant/personalConsult";
 
 const Consult: React.FC = () => {
   const history = useHistory();
@@ -35,50 +33,19 @@ const Consult: React.FC = () => {
       </StyledImageContainer>
 
       <Header>{locale("personalConsultHeader")}</Header>
-      <ContentContainer>
-        {locale("personalConsultSentences").map(
-          (sentence: string, index: number) => (
-            <P key={index}>{sentence}</P>
-          )
+      <Content>
+        {personalConsultData.intro && (
+          <>
+            {personalConsultData.intro.map((line, index: number) => (
+              <Title key={index} bold={line.bold} color={line.color}>
+                {line.content === "" ? <SpaceLine /> : line.content}
+              </Title>
+            ))}
+          </>
         )}
-
-        {locale("personalConsultBullets").map(
-          (bullet: string, index: number) => (
-            <Bullet key={index} title={bullet} />
-          )
-        )}
-
-        <p>{locale("personalConsultSumUp")}</p>
-      </ContentContainer>
-      <WorkshopStyledButton onClick={() => history.push(`/contact/consult`)}>
-        צרו קשר לקביעת פגישת היכרות
-      </WorkshopStyledButton>
-      <SumUpContainer>
-        <SumUpItem> קצר מועד</SumUpItem>
-        <SumUpItem>בזום או בקלינקה</SumUpItem>
-        <SumUpItem>פרקטי ומותאם לערכי המשפחה</SumUpItem>
-      </SumUpContainer>
+      </Content>
     </FadeInContainer>
   );
 };
-
-const ContentContainer = styled.p`
-  width: 80%;
-  text-align: right;
-`;
-
-const P = styled.p`
-  direction: rtl;
-`;
-const SumUpContainer = styled.div`
-  display: flex;
-  gap: 50px;
-
-  @media screen and ${deviceMax.mobileL} {
-    display: none;
-    flex-direction: column;
-    gap: 20px;
-  }
-`;
 
 export default Consult;
