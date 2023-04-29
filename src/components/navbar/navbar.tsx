@@ -16,6 +16,7 @@ const Navbar: React.FC = () => {
           <WhatsappLogo />
         </WhatsappContainer>
         054-6715252
+        <Hamburger onClick={() => setShowMenu((prev) => !prev)} />
       </StyledStrip>
 
       <MenuContainer>
@@ -36,7 +37,6 @@ const Navbar: React.FC = () => {
             <NavbarItem to="/home">{locale("navBarItemHome")}</NavbarItem>
           </NavbarItemContainer>
 
-          <Hamburger onClick={() => setShowMenu((prev) => !prev)} />
           {showMenu && (
             <ResponsiveMenu onClick={() => setShowMenu(false)}>
               <NavbarItem to="/contact">
@@ -79,7 +79,9 @@ export const StyledStrip = styled.div`
   font-weight: 650;
 
   @media screen and ${deviceMax.mobileL} {
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
   }
 `;
 
@@ -145,7 +147,7 @@ const ResponsiveMenu = styled.div`
   display: flex;
   flex-direction: column-reverse;
   gap: 10px;
-  z-index: 1000;
+  z-index: 2000;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   background-color: white;
   border-radius: 20px;

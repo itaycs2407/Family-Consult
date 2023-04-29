@@ -21,6 +21,7 @@ import { Title } from "./workshop";
 import { AbsoluteStyledImage } from "./about-me";
 import { useHistory } from "react-router-dom";
 import ContactUs from "../components/shred/ContactUs";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 const Home: React.FC = () => {
   const subTitle = <span> הילה כהן, יועצת משפחתית MA מומחית לגיל הרך</span>;
@@ -35,6 +36,7 @@ const Home: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const isMobile = useIsMobile();
   const history = useHistory();
   return (
     <>
@@ -43,7 +45,7 @@ const Home: React.FC = () => {
           <Content>
             <H1>
               איך להתקדם להורות המיטבית והייחודית שלכם
-              <br />
+              <StyledBr />
               ולהעניק לילדים שלכם את הטוב ביותר
             </H1>
             <H2>
@@ -62,26 +64,34 @@ const Home: React.FC = () => {
             title={"ייעוץ - הדרכת הורים"}
             redirectTo={"/personal-consult"}
             content={
-              " חוויית ההורות אמנם מספקת לנו המון רגעים יפים \n" +
-              "אך גם מציפה הרבה דילמות ואתגרים שלא הכרנו קודם" +
-              "צריכים ליווי והדרכה בהורות שלכם?\n" +
-              "יש לכם שאלה ספציפית?\n" +
-              "במפגשי ייעוץ פרקטיים, ממוקדים ומותאמים לערכי המשפחה שלכם\n" +
-              "נוכל להגיע לפתרונות בזמן קצר.\n"
+              isMobile
+                ? " חוויית ההורות אמנם מספקת לנו המון רגעים יפים \n" +
+                  "אך גם מציפה הרבה דילמות ואתגרים שלא הכרנו קודם"
+                : " חוויית ההורות אמנם מספקת לנו המון רגעים יפים \n" +
+                  "אך גם מציפה הרבה דילמות ואתגרים שלא הכרנו קודם" +
+                  "צריכים ליווי והדרכה בהורות שלכם?\n" +
+                  "יש לכם שאלה ספציפית?\n" +
+                  "במפגשי ייעוץ פרקטיים, ממוקדים ומותאמים לערכי המשפחה שלכם\n" +
+                  "נוכל להגיע לפתרונות בזמן קצר.\n"
             }
           />
 
           <CardWithImage
-            redirectText={"לפרטים נוספים, ייעוץ והתאמה"}
+            redirectText={
+              isMobile ? "לפרטים נוספים" : "לפרטים נוספים, ייעוץ והתאמה"
+            }
             image={Workshop}
             title={"סדנאות"}
             redirectTo={"/workshops"}
             content={
-              "סדרת סדנאות והרצאות לשלבים שונים בחיי ההורות שלנו\n" +
-              "כדי להעניק להורים ולכאלה שעתידים להיות הורים\n" +
-              "כלים מעשיים וחשובים להתנהלות נכונה בבית, שיפור התקשורת, יצירת אווירה רגועה \n" +
-              "והכי חשוב על מנת להעניק לילדים שלנו את הטוב ביותר!\n" +
-              "\n"
+              isMobile
+                ? "סדרת סדנאות והרצאות לשלבים שונים בחיי ההורות שלנו\n" +
+                  "כדי להעניק להורים ולכאלה שעתידים להיות הורים\n"
+                : "סדרת סדנאות והרצאות לשלבים שונים בחיי ההורות שלנו\n" +
+                  "כדי להעניק להורים ולכאלה שעתידים להיות הורים\n" +
+                  "כלים מעשיים וחשובים להתנהלות נכונה בבית, שיפור התקשורת, יצירת אווירה רגועה \n" +
+                  "והכי חשוב על מנת להעניק לילדים שלנו את הטוב ביותר!\n" +
+                  "\n"
             }
           />
         </CardContainer>
@@ -137,6 +147,12 @@ const Recommendation = styled.div`
   background: bisque;
 `;
 
+const StyledBr = styled.br`
+  @media screen and ${deviceMax.mobileL} {
+    display: none;
+  }
+`;
+
 const Button = styled(StyledButton)`
   position: absolute;
   right: 0;
@@ -159,6 +175,7 @@ const H1 = styled.h1`
     font-size: 14px;
     top: 30%;
     right: 2%;
+    width: 50%;
   }
 `;
 const H2 = styled.h2`
@@ -244,7 +261,7 @@ const ResponsiveSubTitle = styled.h2`
     display: initial;
     position: absolute;
     font-size: 10px;
-    top: 60%;
+    top: 90%;
     right: 2%;
   }
 `;
