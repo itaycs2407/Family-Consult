@@ -66,7 +66,7 @@ const Home: React.FC = () => {
             content={
               isMobile
                 ? " חוויית ההורות אמנם מספקת לנו המון רגעים יפים \n" +
-                  "אך גם מציפה הרבה דילמות ואתגרים שלא הכרנו קודם"
+                  "אך גם מציפה הרבה דילמות ואתגרים ..."
                 : " חוויית ההורות אמנם מספקת לנו המון רגעים יפים \n" +
                   "אך גם מציפה הרבה דילמות ואתגרים שלא הכרנו קודם" +
                   "צריכים ליווי והדרכה בהורות שלכם?\n" +
@@ -117,7 +117,11 @@ const Home: React.FC = () => {
           )}
         </>
         <Button onClick={() => history.push("/about-me")}>להמשך קריאה</Button>
-        <AbsoluteStyledImage src={intro} alt={second} height="80%" />
+        <StyledResponsiveAbsoluteStyledImage
+          src={intro}
+          alt={second}
+          height="80%"
+        />
       </WhoAmI>
       <WhyWithMeWrapper>
         <StyledHeader>5 סיבות למה כדאי לעבוד איתי</StyledHeader>
@@ -129,7 +133,7 @@ const Home: React.FC = () => {
                 <img src={mark} width={"50px"} height={"50px"} alt="someAlt" />
               }
               title={item.title}
-              content={item.content}
+              content={isMobile ? { content: "" } : item.content}
               height={330}
             />
           ))}
@@ -159,6 +163,9 @@ const Button = styled(StyledButton)`
   bottom: 0;
   margin-bottom: 50px;
   margin-right: 120px;
+  @media screen and ${deviceMax.mobileL} {
+    bottom: auto;
+  }
 `;
 
 const StyledAbsoluteStyledImage = styled(AbsoluteStyledImage)`
@@ -175,9 +182,16 @@ const H1 = styled.h1`
     font-size: 14px;
     top: 30%;
     right: 2%;
-    width: 50%;
+    width: 60%;
   }
 `;
+
+const StyledResponsiveAbsoluteStyledImage = styled(AbsoluteStyledImage)`
+  @media screen and ${deviceMax.mobileL} {
+    display: none;
+  }
+`;
+
 const H2 = styled.h2`
   position: absolute;
   direction: rtl;
@@ -217,27 +231,38 @@ const WhyWithMeContainer = styled.div`
   display: flex;
   gap: 50px;
   padding: 50px;
-
   justify-content: center;
+  @media screen and ${deviceMax.mobileL} {
+    gap: 10px;
+    padding: 0;
+    flex-wrap: wrap;
+  }
 `;
 
 const WhoAmI = styled.div`
   background: beige;
   padding: 60px 120px 120px;
   position: relative;
+  @media screen and ${deviceMax.mobileL} {
+    padding: 20px 20px 20px;
+  }
 `;
 
 const CardContainer = styled.div`
   display: flex;
   height: 350px;
   padding: 50px;
-  width: 100%;
+  width: 80%;
   gap: 50px;
   justify-content: center;
   background: pink;
 
   @media screen and ${deviceMax.mobileL} {
     margin-top: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 90%;
+    gap: 10px;
   }
 `;
 
@@ -261,7 +286,7 @@ const ResponsiveSubTitle = styled.h2`
     display: initial;
     position: absolute;
     font-size: 10px;
-    top: 90%;
+    top: 110%;
     right: 2%;
   }
 `;

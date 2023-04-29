@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
+import { deviceMax } from "../../constant/constant";
 
 export interface ToolsProps {
   icon: JSX.Element;
@@ -29,6 +30,12 @@ const Container = styled.div<{ height?: number }>`
   display: flex;
   flex-direction: column;
   border-radius: 20px;
+
+  @media screen and ${deviceMax.mobileL} {
+    min-height: auto;
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 const Header = styled.div<{ bold: boolean }>`
