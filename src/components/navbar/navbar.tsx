@@ -72,6 +72,7 @@ const Container = styled.div`
 export const StyledStrip = styled.div`
   background-color: #dbdcd5;
   color: #990a43;
+  width: 99%;
   display: flex;
   align-items: center;
   padding: 3px 0 3px 20px;
@@ -81,7 +82,7 @@ export const StyledStrip = styled.div`
   @media screen and ${deviceMax.mobileL} {
     justify-content: space-between;
     padding: 0;
-    width: 100%;
+    width: 108%;
   }
 `;
 

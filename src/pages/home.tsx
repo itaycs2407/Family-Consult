@@ -252,7 +252,7 @@ const CardContainer = styled.div`
   display: flex;
   height: 350px;
   padding: 50px;
-  width: 80%;
+  width: 94%;
   gap: 50px;
   justify-content: center;
   background: pink;
