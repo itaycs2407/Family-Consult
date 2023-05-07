@@ -28,7 +28,7 @@ const App: React.FC = () => (
 
 const Container = styled.div`
   height: 100vh;
-  width: 98vw;
+  width: 100%
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -36,7 +36,7 @@ const Container = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  width: 100%;
+  //width: 100%;
 `;
 
 export default App;

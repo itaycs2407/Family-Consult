@@ -159,12 +159,9 @@ const StyledBr = styled.br`
 
 const Button = styled(StyledButton)`
   position: absolute;
-  right: 0;
-  bottom: 0;
-  margin-bottom: 50px;
-  margin-right: 120px;
+  bottom: 25px;
+  left: 35%;
   @media screen and ${deviceMax.mobileL} {
-    bottom: auto;
   }
 `;
 
@@ -229,8 +226,9 @@ const WhyWithMeWrapper = styled.div`
 const WhyWithMeContainer = styled.div`
   background: aliceblue;
   display: flex;
-  gap: 50px;
-  padding: 50px;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 100px;
   justify-content: center;
   @media screen and ${deviceMax.mobileL} {
     gap: 10px;
@@ -242,9 +240,10 @@ const WhyWithMeContainer = styled.div`
 const WhoAmI = styled.div`
   background: beige;
   padding: 60px 120px 120px;
+  width: 84%;
   position: relative;
   @media screen and ${deviceMax.mobileL} {
-    padding: 20px 20px 20px;
+    padding: 16px;
   }
 `;
 
@@ -252,7 +251,7 @@ const CardContainer = styled.div`
   display: flex;
   height: 350px;
   padding: 50px;
-  width: 94%;
+  width: 93%;
   gap: 50px;
   justify-content: center;
   background: pink;
@@ -261,7 +260,6 @@ const CardContainer = styled.div`
     margin-top: 100px;
     margin-left: 5px;
     margin-right: 5px;
-    width: 90%;
     gap: 10px;
   }
 `;

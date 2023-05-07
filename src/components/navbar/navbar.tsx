@@ -72,17 +72,15 @@ const Container = styled.div`
 export const StyledStrip = styled.div`
   background-color: #dbdcd5;
   color: #990a43;
-  width: 99%;
+  //width: 100%;
   display: flex;
   align-items: center;
-  padding: 3px 0 3px 20px;
+  padding: 3px 3px 3px 20px;
   font-size: 18px;
   font-weight: 650;
 
   @media screen and ${deviceMax.mobileL} {
     justify-content: space-between;
-    padding: 0;
-    width: 108%;
   }
 `;
 
@@ -106,7 +104,6 @@ const MenuContainer = styled.div`
 
 const Hamburger = styled(MenuIcon)`
   display: none;
-  margin: 20px;
   cursor: pointer;
   position: relative;
   @media ${deviceMax.mobileL} {
