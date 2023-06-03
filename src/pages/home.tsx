@@ -162,7 +162,7 @@ const Button = styled(StyledButton)`
   bottom: 25px;
   left: 35%;
   @media screen and ${deviceMax.mobileL} {
-    bottom: 0;
+    bottom: -25px;
   }
 `;
 
