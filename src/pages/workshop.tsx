@@ -33,18 +33,20 @@ const Workshop: React.FC = () => {
   const workshopData = workshopsData[workshopKey];
 
   return (
-    <FadeInContainer>
-      <StyledImageContainer>
-        <ImageContainer>
-          {workshopData.images.map((image: string, index: number) => {
-            return index === 0 ? (
-              <ResponsiveImage key={image} src={image} alt={image} />
-            ) : (
-              <StyledImage key={image} src={image} alt={image} />
-            );
-          })}
-        </ImageContainer>
-      </StyledImageContainer>
+    <>
+      <FadeInContainer>
+        <StyledImageContainer>
+          <ImageContainer>
+            {workshopData.images.map((image: string, index: number) => {
+              return index === 0 ? (
+                <ResponsiveImage key={image} src={image} alt={image} />
+              ) : (
+                <StyledImage key={image} src={image} alt={image} />
+              );
+            })}
+          </ImageContainer>
+        </StyledImageContainer>
+      </FadeInContainer>
       <Header>{workshopData.header}</Header>
       <Content>
         {workshopData.promoImage && (
@@ -77,6 +79,7 @@ const Workshop: React.FC = () => {
           </>
         )}
       </Content>
+
       {workshopData.tools && (
         <Tools>
           <Title>{workshopData.tools.header.content}</Title>
@@ -125,7 +128,7 @@ const Workshop: React.FC = () => {
       )}
 
       <ContactUs workshopKey={workshopKey} />
-    </FadeInContainer>
+    </>
   );
 };
 
@@ -141,7 +144,6 @@ export const Content = styled.div`
   position: relative;
   margin: 0 0 5%;
   display: flex;
-  width: 100%;
   flex-direction: column;
   align-self: flex-end;
   padding: 0 12%;
@@ -179,7 +181,6 @@ const Cards = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  width: 100%;
 `;
 
 export const ToolsWrapper = styled.div`
@@ -187,7 +188,6 @@ export const ToolsWrapper = styled.div`
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
-  width: 80%;
 `;
 
 const CardsWrapper = styled.div`
