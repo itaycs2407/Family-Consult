@@ -9,6 +9,7 @@ import { keyframes } from "@emotion/react";
 import { deviceMax } from "../constant/constant";
 import { aboutMePart1, aboutMePart2 } from "../constant/aboutMe";
 import ContactUs from "../components/shred/ContactUs";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 const AboutMe: React.FC = () => {
   const subTitle = <span> מומחית לגיל הרך MA יועצת משפחתית </span>;
@@ -19,6 +20,7 @@ const AboutMe: React.FC = () => {
     </span>
   );
 
+  const isMobile = useIsMobile();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -31,10 +33,16 @@ const AboutMe: React.FC = () => {
             <H1>הילה כהן</H1>
             <H2>{subTitle}</H2>
             <ResponsiveSubTitle>{responsiveSubTitle}</ResponsiveSubTitle>
+            <ResponsiveImage
+              src={HilaPersonal}
+              alt={second}
+              left={10}
+              top={10}
+            />
           </Content>
 
           <Description backgroundColor={"pink"}>
-            <AbsoluteStyledImage src={HilaPersonal} alt={second} left={20} />
+            <DesktopImage src={HilaPersonal} alt={second} left={20} />
 
             {aboutMePart1.map((line, index) => {
               return (
@@ -46,19 +54,9 @@ const AboutMe: React.FC = () => {
           </Description>
 
           <Description backgroundColor={"honeydew"}>
-            <AbsoluteStyledImage
-              src={AboutMe1}
-              alt={second}
-              left={20}
-              top={10}
-            />
+            <DesktopImage src={AboutMe1} alt={second} left={20} top={10} />
 
-            <AbsoluteStyledImage
-              src={AboutMe2}
-              alt={second}
-              left={20}
-              top={60}
-            />
+            <DesktopImage src={AboutMe2} alt={second} left={20} top={60} />
 
             {aboutMePart2.map((line, index) => {
               return (
@@ -68,8 +66,9 @@ const AboutMe: React.FC = () => {
               );
             })}
           </Description>
+          {isMobile && <ContactUs />}
         </UpperContent>
-        <ContactUs />
+        {!isMobile && <ContactUs />}
       </FadeInContainer>
     </>
   );
@@ -93,6 +92,9 @@ export const AbsoluteStyledImage = styled.img<{
 const Content = styled.div`
   text-align: right;
   padding-right: 10%;
+  @media screen and ${deviceMax.mobileL} {
+    padding-bottom: 10%;
+  }
 `;
 
 const Sentence = styled.div<{ bold?: boolean; color?: string }>`
@@ -122,22 +124,19 @@ const UpperContent = styled(CardContainer)`
 `;
 
 const Description = styled.div<{ backgroundColor: string }>`
-  margin-top: 70px;
   width: 100%;
   position: relative;
-  padding: 5% 10%;
+  padding: 5% 5%;
   font-size: 22px;
   direction: rtl;
   background: ${({ backgroundColor }) => backgroundColor};
 
   &:last-child {
-    margin-top: 0;
-    padding: 1% 10% 5%;
+    padding: 1% 5% 5%;
   }
   @media screen and ${deviceMax.mobileL} {
     font-size: 12px;
-    width: 80%;
-    margin-bottom: 50px;
+    padding: 5% 5% 50px;
   }
 `;
 
@@ -188,6 +187,26 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
   animation: ${MoveFromRight} 1s ease-out;
+  @media screen and ${deviceMax.mobileL} {
+    font-size: 12px;
+  }
+`;
+
+const ResponsiveImage = styled(AbsoluteStyledImage)`
+  display: none;
+  @media screen and ${deviceMax.mobileL} {
+    display: block;
+  }
+`;
+
+const DesktopImage = styled(AbsoluteStyledImage)`
+  display: block;
+  @media screen and ${deviceMax.mobileL} {
+    display: none;
+  }
+`;
+
+const StyledContactUs = styled(ContactUs)`
   @media screen and ${deviceMax.mobileL} {
     display: none;
   }
