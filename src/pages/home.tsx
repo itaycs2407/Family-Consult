@@ -39,7 +39,7 @@ const Home: React.FC = () => {
   const isMobile = useIsMobile();
   const history = useHistory();
   return (
-    <>
+    <RouterContainer>
       <FadeInContainer>
         <UpperContent>
           <Content>
@@ -57,6 +57,7 @@ const Home: React.FC = () => {
           <StyledAbsoluteStyledImage src={Heart} alt={second} />
         </UpperContent>
       </FadeInContainer>
+
       <CardContainer>
         <CardWithImage
           image={Consult}
@@ -142,7 +143,7 @@ const Home: React.FC = () => {
         <StyledHeader>המלצות</StyledHeader>
       </Recommendation>
       <ContactUs />
-    </>
+    </RouterContainer>
   );
 };
 
@@ -161,6 +162,7 @@ const Button = styled(StyledButton)`
   bottom: 25px;
   left: 35%;
   @media screen and ${deviceMax.mobileL} {
+    bottom: 0;
   }
 `;
 
@@ -239,14 +241,12 @@ const WhyWithMeContainer = styled.div`
 const WhoAmI = styled.div`
   background: beige;
   padding: 60px 120px 120px;
-  //width: 84%;
   position: relative;
   @media screen and ${deviceMax.mobileL} {
     display: flex;
-    padding: 0;
-    width: 100%;
+    padding: 20px;
     flex-direction: column;
-    align-items: end;
+    //align-items: end;
   }
 `;
 
@@ -260,8 +260,6 @@ const CardContainer = styled.div`
 
   @media screen and ${deviceMax.mobileL} {
     margin-top: 100px;
-    margin-left: 5px;
-    margin-right: 5px;
     gap: 10px;
     padding: 50px 20px;
   }
@@ -300,6 +298,13 @@ const ResponsiveParagraph = styled.p`
 
 const StyledHeader = styled(Header)`
   margin: 0;
+`;
+
+const RouterContainer = styled.div`
+  @media screen and ${deviceMax.mobileL} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export default Home;

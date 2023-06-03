@@ -80,7 +80,6 @@ export const StyledStrip = styled.div`
   font-weight: 650;
 
   @media screen and ${deviceMax.mobileL} {
-    width: 100%;
     justify-content: space-between;
   }
 `;

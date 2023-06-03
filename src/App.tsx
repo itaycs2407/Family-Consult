@@ -8,6 +8,7 @@ import AboutMe from "./pages/about-me";
 import Consult from "./pages/consult";
 import { Redirect, Route, Switch } from "react-router-dom";
 import Workshop from "./pages/workshop";
+import { deviceMax } from "./constant/constant";
 
 const App: React.FC = () => (
   <Container>
