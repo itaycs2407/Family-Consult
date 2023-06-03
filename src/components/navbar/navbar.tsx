@@ -72,14 +72,15 @@ const Container = styled.div`
 export const StyledStrip = styled.div`
   background-color: #dbdcd5;
   color: #990a43;
-  //width: 100%;
+
   display: flex;
   align-items: center;
-  padding: 3px 3px 3px 20px;
+  padding: 3px 3px 3px;
   font-size: 18px;
   font-weight: 650;
 
   @media screen and ${deviceMax.mobileL} {
+    width: 100%;
     justify-content: space-between;
   }
 `;
@@ -107,7 +108,8 @@ const Hamburger = styled(MenuIcon)`
   cursor: pointer;
   position: relative;
   @media ${deviceMax.mobileL} {
-    display: initial;
+    display: block;
+    margin-right: 20px;
   }
 `;
 
@@ -133,6 +135,9 @@ const WhatsappContainer = styled.a`
   height: 40px;
   margin-left: 20px;
   margin-right: 20px;
+  @media screen and ${deviceMax.mobileL} {
+    margin-right: 0;
+  }
 `;
 
 const ResponsiveMenu = styled.div`

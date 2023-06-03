@@ -169,7 +169,6 @@ export const Tools = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  width: 100%;
 `;
 
 const Cards = styled.div`

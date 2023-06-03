@@ -56,46 +56,45 @@ const Home: React.FC = () => {
           </Content>
           <StyledAbsoluteStyledImage src={Heart} alt={second} />
         </UpperContent>
-
-        <CardContainer>
-          <CardWithImage
-            image={Consult}
-            redirectText={"להמשך קריאה "}
-            title={"ייעוץ - הדרכת הורים"}
-            redirectTo={"/personal-consult"}
-            content={
-              isMobile
-                ? " חוויית ההורות אמנם מספקת לנו המון רגעים יפים \n" +
-                  "אך גם מציפה הרבה דילמות ואתגרים ..."
-                : " חוויית ההורות אמנם מספקת לנו המון רגעים יפים \n" +
-                  "אך גם מציפה הרבה דילמות ואתגרים שלא הכרנו קודם" +
-                  "צריכים ליווי והדרכה בהורות שלכם?\n" +
-                  "יש לכם שאלה ספציפית?\n" +
-                  "במפגשי ייעוץ פרקטיים, ממוקדים ומותאמים לערכי המשפחה שלכם\n" +
-                  "נוכל להגיע לפתרונות בזמן קצר.\n"
-            }
-          />
-
-          <CardWithImage
-            redirectText={
-              isMobile ? "לפרטים נוספים" : "לפרטים נוספים, ייעוץ והתאמה"
-            }
-            image={Workshop}
-            title={"סדנאות"}
-            redirectTo={"/workshops"}
-            content={
-              isMobile
-                ? "סדרת סדנאות והרצאות לשלבים שונים בחיי ההורות שלנו\n" +
-                  "כדי להעניק להורים ולכאלה שעתידים להיות הורים\n"
-                : "סדרת סדנאות והרצאות לשלבים שונים בחיי ההורות שלנו\n" +
-                  "כדי להעניק להורים ולכאלה שעתידים להיות הורים\n" +
-                  "כלים מעשיים וחשובים להתנהלות נכונה בבית, שיפור התקשורת, יצירת אווירה רגועה \n" +
-                  "והכי חשוב על מנת להעניק לילדים שלנו את הטוב ביותר!\n" +
-                  "\n"
-            }
-          />
-        </CardContainer>
       </FadeInContainer>
+      <CardContainer>
+        <CardWithImage
+          image={Consult}
+          redirectText={"להמשך קריאה "}
+          title={"ייעוץ - הדרכת הורים"}
+          redirectTo={"/personal-consult"}
+          content={
+            isMobile
+              ? " חוויית ההורות אמנם מספקת לנו המון רגעים יפים \n" +
+                "אך גם מציפה הרבה דילמות ואתגרים ..."
+              : " חוויית ההורות אמנם מספקת לנו המון רגעים יפים \n" +
+                "אך גם מציפה הרבה דילמות ואתגרים שלא הכרנו קודם" +
+                "צריכים ליווי והדרכה בהורות שלכם?\n" +
+                "יש לכם שאלה ספציפית?\n" +
+                "במפגשי ייעוץ פרקטיים, ממוקדים ומותאמים לערכי המשפחה שלכם\n" +
+                "נוכל להגיע לפתרונות בזמן קצר.\n"
+          }
+        />
+
+        <CardWithImage
+          redirectText={
+            isMobile ? "לפרטים נוספים" : "לפרטים נוספים, ייעוץ והתאמה"
+          }
+          image={Workshop}
+          title={"סדנאות"}
+          redirectTo={"/workshops"}
+          content={
+            isMobile
+              ? "סדרת סדנאות והרצאות לשלבים שונים בחיי ההורות שלנו\n" +
+                "כדי להעניק להורים ולכאלה שעתידים להיות הורים\n"
+              : "סדרת סדנאות והרצאות לשלבים שונים בחיי ההורות שלנו\n" +
+                "כדי להעניק להורים ולכאלה שעתידים להיות הורים\n" +
+                "כלים מעשיים וחשובים להתנהלות נכונה בבית, שיפור התקשורת, יצירת אווירה רגועה \n" +
+                "והכי חשוב על מנת להעניק לילדים שלנו את הטוב ביותר!\n" +
+                "\n"
+          }
+        />
+      </CardContainer>
 
       <WhoAmI>
         <>
@@ -240,10 +239,14 @@ const WhyWithMeContainer = styled.div`
 const WhoAmI = styled.div`
   background: beige;
   padding: 60px 120px 120px;
-  width: 84%;
+  //width: 84%;
   position: relative;
   @media screen and ${deviceMax.mobileL} {
-    padding: 16px;
+    display: flex;
+    padding: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: end;
   }
 `;
 
@@ -251,7 +254,6 @@ const CardContainer = styled.div`
   display: flex;
   height: 350px;
   padding: 50px;
-  width: 93%;
   gap: 50px;
   justify-content: center;
   background: pink;
@@ -261,6 +263,7 @@ const CardContainer = styled.div`
     margin-left: 5px;
     margin-right: 5px;
     gap: 10px;
+    padding: 50px 20px;
   }
 `;
 

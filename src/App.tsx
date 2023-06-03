@@ -12,7 +12,7 @@ import Workshop from "./pages/workshop";
 const App: React.FC = () => (
   <Container>
     <Navbar />
-    <ContentContainer>
+    <div>
       <Switch>
         <Route exact path="/home" component={Home} />
         <Route path="/contact/:reason?" component={Contact} />
@@ -22,21 +22,15 @@ const App: React.FC = () => (
         <Route exact path="/workshops/:workshopKey" component={Workshop} />
         <Redirect from="/" to={"/home"} />
       </Switch>
-    </ContentContainer>
+    </div>
   </Container>
 );
 
 const Container = styled.div`
-  height: 100vh;
-  width: 100%
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   z-index: 1;
-`;
-
-const ContentContainer = styled.div`
-  //width: 100%;
 `;
 
 export default App;
